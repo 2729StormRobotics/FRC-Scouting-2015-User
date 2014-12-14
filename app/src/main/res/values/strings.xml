@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FRC Scouting 2015</string>
+    <string name="action_settings">Settings</string>
+    
+      <!-- MAIN ACTIVITY STRINGS -->
+    <string name="team_number">   Enter Team Number</string>
+    <string name="begin_match">Begin Match</string>
+    <string name="title_activity_match">Match #</string>
+    <string name="match_number">   Enter Match Number</string>
+    <string name="title_name">Storm Scouting</string>
+    <string name="txt_blueTeam">Blue Alliance</string>
+    <string name="txt_redTeam">Red Alliance</string>
+    <string name="txt_pause">Pause</string>
+    
+     <!-- HELP STRINGS -->
+    <string name="txt_help">Help</string>
+
+</resources>
