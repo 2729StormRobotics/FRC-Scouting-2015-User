@@ -96,31 +96,31 @@ public class MainActivity extends Activity {
     //starts match, sends user to match activity
     public void startMatch(View view) {
     	if(this.dataEntered()){
-    		
+
     		DataHandler.clear();
-    		
-			Intent intent = new Intent(this, MatchActivity.class);
-			
+
+			//Intent intent = new Intent(this, MatchActivity.class);
+
 			EditText txtmatch = (EditText) this.findViewById(R.id.te_match_num);
 			EditText txtteam = (EditText) this.findViewById(R.id.te_team_num);
-			
+
 			RadioButton btnRed = (RadioButton) this.findViewById(R.id.btn_red);
-			
+
 			String matchNum = txtmatch.getText().toString();
 			String teamNum = txtteam.getText().toString();
-			
+
 			if(!TeamNumbers.isATeamNumber(Integer.parseInt(teamNum))){
 				Toast.makeText(this,"That is not a valid team number.",Toast.LENGTH_SHORT).show();
 				return;
 			}
-			
+
 			boolean isRed = btnRed.isChecked();
-			
-			intent.putExtra(MATCH_NUM,matchNum);		//match number
-			intent.putExtra(TEAM_NUM,teamNum);			//team number
-			intent.putExtra(IS_RED,isRed);				//if alliance is red
-			
-			startActivity(intent);
+
+			//intent.putExtra(MATCH_NUM,matchNum);		//match number
+			//intent.putExtra(TEAM_NUM,teamNum);			//team number
+			//intent.putExtra(IS_RED,isRed);				//if alliance is red
+
+			//startActivity(intent);
     	}else{
     		Toast.makeText(this,"Please enter all the team's information.",Toast.LENGTH_SHORT).show();
     	}
