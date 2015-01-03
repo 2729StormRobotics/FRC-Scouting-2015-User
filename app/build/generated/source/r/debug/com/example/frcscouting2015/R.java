@@ -1315,18 +1315,11 @@ containing a value of this type.
         public static final int abc_textfield_search_activated_mtrl_alpha=0x7f020030;
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020031;
         public static final int abc_textfield_search_material=0x7f020032;
-        public static final int bg_gradient=0x7f020033;
-        public static final int chkbox_off=0x7f020034;
-        public static final int chkbox_on=0x7f020035;
-        public static final int first=0x7f020036;
-        public static final int high_bzone_border=0x7f020037;
-        public static final int high_rzone_border=0x7f020038;
-        public static final int high_wzone_border=0x7f020039;
-        public static final int ic_launcher=0x7f02003a;
-        public static final int storm_logo_text_v2=0x7f02003b;
-        public static final int trans_bzone_border=0x7f02003c;
-        public static final int trans_rzone_border=0x7f02003d;
-        public static final int trans_wzone_border=0x7f02003e;
+        public static final int chkbox_off=0x7f020033;
+        public static final int chkbox_on=0x7f020034;
+        public static final int first=0x7f020035;
+        public static final int ic_launcher=0x7f020036;
+        public static final int storm_logo_text_v2=0x7f020037;
     }
     public static final class id {
         public static final int action_MainHelp=0x7f080047;
@@ -1361,13 +1354,12 @@ containing a value of this type.
         public static final int end=0x7f080014;
         public static final int expand_activities_button=0x7f080022;
         public static final int expanded_menu=0x7f080028;
-        public static final int fragment_container=0x7f080045;
+        public static final int first_logo=0x7f080045;
         public static final int home=0x7f080004;
         public static final int homeAsUp=0x7f08000d;
         public static final int icon=0x7f080026;
         public static final int ifRoom=0x7f080018;
         public static final int image=0x7f080023;
-        public static final int imageView1=0x7f080044;
         public static final int listMode=0x7f080009;
         public static final int list_item=0x7f080025;
         public static final int middle=0x7f080015;
@@ -1392,6 +1384,7 @@ containing a value of this type.
         public static final int showHome=0x7f080010;
         public static final int showTitle=0x7f080011;
         public static final int split_action_bar=0x7f080007;
+        public static final int storm_logo=0x7f080044;
         public static final int submit_area=0x7f08003c;
         public static final int tabMode=0x7f08000b;
         public static final int te_match_num=0x7f080040;
@@ -1430,14 +1423,12 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030015;
         public static final int abc_simple_dropdown_hint=0x7f030016;
         public static final int activity_main=0x7f030017;
-        public static final int activity_main_help=0x7f030018;
-        public static final int activity_match=0x7f030019;
-        public static final int activity_match_help=0x7f03001a;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
+        public static final int support_simple_spinner_dropdown_item=0x7f030018;
     }
     public static final class menu {
         public static final int help=0x7f0c0000;
         public static final int main=0x7f0c0001;
+        public static final int menu_match=0x7f0c0002;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f0a0000;
@@ -1459,14 +1450,18 @@ containing a value of this type.
         public static final int action_settings=0x7f0a0010;
         public static final int app_name=0x7f0a0011;
         public static final int begin_match=0x7f0a0012;
-        public static final int match_number=0x7f0a0013;
-        public static final int team_number=0x7f0a0014;
-        public static final int title_activity_match=0x7f0a0015;
-        public static final int title_name=0x7f0a0016;
-        public static final int txt_blueTeam=0x7f0a0017;
-        public static final int txt_help=0x7f0a0018;
-        public static final int txt_pause=0x7f0a0019;
-        public static final int txt_redTeam=0x7f0a001a;
+        public static final int hello_world=0x7f0a0013;
+        public static final int match_number=0x7f0a0014;
+        public static final int team_number=0x7f0a0015;
+        public static final int title_activity_match=0x7f0a0016;
+        public static final int title_name=0x7f0a0017;
+        public static final int title_section1=0x7f0a0018;
+        public static final int title_section2=0x7f0a0019;
+        public static final int title_section3=0x7f0a001a;
+        public static final int txt_blueTeam=0x7f0a001b;
+        public static final int txt_help=0x7f0a001c;
+        public static final int txt_pause=0x7f0a001d;
+        public static final int txt_redTeam=0x7f0a001e;
     }
     public static final class style {
         /** 
