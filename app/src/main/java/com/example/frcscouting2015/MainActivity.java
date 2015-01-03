@@ -12,8 +12,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import com.example.frcscouting2015.help.MainHelpActivity;
-
 public class MainActivity extends Activity {
 
 	//////////CONSTANTS///////////
@@ -35,47 +33,13 @@ public class MainActivity extends Activity {
         
         btnRed.setButtonDrawable(R.drawable.chkbox_off);
         btnBlue.setButtonDrawable(R.drawable.chkbox_off);
-        
-        btnRed.setOnCheckedChangeListener(new OnCheckedChangeListener(){
 
-			public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
-				if(btnRed.isChecked())
-					btnRed.setBackgroundResource(R.drawable.high_rzone_border);
-				else
-					btnRed.setBackgroundResource(R.drawable.trans_rzone_border);
-				
-			}
-        	
-        });
-        
-        btnBlue.setOnCheckedChangeListener(new OnCheckedChangeListener(){
-
-			public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
-				if(btnBlue.isChecked())
-					btnBlue.setBackgroundResource(R.drawable.high_bzone_border);
-				else
-					btnBlue.setBackgroundResource(R.drawable.trans_bzone_border);
-				
-			}
-        	
-        });
-        
         new TeamNumbers(this);
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-    }
-    public boolean onOptionsItemSelected(MenuItem i) {
-    	switch(i.getItemId()){
-		case R.id.action_MainHelp:
-			Intent intent = new Intent(this,MainHelpActivity.class);
-			startActivity(intent);
-			return true;
-		default:
-			return false;
-    	}
     }
     
     //////////UTILITY METHODS//////////
@@ -99,7 +63,7 @@ public class MainActivity extends Activity {
 
     		DataHandler.clear();
 
-			//Intent intent = new Intent(this, MatchActivity.class);
+			Intent intent = new Intent(this, MatchActivity.class);
 
 			EditText txtmatch = (EditText) this.findViewById(R.id.te_match_num);
 			EditText txtteam = (EditText) this.findViewById(R.id.te_team_num);
@@ -116,11 +80,11 @@ public class MainActivity extends Activity {
 
 			boolean isRed = btnRed.isChecked();
 
-			//intent.putExtra(MATCH_NUM,matchNum);		//match number
-			//intent.putExtra(TEAM_NUM,teamNum);			//team number
-			//intent.putExtra(IS_RED,isRed);				//if alliance is red
+			intent.putExtra(MATCH_NUM,matchNum);		//match number
+			intent.putExtra(TEAM_NUM,teamNum);			//team number
+			intent.putExtra(IS_RED,isRed);				//if alliance is red
 
-			//startActivity(intent);
+			startActivity(intent);
     	}else{
     		Toast.makeText(this,"Please enter all the team's information.",Toast.LENGTH_SHORT).show();
     	}
