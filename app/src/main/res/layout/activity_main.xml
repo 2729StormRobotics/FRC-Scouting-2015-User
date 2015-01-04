@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" 
-    android:background="@android:color/holo_red_dark"
+    android:background="@android:color/background_dark"
     android:screenOrientation="portrait"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
@@ -19,7 +19,8 @@
         android:ems="10"
         android:hint="@string/team_number"
         android:inputType="number"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="15dp" />
 
     <EditText
         android:id="@+id/te_match_num"
@@ -30,7 +31,8 @@
         android:ems="10"
         android:inputType="number"
         android:hint="@string/match_number"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="15dp" />
 
     <RadioGroup
         android:layout_width="match_parent"
