@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -87,7 +86,7 @@ public class MainActivity extends Activity {
 
     		DataHandler.clear();
 
-		//	Intent intent = new Intent(this, MatchActivity.class);
+			Intent intent = new Intent(this, MatchActivity.class);
 
 			EditText txtmatch = (EditText) this.findViewById(R.id.te_match_num);
 			EditText txtteam = (EditText) this.findViewById(R.id.te_team_num);
@@ -104,11 +103,11 @@ public class MainActivity extends Activity {
 
 			boolean isRed = btnRed.isChecked();
 
-		//	intent.putExtra(MATCH_NUM,matchNum);		//match number
-		//	intent.putExtra(TEAM_NUM,teamNum);			//team number
-		//	intent.putExtra(IS_RED,isRed);				//if alliance is red
+			intent.putExtra(MATCH_NUM,matchNum);		//match number
+		    intent.putExtra(TEAM_NUM,teamNum);			//team number
+			intent.putExtra(IS_RED,isRed);				//if alliance is red
 
-			//startActivity(intent);
+			startActivity(intent);
     	}else{
     		Toast.makeText(this,"Please enter all the team's information.",Toast.LENGTH_SHORT).show();
     	}

@@ -73,15 +73,15 @@
         android:background="@android:color/background_light"
         android:onClick="startMatch"
         android:stateListAnimator="@null"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="30dp"
         android:textStyle="bold" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:id="@+id/storm_logo"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/storm_logo_text_v2" />
+        android:background="@drawable/logo" />
 
     <ImageView
         android:layout_width="50dp"

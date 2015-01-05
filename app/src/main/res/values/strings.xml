@@ -21,4 +21,8 @@
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
 
+    <string name="auto_frag">Auto</string>
+    <string name="tele_frag">Tele</string>
+    <string name="submit_frag">Submit</string>
+
 </resources>

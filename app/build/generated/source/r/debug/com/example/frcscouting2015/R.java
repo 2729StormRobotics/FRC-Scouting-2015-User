@@ -1321,12 +1321,12 @@ containing a value of this type.
         public static final int high_bzone_border=0x7f020036;
         public static final int high_rzone_border=0x7f020037;
         public static final int ic_launcher=0x7f020038;
-        public static final int storm_logo_text_v2=0x7f020039;
+        public static final int logo=0x7f020039;
         public static final int trans_bzone_border=0x7f02003a;
         public static final int trans_rzone_border=0x7f02003b;
     }
     public static final class id {
-        public static final int action_MainHelp=0x7f080047;
+        public static final int action_MainHelp=0x7f080048;
         public static final int action_bar=0x7f080031;
         public static final int action_bar_activity_content=0x7f080000;
         public static final int action_bar_container=0x7f080030;
@@ -1340,7 +1340,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f08002e;
         public static final int action_mode_bar_stub=0x7f08002d;
         public static final int action_mode_close_button=0x7f080020;
-        public static final int action_settings=0x7f080046;
+        public static final int action_settings=0x7f080047;
         public static final int activity_chooser_view_content=0x7f080021;
         public static final int always=0x7f080016;
         public static final int beginning=0x7f080013;
@@ -1370,6 +1370,7 @@ containing a value of this type.
         public static final int never=0x7f080019;
         public static final int none=0x7f08000e;
         public static final int normal=0x7f08000a;
+        public static final int pager=0x7f080046;
         public static final int progress_circular=0x7f080005;
         public static final int progress_horizontal=0x7f080006;
         public static final int radio=0x7f08002b;
@@ -1427,7 +1428,11 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030015;
         public static final int abc_simple_dropdown_hint=0x7f030016;
         public static final int activity_main=0x7f030017;
-        public static final int support_simple_spinner_dropdown_item=0x7f030018;
+        public static final int activity_match=0x7f030018;
+        public static final int auto_fragment=0x7f030019;
+        public static final int submit_fragment=0x7f03001a;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
+        public static final int tele_fragment=0x7f03001c;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
@@ -1452,19 +1457,22 @@ containing a value of this type.
         public static final int abc_toolbar_collapse_description=0x7f0a000f;
         public static final int action_settings=0x7f0a0010;
         public static final int app_name=0x7f0a0011;
-        public static final int begin_match=0x7f0a0012;
-        public static final int hello_world=0x7f0a0013;
-        public static final int match_number=0x7f0a0014;
-        public static final int team_number=0x7f0a0015;
-        public static final int title_activity_match=0x7f0a0016;
-        public static final int title_name=0x7f0a0017;
-        public static final int title_section1=0x7f0a0018;
-        public static final int title_section2=0x7f0a0019;
-        public static final int title_section3=0x7f0a001a;
-        public static final int txt_blueTeam=0x7f0a001b;
-        public static final int txt_help=0x7f0a001c;
-        public static final int txt_pause=0x7f0a001d;
-        public static final int txt_redTeam=0x7f0a001e;
+        public static final int auto_frag=0x7f0a0012;
+        public static final int begin_match=0x7f0a0013;
+        public static final int hello_world=0x7f0a0014;
+        public static final int match_number=0x7f0a0015;
+        public static final int submit_frag=0x7f0a0016;
+        public static final int team_number=0x7f0a0017;
+        public static final int tele_frag=0x7f0a0018;
+        public static final int title_activity_match=0x7f0a0019;
+        public static final int title_name=0x7f0a001a;
+        public static final int title_section1=0x7f0a001b;
+        public static final int title_section2=0x7f0a001c;
+        public static final int title_section3=0x7f0a001d;
+        public static final int txt_blueTeam=0x7f0a001e;
+        public static final int txt_help=0x7f0a001f;
+        public static final int txt_pause=0x7f0a0020;
+        public static final int txt_redTeam=0x7f0a0021;
     }
     public static final class style {
         /**  API 14 theme customizations can go here. 
