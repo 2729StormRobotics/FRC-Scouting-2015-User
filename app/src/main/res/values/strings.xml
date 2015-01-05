@@ -16,7 +16,6 @@
 
     <!-- HELP STRINGS -->
     <string name="txt_help">Help</string>
-    <string name="hello_world">Hello world!</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
@@ -25,4 +24,9 @@
     <string name="tele_frag">Tele</string>
     <string name="submit_frag">Submit</string>
 
+    <!-- Auto strings -->
+    <string name="robot_set">Robot Set</string>
+    <string name="tote_set">Tote Set</string>
+    <string name="container_set">Container Set</string>
+    <string name="stacked_tote_set">Stacked Tote Set</string>
 </resources>

@@ -1,10 +1,12 @@
 package com.example.frcscouting2015;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
@@ -112,5 +114,11 @@ public class MainActivity extends Activity {
     		Toast.makeText(this,"Please enter all the team's information.",Toast.LENGTH_SHORT).show();
     	}
 	}
+    public void hideKeys(View view) {
+        EditText myEditText = (EditText) findViewById(R.id.te_match_num);
+        InputMethodManager imm = (InputMethodManager)getSystemService(
+                Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(myEditText.getWindowToken(), 0);
+    }
     
 }

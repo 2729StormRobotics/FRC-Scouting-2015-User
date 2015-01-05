@@ -50,7 +50,8 @@
             android:textColor="@android:color/black"
             android:gravity="center"
             android:background="@android:color/holo_blue_light"
-            android:text="@string/txt_blueTeam" />
+            android:text="@string/txt_blueTeam"
+            android:onClick="hideKeys" />
 
         <RadioButton
             android:id="@+id/btn_red"
@@ -60,7 +61,8 @@
             android:textColor="@android:color/black"
             android:gravity="center"
             android:background="@android:color/holo_red_light"
-            android:text="@string/txt_redTeam" />
+            android:text="@string/txt_redTeam"
+            android:onClick="hideKeys" />
     </RadioGroup>
 
     <Button
