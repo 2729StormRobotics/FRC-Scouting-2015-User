@@ -25,8 +25,8 @@
     <string name="submit_frag">Submit</string>
 
     <!-- Auto strings -->
-    <string name="robot_set">Robot Set</string>
-    <string name="tote_set">Tote Set</string>
-    <string name="container_set">Container Set</string>
-    <string name="stacked_tote_set">Stacked Tote Set</string>
+    <string name="robot_set">Robot in Auto Zone</string>
+    <string name="tote_set">Tote Put In Auto Zone</string>
+    <string name="container_set">Container Put In Auto Zone</string>
+    <string name="stacked_tote_set">Assisted in Stacking Totes</string>
 </resources>
