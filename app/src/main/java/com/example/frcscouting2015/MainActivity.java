@@ -86,8 +86,6 @@ public class MainActivity extends Activity {
     public void startMatch(View view) {
     	if(this.dataEntered()){
 
-    		DataHandler.clear();
-
 			Intent intent = new Intent(this, MatchActivity.class);
 
 			EditText txtmatch = (EditText) this.findViewById(R.id.te_match_num);

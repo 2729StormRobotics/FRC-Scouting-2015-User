@@ -29,4 +29,8 @@
     <string name="tote_set">Tote Put In Auto Zone</string>
     <string name="container_set">Container Put In Auto Zone</string>
     <string name="stacked_tote_set">Assisted in Stacking Totes</string>
+
+    <!-- Tele Strings -->
+    <string name="grey_tote">Grey Totes</string>
+
 </resources>
