@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -13,6 +14,9 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import database.DatabaseHandler;
+import database.TeamData;
+
 public class MainActivity extends Activity {
 
 	//////////CONSTANTS///////////
@@ -21,8 +25,8 @@ public class MainActivity extends Activity {
 	public static final String IS_RED = "isRed";
 	
 	public static RadioButton btnRed, btnBlue;
-	
-	public static int[] teamNums;
+
+    public static int[] teamNums;
 
 	//////////IMPLEMENTED METHODS//////////
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +64,7 @@ public class MainActivity extends Activity {
         });
 
         new TeamNumbers(this);
+        DatabaseHandler db = DatabaseHandler.getInstance(this);
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -103,11 +108,19 @@ public class MainActivity extends Activity {
 
 			boolean isRed = btnRed.isChecked();
 
-			intent.putExtra(MATCH_NUM,matchNum);		//match number
-		    intent.putExtra(TEAM_NUM,teamNum);			//team number
-			intent.putExtra(IS_RED,isRed);				//if alliance is red
+            /**
+             * CRUD Operations
+             * */
 
-			startActivity(intent);
+             // Inserting Team Data
+            DatabaseHandler.getInstance(this).clearTable();
+            Log.d("Insert: ", "Inserting ..");
+            DatabaseHandler.getInstance(this).addTeamData(new TeamData(Integer.parseInt(teamNum), Integer.parseInt(matchNum),false,false,false,0,false,0,false,0));
+            TeamData teamData = DatabaseHandler.getInstance(this).getTeamData(1);
+            String log = String.valueOf(teamData.getTeamNumber());
+            Log.d("Number",log);
+
+            startActivity(intent);
     	}else{
     		Toast.makeText(this,"Please enter all the team's information.",Toast.LENGTH_SHORT).show();
     	}
