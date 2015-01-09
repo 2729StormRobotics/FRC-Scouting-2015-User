@@ -14,6 +14,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import java.util.List;
+
 import database.DatabaseHandler;
 import database.TeamData;
 
@@ -116,9 +118,12 @@ public class MainActivity extends Activity {
             DatabaseHandler.getInstance(this).clearTable();
             Log.d("Insert: ", "Inserting ..");
             DatabaseHandler.getInstance(this).addTeamData(new TeamData(Integer.parseInt(teamNum), Integer.parseInt(matchNum),false,false,false,0,false,0,false,0));
-            TeamData teamData = DatabaseHandler.getInstance(this).getTeamData(1);
-            String log = String.valueOf(teamData.getTeamNumber());
-            Log.d("Number",log);
+            List<TeamData> teamData = DatabaseHandler.getInstance(this).getAllTeamData();
+            for (TeamData cn : teamData) {
+                String log = "Id: "+cn.getID()+" ,Name: " + cn.getTeamNumber() + " ,match: " + cn.getMatchNumber();
+                // Writing Contacts to log
+                Log.d("Name: ", log);
+            }
 
             startActivity(intent);
     	}else{

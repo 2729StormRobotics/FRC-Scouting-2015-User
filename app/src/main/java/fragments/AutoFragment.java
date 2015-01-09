@@ -18,8 +18,5 @@ public class AutoFragment extends Fragment {
         return view;
     }
 
-    public void updateData(View view) {
-
-    }
 
 }

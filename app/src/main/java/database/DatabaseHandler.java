@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DatabaseHandler extends SQLiteOpenHelper {
 
     // All Static variables
@@ -136,6 +139,30 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // updating row
         return db.update(TABLE_TEAM, values, KEY_ID + " = ?",
                 new String[] { String.valueOf(teamData.getID()) });
+    }
+
+    public List<TeamData> getAllTeamData() {
+        List<TeamData> teamDataList = new ArrayList<TeamData>();
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + TABLE_TEAM;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                TeamData teamData = new TeamData();
+                teamData.setID(Integer.parseInt(cursor.getString(0)));
+                teamData.setTeamNumber(cursor.getInt(1));
+                teamData.setMatchNumber(cursor.getInt(2));
+                // Adding contact to list
+                teamDataList.add(teamData);
+            } while (cursor.moveToNext());
+        }
+
+        // return contact list
+        return teamDataList;
     }
 
 
