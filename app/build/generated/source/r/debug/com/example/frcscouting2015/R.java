@@ -1381,6 +1381,7 @@ containing a value of this type.
         public static final int progress_circular=0x7f080005;
         public static final int progress_horizontal=0x7f080006;
         public static final int radio=0x7f08002b;
+        public static final int save_button=0x7f08004e;
         public static final int search_badge=0x7f080035;
         public static final int search_bar=0x7f080034;
         public static final int search_button=0x7f080036;
@@ -1401,7 +1402,6 @@ containing a value of this type.
         public static final int tabMode=0x7f08000b;
         public static final int te_match_num=0x7f080040;
         public static final int te_team_num=0x7f08003f;
-        public static final int textView=0x7f08004e;
         public static final int title=0x7f080027;
         public static final int up=0x7f080008;
         public static final int useLogo=0x7f080012;
@@ -1471,20 +1471,21 @@ containing a value of this type.
         public static final int grey_tote=0x7f0a0015;
         public static final int match_number=0x7f0a0016;
         public static final int robot_set=0x7f0a0017;
-        public static final int stacked_tote_set=0x7f0a0018;
-        public static final int submit_frag=0x7f0a0019;
-        public static final int team_number=0x7f0a001a;
-        public static final int tele_frag=0x7f0a001b;
-        public static final int title_activity_match=0x7f0a001c;
-        public static final int title_name=0x7f0a001d;
-        public static final int title_section1=0x7f0a001e;
-        public static final int title_section2=0x7f0a001f;
-        public static final int title_section3=0x7f0a0020;
-        public static final int tote_set=0x7f0a0021;
-        public static final int txt_blueTeam=0x7f0a0022;
-        public static final int txt_help=0x7f0a0023;
-        public static final int txt_pause=0x7f0a0024;
-        public static final int txt_redTeam=0x7f0a0025;
+        public static final int save_button=0x7f0a0018;
+        public static final int stacked_tote_set=0x7f0a0019;
+        public static final int submit_frag=0x7f0a001a;
+        public static final int team_number=0x7f0a001b;
+        public static final int tele_frag=0x7f0a001c;
+        public static final int title_activity_match=0x7f0a001d;
+        public static final int title_name=0x7f0a001e;
+        public static final int title_section1=0x7f0a001f;
+        public static final int title_section2=0x7f0a0020;
+        public static final int title_section3=0x7f0a0021;
+        public static final int tote_set=0x7f0a0022;
+        public static final int txt_blueTeam=0x7f0a0023;
+        public static final int txt_help=0x7f0a0024;
+        public static final int txt_pause=0x7f0a0025;
+        public static final int txt_redTeam=0x7f0a0026;
     }
     public static final class style {
         /**  API 14 theme customizations can go here. 

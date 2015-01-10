@@ -111,7 +111,7 @@ public class TeamData {
     }
 
 
-    public void setRNumberTotesAuto(int number_totes_auto){
+    public void setNumberTotesAuto(int number_totes_auto){
         this.number_totes_auto = number_totes_auto;
     }
 

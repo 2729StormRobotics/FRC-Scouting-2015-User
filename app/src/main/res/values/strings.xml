@@ -33,4 +33,7 @@
     <!-- Tele Strings -->
     <string name="grey_tote">Grey Totes</string>
 
+    <!-- Submit strings -->
+    <string name="save_button">Save Data</string>
+
 </resources>

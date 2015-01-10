@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 import com.example.frcscouting2015.R;
 
+import database.DatabaseHandler;
+
 public class SubmitFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -16,4 +18,7 @@ public class SubmitFragment extends Fragment {
         View view = inflater.inflate(R.layout.submit_fragment, container, false);
         return view;
     }
+
+
+
 }
