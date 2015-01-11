@@ -118,18 +118,21 @@ public class MainActivity extends Activity {
 
              // Inserting Team Data
             DatabaseHandler.getInstance(this).clearTable();
-            TeamData teamData = new TeamData(Integer.parseInt(teamNum), Integer.parseInt(matchNum),isRed,false,false,0,false,0,false,0);
+            TeamData teamData = new TeamData(Integer.parseInt(teamNum), Integer.parseInt(matchNum),
+                    isRed,false,false,0,false,0,false,0);
             DatabaseHandler.getInstance(this).addTeamData(teamData);
             List<TeamData> teamData2 = DatabaseHandler.getInstance(this).getAllTeamData();
             for (TeamData cn : teamData2) {
-                String log = "Id: "+cn.getID()+" ,Name: " + cn.getTeamNumber() + " ,match: " + cn.getMatchNumber() + " ,alliance" + cn.getAlliance() + " ,robotauto" + cn.getRobotAuto();
+                String log = "Id: "+cn.getID()+" ,Name: " + cn.getTeamNumber() + " ,match: " +
+                        cn.getMatchNumber() + " ,alliance" + cn.getAlliance() + " ,robotauto" +
+                        cn.getRobotAuto();
                 // Writing Contacts to log
                 Log.d("Name: ", log);
             }
             EventBus.getDefault().postSticky(teamData);
             startActivity(intent);
     	}else{
-    		Toast.makeText(this,"Please enter all the team's information.",Toast.LENGTH_SHORT).show();
+    		Toast.makeText(this,"Please enter all the team's information.", Toast.LENGTH_SHORT).show();
     	}
 	}
     public void hideKeys(View view) {
