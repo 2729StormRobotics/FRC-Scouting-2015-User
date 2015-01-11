@@ -8,14 +8,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import java.io.Serializable;
 import java.util.List;
 
 import database.DatabaseHandler;
@@ -119,9 +117,8 @@ public class MainActivity extends Activity {
              * */
 
              // Inserting Team Data
-
-            TeamData teamData = new TeamData(Integer.parseInt(teamNum), Integer.parseInt(matchNum),isRed,false,false,0,false,0,false,0);
             DatabaseHandler.getInstance(this).clearTable();
+            TeamData teamData = new TeamData(Integer.parseInt(teamNum), Integer.parseInt(matchNum),isRed,false,false,0,false,0,false,0);
             DatabaseHandler.getInstance(this).addTeamData(teamData);
             List<TeamData> teamData2 = DatabaseHandler.getInstance(this).getAllTeamData();
             for (TeamData cn : teamData2) {
