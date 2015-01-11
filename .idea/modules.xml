@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FRC-Scouting-2015.iml" filepath="$PROJECT_DIR$/FRC-Scouting-2015.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FRC-Scouting-2015-New.iml" filepath="$PROJECT_DIR$/FRC-Scouting-2015-New.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

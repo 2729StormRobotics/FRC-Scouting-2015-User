@@ -85,9 +85,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addTeamData(TeamData teamData) {
-        SQLiteDatabase db = this.getWritableDatabase();
-
+    private ContentValues  addValues(TeamData teamData){
         ContentValues values = new ContentValues();
         //main
         values.put(KEY_TEAM_NUMBER, teamData.getTeamNumber());
@@ -101,7 +99,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_NUMBER_CONTAINERS_AUTO, teamData.getNumberContainersAuto());
         values.put(KEY_ASSISTED_TOTES_AUTO, teamData.getAssistedTotesAuto());
         values.put(KEY_NUMBER_TOTES_STACKED_AUTO, teamData.getNumberStackedTotesAuto());
+        return values;
+    }
 
+    public void addTeamData(TeamData teamData) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = addValues(teamData);
         //TODO teleop
 
         // Inserting Row
@@ -132,22 +135,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public int updateTeamData(TeamData teamData) {
         SQLiteDatabase db = this.getWritableDatabase();
 
-        ContentValues values = new ContentValues();
-        //main
-        values.put(KEY_TEAM_NUMBER, teamData.getTeamNumber());
-        values.put(KEY_MATCH_NUMBER, teamData.getMatchNumber());
-        values.put(KEY_ALLIANCE, teamData.getAlliance());
-        //auto
-      //  Log.d("robot_auto database", String.valueOf(teamData.getRobotAuto()));
-        values.put(KEY_ROBOT_AUTO, teamData.getRobotAuto());
+        ContentValues values = addValues(teamData);
         //Log.d("robot_auto database", String.valueOf(teamData.getRobotAuto()));
        // Log.d("robot_auto database values list", String.valueOf(values.get(KEY_ROBOT_AUTO)));
-        values.put(KEY_TOTE_AUTO, teamData.getToteAuto());
-        values.put(KEY_NUMBER_TOTES_AUTO, teamData.getNumberTotesAuto());
-        values.put(KEY_CONTAINER_AUTO, teamData.getContainerAuto());
-        values.put(KEY_NUMBER_CONTAINERS_AUTO, teamData.getNumberContainersAuto());
-        values.put(KEY_ASSISTED_TOTES_AUTO, teamData.getAssistedTotesAuto());
-        values.put(KEY_NUMBER_TOTES_STACKED_AUTO, teamData.getAssistedTotesAuto());
+
 
         //TODO teleop
 

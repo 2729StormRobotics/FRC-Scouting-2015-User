@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\garrett\AndroidstudioProjects\FRC-Scouting-2015\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="C:\Users\garrett\AndroidstudioProjects\FRC-Scouting-2015\app\build\intermediates\pre-dexed\debug\classes-0963d511d88a23f60bb9b68f09c18ab0b8a24fd0.jar" />
-    </item>
-    <item
-        jar="C:\Users\garrett\AndroidstudioProjects\FRC-Scouting-2015\app\src\eventbus-2.4.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
-        <dex dex="C:\Users\garrett\AndroidstudioProjects\FRC-Scouting-2015\app\build\intermediates\pre-dexed\debug\eventbus-2.4.0-77507132013494505a68201e66c69b4ded0ec61c.jar" />
-    </item>
-    <item
-        jar="C:\Users\garrett\AndroidstudioProjects\FRC-Scouting-2015\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jar="C:\Users\Matt\AndroidStudioProjects\FRC-Scouting-2015-New\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="C:\Users\garrett\AndroidstudioProjects\FRC-Scouting-2015\app\build\intermediates\pre-dexed\debug\classes-28ade9fd34841f6f173b29552d3ec320cdab31c3.jar" />
+        <dex dex="C:\Users\Matt\AndroidStudioProjects\FRC-Scouting-2015-New\app\build\intermediates\pre-dexed\debug\classes-72f8ef1b67bf739d8ab797ef952d26150f6ffd38.jar" />
     </item>
     <item
-        jar="C:\Users\garrett\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jar="C:\Users\Matt\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="C:\Users\garrett\AndroidstudioProjects\FRC-Scouting-2015\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-288b5d8b175b84fd29080455c58607fe0092bed4.jar" />
+        <dex dex="C:\Users\Matt\AndroidStudioProjects\FRC-Scouting-2015-New\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-e0b0d128a9f073b4408bfb777048a5ab790217b4.jar" />
     </item>
     <item
-        jar="C:\Users\garrett\AndroidstudioProjects\FRC-Scouting-2015\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jar="C:\Users\Matt\AndroidStudioProjects\FRC-Scouting-2015-New\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="C:\Users\garrett\AndroidstudioProjects\FRC-Scouting-2015\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-1984146a180a9806f0de2acc68749752be0ce4e6.jar" />
+        <dex dex="C:\Users\Matt\AndroidStudioProjects\FRC-Scouting-2015-New\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-8e31d102346d80aaf6afc4d1f6d2a5be9ef16b3d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Matt\AndroidStudioProjects\FRC-Scouting-2015-New\app\src\eventbus-2.4.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
+        <dex dex="C:\Users\Matt\AndroidStudioProjects\FRC-Scouting-2015-New\app\build\intermediates\pre-dexed\debug\eventbus-2.4.0-ae4eb59b9b9c5c91392619c58bfc9a7bca0ad011.jar" />
+    </item>
+    <item
+        jar="C:\Users\Matt\AndroidStudioProjects\FRC-Scouting-2015-New\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\Users\Matt\AndroidStudioProjects\FRC-Scouting-2015-New\app\build\intermediates\pre-dexed\debug\classes-e02814fa8ddb2605bd9b4b642ce7396030c748b7.jar" />
     </item>
 
 </items>

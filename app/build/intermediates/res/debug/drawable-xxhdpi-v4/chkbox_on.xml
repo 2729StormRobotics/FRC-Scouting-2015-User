@@ -3,4 +3,4 @@
    <stroke android:color="@color/onSelect" android:width="2dp" android:height="2dp"/>
    <solid android:color="@color/chkBox_on"/>
 </shape>
-<!-- From: file:/C:/Users/garrett/AndroidstudioProjects/FRC-Scouting-2015/app/src/main/res/drawable-xxhdpi/chkbox_on.xml -->
+<!-- From: file:/C:/Users/Matt/AndroidStudioProjects/FRC-Scouting-2015-New/app/src/main/res/drawable-xxhdpi/chkbox_on.xml -->
