@@ -84,11 +84,11 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="385dp"
+        android:layout_height="301dp"
         android:id="@+id/storm_logo"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/logo" />
+        android:background="@drawable/slogo" />
 
     <ImageView
         android:layout_width="50dp"

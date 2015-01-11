@@ -6,8 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.example.frcscouting2015.R;
-import database.TeamData;
 
 
 public class AutoFragment extends Fragment {
@@ -19,7 +19,6 @@ public class AutoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.auto_fragment, container, false);
-
         return view;
     }
 

@@ -86,13 +86,7 @@ public class MainActivity extends Activity {
         String matchNum = txtmatch.getText().toString();
         String teamNum = txtteam.getText().toString();
 
-        //checks to see if team is in database already
-        List<TeamData> teamDataList = DatabaseHandler.getInstance(this).getAllTeamData();
-        for (TeamData cn : teamDataList) {
-           if(cn.getTeamNumber() == Integer.parseInt(teamNum) && cn.getMatchNumber() == Integer.parseInt(matchNum)){
-                return false;
-           }
-        }
+
 		
 		if(!txtmatch.getText().toString().matches("") && !txtteam.getText().toString().matches("")
 			&& (btnBlue.isChecked() || btnRed.isChecked())){
@@ -118,6 +112,16 @@ public class MainActivity extends Activity {
 				Toast.makeText(this,"That is not a valid team number.",Toast.LENGTH_SHORT).show();
 				return;
 			}
+
+
+            //checks to see if team is in database already
+            List<TeamData> teamDataList = DatabaseHandler.getInstance(this).getAllTeamData();
+            for (TeamData cn : teamDataList) {
+                if(cn.getTeamNumber() == Integer.parseInt(teamNum) && cn.getMatchNumber() == Integer.parseInt(matchNum)){
+                    Toast.makeText(this,"Team Number and Match Number are already in database.",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            }
 
 			boolean isRed = btnRed.isChecked();
 
