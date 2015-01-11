@@ -1,9 +1,0 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-	    xmlns:tools="http://schemas.android.com/tools"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    tools:context=".MatchHelpActivity" 
-	    android:background="@drawable/bg_gradient">
-
-</ScrollView>
-<!-- From: file:/C:/Users/garrett/AndroidstudioProjects/FRC-Scouting-2015/app/src/main/res/layout/activity_match_help.xml -->
