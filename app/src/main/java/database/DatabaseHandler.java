@@ -115,7 +115,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public TeamData getTeamData(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_TEAM, new String[] {KEY_TEAM_NUMBER, KEY_MATCH_NUMBER, KEY_ALLIANCE, KEY_ROBOT_AUTO, KEY_TOTE_AUTO, KEY_NUMBER_TOTES_AUTO, KEY_CONTAINER_AUTO, KEY_NUMBER_CONTAINERS_AUTO, KEY_ASSISTED_TOTES_AUTO, KEY_NUMBER_TOTES_STACKED_AUTO }, KEY_TEAM_NUMBER + "=?",
+        Cursor cursor = db.query(TABLE_TEAM, null, KEY_TEAM_NUMBER + " = ?",
                 new String[] { String.valueOf(id) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
