@@ -19,7 +19,7 @@ public class TeamData {
     public TeamData(){
 
     }
-    // constructor
+/*    // constructor
     public TeamData(int id, int team_number, int match_number, boolean alliance_red, boolean robot_auto, boolean tote_auto, int number_totes_auto, boolean container_auto, int number_containers_auto, boolean assisted_totes_auto, int number_totes_stacked_auto){
         this._id = id;
         this.team_number = team_number;
@@ -32,7 +32,7 @@ public class TeamData {
         this.number_containers_auto = number_containers_auto;
         this.assisted_totes_auto = assisted_totes_auto;
         this.number_totes_stacked_auto = number_totes_stacked_auto;
-    }
+    }*/
 
     // constructor
     public TeamData(int team_number, int match_number, boolean alliance_red, boolean robot_auto, boolean tote_auto, int number_totes_auto, boolean container_auto, int number_containers_auto, boolean assisted_totes_auto, int number_totes_stacked_auto){
