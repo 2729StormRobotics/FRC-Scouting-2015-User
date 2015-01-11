@@ -169,7 +169,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 teamData.setRobotAuto(cursor.getInt(3)>0);
                 teamData.setToteAuto(cursor.getInt(4)>0);
                 teamData.setNumberTotesAuto(cursor.getInt(5));
-                teamData.setContainer_auto(cursor.getInt(6)>0);
+                teamData.setContainerAuto(cursor.getInt(6) > 0);
                 teamData.setNumberContainersAuto(cursor.getInt(7));
                 teamData.setAssistedTotesAuto(cursor.getInt(8)>0);
                 teamData.setNumberStackedTotesAuto(cursor.getInt(9));

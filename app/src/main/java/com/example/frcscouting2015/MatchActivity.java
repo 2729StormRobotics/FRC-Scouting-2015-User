@@ -70,7 +70,7 @@ public class MatchActivity extends FragmentActivity {
         teamData.setRobotAuto(robotAuto);
         teamData.setToteAuto(toteAuto);
         teamData.setNumberTotesAuto(numberTotesAuto);
-        teamData.setContainer_auto(containerAuto);
+        teamData.setContainerAuto(containerAuto);
         teamData.setNumberContainersAuto(numberContainersAuto);
         teamData.setAssistedTotesAuto(assistedStackingTotesAuto);
         teamData.setNumberStackedTotesAuto(numberTotesStackedAuto);

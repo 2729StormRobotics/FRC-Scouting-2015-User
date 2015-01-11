@@ -120,7 +120,7 @@ public class TeamData {
     }
 
 
-    public void setContainer_auto(boolean container_auto){
+    public void setContainerAuto(boolean container_auto){
         this.container_auto = container_auto;
     }
 
