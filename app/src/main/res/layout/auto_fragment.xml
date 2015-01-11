@@ -16,7 +16,7 @@
         android:layout_alignParentStart="true"
         android:textColor="#ffffffff"
         android:layout_marginBottom="20dp"
-        android:textSize="45dp"
+        android:textSize="40dp"
         android:checked="false" />
 
     <CheckBox
@@ -29,7 +29,7 @@
         android:layout_alignParentStart="true"
         android:textColor="#ffffffff"
         android:layout_marginBottom="15dp"
-        android:textSize="45dp" />
+        android:textSize="40dp" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -39,8 +39,9 @@
         android:textColor="#ffffffff"
         android:layout_below="@+id/auto_tote_number"
         android:layout_marginBottom="15dp"
-        android:textSize="45dp"
-        android:layout_alignEnd="@+id/auto_tote_number" />
+        android:textSize="40dp"
+        android:layout_alignRight="@+id/auto_assisted_checkbox"
+        android:layout_alignEnd="@+id/auto_assisted_checkbox" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -52,7 +53,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="10dp"
-        android:textSize="45dp" />
+        android:textSize="40dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -64,25 +65,23 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="20dp"
-        android:hint="# Totes Put In Auto Zone"
-        android:textSize="45dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:hint="Number of Totes Put In Auto Zone"
+        android:textSize="25dp"
+        android:layout_alignRight="@+id/auto_robot_checkbox"
+        android:layout_alignEnd="@+id/auto_robot_checkbox" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
         android:id="@+id/auto_container_number"
         android:layout_below="@+id/auto_container_checkbox"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentStart="false"
         android:layout_marginBottom="20dp"
         android:hint="# Containers Put In Auto Zone"
-        android:textSize="40dp"
-        android:layout_alignRight="@+id/auto_assisted_checkbox"
-        android:layout_alignEnd="@+id/auto_assisted_checkbox" />
+        android:textSize="25dp" />
 
     <EditText
         android:layout_width="200dp"
@@ -94,8 +93,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:hint="# Totes Stacked"
-        android:textSize="45dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:textSize="25dp" />
 
 </RelativeLayout>
