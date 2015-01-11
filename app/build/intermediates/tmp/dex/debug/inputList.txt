@@ -1,6 +1,0 @@
-C:\Users\Matt\AndroidStudioProjects\FRC-Scouting-2015-New\app\build\intermediates\classes\debug
-C:\Users\Matt\AndroidStudioProjects\FRC-Scouting-2015-New\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-e0b0d128a9f073b4408bfb777048a5ab790217b4.jar
-C:\Users\Matt\AndroidStudioProjects\FRC-Scouting-2015-New\app\build\intermediates\pre-dexed\debug\eventbus-2.4.0-ae4eb59b9b9c5c91392619c58bfc9a7bca0ad011.jar
-C:\Users\Matt\AndroidStudioProjects\FRC-Scouting-2015-New\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-8e31d102346d80aaf6afc4d1f6d2a5be9ef16b3d.jar
-C:\Users\Matt\AndroidStudioProjects\FRC-Scouting-2015-New\app\build\intermediates\pre-dexed\debug\classes-e02814fa8ddb2605bd9b4b642ce7396030c748b7.jar
-C:\Users\Matt\AndroidStudioProjects\FRC-Scouting-2015-New\app\build\intermediates\pre-dexed\debug\classes-72f8ef1b67bf739d8ab797ef952d26150f6ffd38.jar

@@ -1,8 +1,0 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/holo_red_dark"
-    android:padding="15dp">
-
-</RelativeLayout><!-- From: file:/C:/Users/Matt/AndroidStudioProjects/FRC-Scouting-2015-New/app/src/main/res/layout/tele_fragment.xml -->
