@@ -1,5 +1,7 @@
 package com.example.frcscouting2015;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -44,53 +46,61 @@ public class MatchActivity extends FragmentActivity {
          }
 
     public void addToDatabase(View view){
-        //Auto input
 
-        inputRobotAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_robot_checkbox);
-        inputToteAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_tote_checkbox);
-        inputNumberTotesAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_tote_number);
-        inputContainerAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_container_checkbox);
-        inputNumberContainersAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_container_number);
-        inputAssistedStackingAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_assisted_checkbox);
-        inputNumberTotesStackedAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_totes_stacked_number);
-        int numberTotesAuto = 0;
-        int numberContainersAuto = 0;
-        int numberTotesStackedAuto = 0;
-        boolean robotAuto = inputRobotAuto.isChecked();
-        boolean toteAuto = inputToteAuto.isChecked();
-        if(inputNumberTotesAuto.length() > 0){
-            numberTotesAuto = Integer.parseInt(inputNumberTotesAuto.getText().toString());
-        }
-        boolean containerAuto = inputContainerAuto.isChecked();
-        if(inputNumberContainersAuto.length() > 0){
-            numberContainersAuto = Integer.parseInt(inputNumberContainersAuto.getText().toString());
-        }
-        boolean assistedStackingTotesAuto = inputContainerAuto.isChecked();
-        if(inputNumberTotesStackedAuto.length() > 0){
-            numberTotesStackedAuto = Integer.parseInt(inputNumberTotesStackedAuto.getText().toString());
-        }
-        //auto add to teamdata
-        teamData.setRobotAuto(robotAuto);
-        teamData.setToteAuto(toteAuto);
-        teamData.setNumberTotesAuto(numberTotesAuto);
-        teamData.setContainerAuto(containerAuto);
-        teamData.setNumberContainersAuto(numberContainersAuto);
-        teamData.setAssistedTotesAuto(assistedStackingTotesAuto);
-        teamData.setNumberStackedTotesAuto(numberTotesStackedAuto);
-        DatabaseHandler.getInstance(this).updateTeamData(teamData);
-        Toast.makeText(this, "Data Saved.", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this,MainActivity.class);
-        startActivity(intent);
 
-/*      List<TeamData> teamDataList = DatabaseHandler.getInstance(this).getAllTeamData();
-      for (TeamData cn : teamDataList) {
-          String log =  "Name: " + cn.getTeamNumber() + " ,match: " + cn.getMatchNumber() + " ,alliance" + cn.getAlliance() + " ,robotauto" + cn.getRobotAuto();
-          // Writing Contacts to log
-          Log.d("Name: ", log);
-      }*/
+        new AlertDialog.Builder(this)
+                .setTitle("Save Data")
+                .setMessage("Are you sure you this info is correct?")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // continue with add
+                        //Auto input
 
-//        String log = "robotauto" + DatabaseHandler.getInstance(this).getTeamData(2729).getRobotAuto() + "teamnumber" + DatabaseHandler.getInstance(this).getTeamData(2729).getTeamNumber();
-//        Log.d("data ", log);
+                        inputRobotAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_robot_checkbox);
+                        inputToteAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_tote_checkbox);
+                        inputNumberTotesAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_tote_number);
+                        inputContainerAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_container_checkbox);
+                        inputNumberContainersAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_container_number);
+                        inputAssistedStackingAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_assisted_checkbox);
+                        inputNumberTotesStackedAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_totes_stacked_number);
+                        int numberTotesAuto = 0;
+                        int numberContainersAuto = 0;
+                        int numberTotesStackedAuto = 0;
+                        boolean robotAuto = inputRobotAuto.isChecked();
+                        boolean toteAuto = inputToteAuto.isChecked();
+                        if(inputNumberTotesAuto.length() > 0){
+                            numberTotesAuto = Integer.parseInt(inputNumberTotesAuto.getText().toString());
+                        }
+                        boolean containerAuto = inputContainerAuto.isChecked();
+                        if(inputNumberContainersAuto.length() > 0){
+                            numberContainersAuto = Integer.parseInt(inputNumberContainersAuto.getText().toString());
+                        }
+                        boolean assistedStackingTotesAuto = inputContainerAuto.isChecked();
+                        if(inputNumberTotesStackedAuto.length() > 0){
+                            numberTotesStackedAuto = Integer.parseInt(inputNumberTotesStackedAuto.getText().toString());
+                        }
+                        //auto add to teamdata
+                        teamData.setRobotAuto(robotAuto);
+                        teamData.setToteAuto(toteAuto);
+                        teamData.setNumberTotesAuto(numberTotesAuto);
+                        teamData.setContainerAuto(containerAuto);
+                        teamData.setNumberContainersAuto(numberContainersAuto);
+                        teamData.setAssistedTotesAuto(assistedStackingTotesAuto);
+                        teamData.setNumberStackedTotesAuto(numberTotesStackedAuto);
+                        //updates database
+                        DatabaseHandler.getInstance(getApplicationContext()).updateTeamData(teamData);
+                        Toast.makeText(getApplicationContext(), "Data Saved.", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // do nothing
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 
 
