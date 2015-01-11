@@ -40,7 +40,6 @@
         android:layout_below="@+id/auto_tote_number"
         android:layout_marginBottom="15dp"
         android:textSize="45dp"
-        android:layout_alignRight="@+id/auto_tote_number"
         android:layout_alignEnd="@+id/auto_tote_number" />
 
     <CheckBox
@@ -67,7 +66,8 @@
         android:layout_marginBottom="20dp"
         android:hint="# Totes Put In Auto Zone"
         android:textSize="45dp"
-        />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
