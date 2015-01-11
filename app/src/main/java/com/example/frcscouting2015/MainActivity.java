@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import java.util.List;
+
 import database.DatabaseHandler;
 import database.TeamData;
 import de.greenrobot.event.EventBus;
@@ -81,6 +83,16 @@ public class MainActivity extends Activity {
 		EditText txtteam = (EditText) this.findViewById(R.id.te_team_num);
 		RadioButton btnBlue = (RadioButton) this.findViewById(R.id.btn_blue);
 		RadioButton btnRed = (RadioButton) this.findViewById(R.id.btn_red);
+        String matchNum = txtmatch.getText().toString();
+        String teamNum = txtteam.getText().toString();
+
+        //checks to see if team is in database already
+        List<TeamData> teamDataList = DatabaseHandler.getInstance(this).getAllTeamData();
+        for (TeamData cn : teamDataList) {
+           if(cn.getTeamNumber() == Integer.parseInt(teamNum) && cn.getMatchNumber() == Integer.parseInt(matchNum)){
+                return false;
+           }
+        }
 		
 		if(!txtmatch.getText().toString().matches("") && !txtteam.getText().toString().matches("")
 			&& (btnBlue.isChecked() || btnRed.isChecked())){
