@@ -22,15 +22,7 @@ import de.greenrobot.event.EventBus;
 
 public class MainActivity extends Activity {
 
-	//////////CONSTANTS///////////
-    public static final String MATCH_NUM = "MatchNum";
-	public static final String TEAM_NUM = "TeamNum";
-	public static final String IS_RED = "isRed";
-    public TeamData teamData;
-	
 	public static RadioButton btnRed, btnBlue;
-
-    public static int[] teamNums;
 
 	//////////IMPLEMENTED METHODS//////////
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,9 +77,6 @@ public class MainActivity extends Activity {
 		EditText txtteam = (EditText) this.findViewById(R.id.te_team_num);
 		RadioButton btnBlue = (RadioButton) this.findViewById(R.id.btn_blue);
 		RadioButton btnRed = (RadioButton) this.findViewById(R.id.btn_red);
-        String matchNum = txtmatch.getText().toString();
-        String teamNum = txtteam.getText().toString();
-
 
 		
 		if(!txtmatch.getText().toString().matches("") && !txtteam.getText().toString().matches("")
