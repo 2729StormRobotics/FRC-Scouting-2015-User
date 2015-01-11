@@ -3,7 +3,7 @@ package database;
 public class TeamData {
 
     //private variables
-    int _id;
+//    int _id;
     int team_number = 0;
     int match_number = 0;
     boolean alliance_red = false;
@@ -47,15 +47,15 @@ public class TeamData {
         this.assisted_totes_auto = assisted_totes_auto;
         this.number_totes_stacked_auto = number_totes_stacked_auto;
     }
-    // getting ID
-    public int getID(){
-        return this._id;
-    }
-
-    // setting id
-    public void setID(int id){
-        this._id = id;
-    }
+//    // getting ID
+//    public int getID(){
+//        return this._id;
+//    }
+//
+//    // setting id
+//    public void setID(int id){
+//        this._id = id;
+//    }
 
     // getting team number
     public int getTeamNumber(){

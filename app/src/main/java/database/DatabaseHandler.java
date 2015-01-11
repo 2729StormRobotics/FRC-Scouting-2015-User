@@ -143,7 +143,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         // updating row
         return db.update(TABLE_TEAM, values, KEY_TEAM_NUMBER + " = ?",
-                new String[] { String.valueOf(teamData.getID()) });
+                new String[] { String.valueOf(teamData.getTeamNumber()) });
     }
 
     public List<TeamData> getAllTeamData() {
