@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -13,8 +12,6 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
-
-import java.util.List;
 
 import database.DatabaseHandler;
 import database.TeamData;
@@ -121,14 +118,14 @@ public class MainActivity extends Activity {
             TeamData teamData = new TeamData(Integer.parseInt(teamNum), Integer.parseInt(matchNum),
                     isRed,false,false,0,false,0,false,0);
             DatabaseHandler.getInstance(this).addTeamData(teamData);
-            List<TeamData> teamData2 = DatabaseHandler.getInstance(this).getAllTeamData();
-            for (TeamData cn : teamData2) {
+            //List<TeamData> teamData2 = DatabaseHandler.getInstance(this).getAllTeamData();
+            /*for (TeamData cn : teamData2) {
                 String log = "Id: "+cn.getID()+" ,Name: " + cn.getTeamNumber() + " ,match: " +
                         cn.getMatchNumber() + " ,alliance" + cn.getAlliance() + " ,robotauto" +
                         cn.getRobotAuto();
                 // Writing Contacts to log
                 Log.d("Name: ", log);
-            }
+            }*/
             EventBus.getDefault().postSticky(teamData);
             startActivity(intent);
     	}else{

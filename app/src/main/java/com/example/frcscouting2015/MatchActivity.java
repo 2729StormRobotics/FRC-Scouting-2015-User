@@ -3,6 +3,7 @@ package com.example.frcscouting2015;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -81,8 +82,8 @@ public class MatchActivity extends FragmentActivity {
 //          Log.d("Name: ", log);
 //      }
 
-        String log = "robotauto" + DatabaseHandler.getInstance(this).getTeamData(2729).getRobotAuto();
-
+        String log = "robotauto" + DatabaseHandler.getInstance(this).getTeamData(2729).getRobotAuto() + "teamnumber" + DatabaseHandler.getInstance(this).getTeamData(2729).getTeamNumber();
+        Log.d("data ", log);
     }
 
 
