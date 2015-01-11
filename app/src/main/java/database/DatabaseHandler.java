@@ -115,14 +115,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public TeamData getTeamData(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_TEAM, new String[] { KEY_ID,
-                        KEY_TEAM_NUMBER, KEY_MATCH_NUMBER, KEY_ALLIANCE, KEY_ROBOT_AUTO, KEY_TOTE_AUTO, KEY_NUMBER_TOTES_AUTO, KEY_CONTAINER_AUTO, KEY_NUMBER_CONTAINERS_AUTO, KEY_ASSISTED_TOTES_AUTO, KEY_NUMBER_TOTES_STACKED_AUTO }, KEY_ID + "=?",
+        Cursor cursor = db.query(TABLE_TEAM, new String[] { KEY_ID, KEY_TEAM_NUMBER,
+                        KEY_MATCH_NUMBER, KEY_ALLIANCE, KEY_ROBOT_AUTO, KEY_TOTE_AUTO,
+                        KEY_NUMBER_TOTES_AUTO, KEY_CONTAINER_AUTO, KEY_NUMBER_CONTAINERS_AUTO,
+                        KEY_ASSISTED_TOTES_AUTO, KEY_NUMBER_TOTES_STACKED_AUTO }, KEY_ID + "=?",
                 new String[] { String.valueOf(id) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 
         TeamData teamData = new TeamData(Integer.parseInt(cursor.getString(0)),
-                cursor.getInt(1), cursor.getInt(2), cursor.getInt(3)>0, cursor.getInt(4)>0, cursor.getInt(5)>0, cursor.getInt(6), cursor.getInt(7)>0, cursor.getInt(8), cursor.getInt(9)>0, cursor.getInt(10));
+                cursor.getInt(1), cursor.getInt(2), cursor.getInt(3)>0, cursor.getInt(4)>0,
+                cursor.getInt(5)>0, cursor.getInt(6), cursor.getInt(7)>0, cursor.getInt(8),
+                cursor.getInt(9)>0, cursor.getInt(10));
         return teamData;
     }
 
