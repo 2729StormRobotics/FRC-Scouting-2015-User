@@ -1,11 +1,13 @@
 package com.example.frcscouting2015;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import adapter.ViewPagerAdapter;
 import database.DatabaseHandler;
@@ -73,6 +75,9 @@ public class MatchActivity extends FragmentActivity {
         teamData.setAssistedTotesAuto(assistedStackingTotesAuto);
         teamData.setNumberStackedTotesAuto(numberTotesStackedAuto);
         DatabaseHandler.getInstance(this).updateTeamData(teamData);
+        Toast.makeText(this, "Data Saved.", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
 
 /*      List<TeamData> teamDataList = DatabaseHandler.getInstance(this).getAllTeamData();
       for (TeamData cn : teamDataList) {
