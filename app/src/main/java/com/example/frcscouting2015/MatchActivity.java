@@ -3,12 +3,9 @@ package com.example.frcscouting2015;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-
-import java.util.List;
 
 import adapter.ViewPagerAdapter;
 import database.DatabaseHandler;
@@ -77,12 +74,15 @@ public class MatchActivity extends FragmentActivity {
         teamData.setNumberStackedTotesAuto(numberTotesStackedAuto);
         DatabaseHandler.getInstance(this).updateTeamData(teamData);
 
-    List<TeamData> teamDataList = DatabaseHandler.getInstance(this).getAllTeamData();
-        for (TeamData cn : teamDataList) {
-            String log = "Id: "+cn.getID()+" ,Name: " + cn.getTeamNumber() + " ,match: " + cn.getMatchNumber() + " ,alliance" + cn.getAlliance() + " ,robotauto" + cn.getRobotAuto();
-            // Writing Contacts to log
-            Log.d("Name: ", log);
-        }
+//    List<TeamData> teamDataList = DatabaseHandler.getInstance(this).getAllTeamData();
+//        for (TeamData cn : teamDataList) {
+//            String log = "Id: "+cn.getID()+" ,Name: " + cn.getTeamNumber() + " ,match: " + cn.getMatchNumber() + " ,alliance" + cn.getAlliance() + " ,robotauto" + cn.getRobotAuto();
+//            // Writing Contacts to log
+//            Log.d("Name: ", log);
+//        }
+
+        String log = "robotauto" + DatabaseHandler.getInstance(this).getTeamData(1).getRobotAuto();
+
     }
 
 
