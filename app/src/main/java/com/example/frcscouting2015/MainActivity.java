@@ -114,7 +114,6 @@ public class MainActivity extends Activity {
              * */
 
              // Inserting Team Data
-            DatabaseHandler.getInstance(this).clearTable();
             TeamData teamData = new TeamData(Integer.parseInt(teamNum), Integer.parseInt(matchNum),
                     isRed,false,false,0,false,0,false,0);
             DatabaseHandler.getInstance(this).addTeamData(teamData);

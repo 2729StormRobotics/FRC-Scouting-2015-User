@@ -142,8 +142,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         //TODO teleop
 
         // updating row
-        return db.update(TABLE_TEAM, values, KEY_TEAM_NUMBER + " = ?",
-                new String[] { String.valueOf(teamData.getTeamNumber()) });
+        return db.update(TABLE_TEAM, values, KEY_TEAM_NUMBER + " = ? AND" + KEY_MATCH_NUMBER + " = ?",
+                new String[] { String.valueOf(teamData.getTeamNumber()), String.valueOf(teamData.getMatchNumber())});
     }
 
     public List<TeamData> getAllTeamData() {

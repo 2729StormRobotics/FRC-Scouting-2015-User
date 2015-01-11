@@ -44,7 +44,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d89a66d3-96d4-47eb-9c06-f7cfc4313765" name="Default" comment="Added match activity with tabs.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/database/DatabaseHandler.java" afterPath="$PROJECT_DIR$/app/src/main/java/database/DatabaseHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/database/TeamData.java" afterPath="$PROJECT_DIR$/app/src/main/java/database/TeamData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/frcscouting2015/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/frcscouting2015/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/frcscouting2015/MatchActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/frcscouting2015/MatchActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FRC-Scouting-2015.iws" />
@@ -71,8 +72,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/frcscouting2015/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1365" max-vertical-offset="2159">
-              <caret line="120" column="14" selection-start-line="120" selection-start-column="14" selection-end-line="120" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1348" max-vertical-offset="2142">
+              <caret line="115" column="35" selection-start-line="115" selection-start-column="35" selection-end-line="115" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -81,8 +82,8 @@
       <file leaf-file-name="MatchActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/frcscouting2015/MatchActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="617" max-vertical-offset="1411">
-              <caret line="84" column="186" selection-start-line="84" selection-start-column="186" selection-end-line="84" selection-end-column="186" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="668" max-vertical-offset="1411">
+              <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -91,21 +92,11 @@
       <file leaf-file-name="DatabaseHandler.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/database/DatabaseHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66273934" vertical-offset="1879" max-vertical-offset="3162">
-              <caret line="145" column="70" selection-start-line="145" selection-start-column="70" selection-end-line="145" selection-end-column="70" />
+            <state vertical-scroll-proportion="1.3792325" vertical-offset="1718" max-vertical-offset="3162">
+              <caret line="145" column="113" selection-start-line="145" selection-start-column="113" selection-end-line="145" selection-end-column="113" />
               <folding>
-                <element signature="e#5685#5695#0" expanded="true" />
+                <element signature="e#5759#5769#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TeamData.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/database/TeamData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="2210">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="2" selection-end-line="57" selection-end-column="7" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -1087,10 +1078,10 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/tele_fragment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/auto_fragment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/fragments/AutoFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/frcscouting2015/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/frcscouting2015/MatchActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/database/TeamData.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/database/DatabaseHandler.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/frcscouting2015/MatchActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/frcscouting2015/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -1463,7 +1454,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32083333" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32777777" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32777777" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3125" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
@@ -1523,7 +1514,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1198" max-vertical-offset="3298">
           <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
           <folding>
-            <element signature="e#5685#5695#0" expanded="true" />
+            <element signature="e#5759#5769#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1549,7 +1540,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1215" max-vertical-offset="3298">
           <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
           <folding>
-            <element signature="e#5685#5695#0" expanded="true" />
+            <element signature="e#5759#5769#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1575,7 +1566,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="3298">
           <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
           <folding>
-            <element signature="e#5685#5695#0" expanded="true" />
+            <element signature="e#5759#5769#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1909,6 +1900,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33236995" vertical-offset="4853" max-vertical-offset="6205">
           <caret line="318" column="25" selection-start-line="318" selection-start-column="25" selection-end-line="318" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1916,22 +1908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44219652" vertical-offset="0" max-vertical-offset="697">
           <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/frcscouting2015/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1365" max-vertical-offset="2159">
-          <caret line="120" column="14" selection-start-line="120" selection-start-column="14" selection-end-line="120" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/frcscouting2015/MatchActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="566" max-vertical-offset="1411">
-          <caret line="84" column="186" selection-start-line="84" selection-start-column="186" selection-end-line="84" selection-end-column="186" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1943,12 +1919,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/frcscouting2015/MatchActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="668" max-vertical-offset="1411">
+          <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/frcscouting2015/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1348" max-vertical-offset="2142">
+          <caret line="115" column="35" selection-start-line="115" selection-start-column="35" selection-end-line="115" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/database/DatabaseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66273934" vertical-offset="1879" max-vertical-offset="3162">
-          <caret line="145" column="70" selection-start-line="145" selection-start-column="70" selection-end-line="145" selection-end-column="70" />
+        <state vertical-scroll-proportion="1.3792325" vertical-offset="1718" max-vertical-offset="3162">
+          <caret line="145" column="113" selection-start-line="145" selection-start-column="113" selection-end-line="145" selection-end-column="113" />
           <folding>
-            <element signature="e#5685#5695#0" expanded="true" />
+            <element signature="e#5759#5769#0" expanded="true" />
           </folding>
         </state>
       </provider>
