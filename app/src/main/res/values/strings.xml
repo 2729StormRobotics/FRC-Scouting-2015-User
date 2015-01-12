@@ -32,6 +32,12 @@
 
     <!-- Tele Strings -->
     <string name="grey_tote">Grey Totes</string>
+    <string name="tote_level">Tote level of stack: </string>
+    <string name="can_level">Recycle Can Level of stack: </string>
+    <string name="noodle_can">Noodle in Can</string>
+    <string name="noodle_land">Noodles in LandFill: </string>
+    <string name="noodle_unaccount">Litter unaccounted for: </string>
+    <string name="update">Complete Stack</string>
 
     <!-- Submit strings -->
     <string name="save_button">Save Data</string>
