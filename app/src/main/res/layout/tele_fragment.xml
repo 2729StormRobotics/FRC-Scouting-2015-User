@@ -5,4 +5,83 @@
     android:background="@android:color/holo_red_dark"
     android:padding="15dp">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/grey_tote"
+        android:id="@+id/tv_tote"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/tote_level"
+        android:id="@+id/tv_grey"
+        android:textSize="50dp"
+        android:layout_marginTop="90dp"
+        android:layout_below="@+id/tv_tote"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:text="@string/minus"
+        android:id="@+id/sub_tote_level"
+        android:layout_below="@+id/tv_grey"
+        android:layout_alignRight="@+id/tv_grey"
+        android:layout_alignEnd="@+id/tv_grey" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:text="@string/plus"
+        android:id="@+id/add_tote_level"
+        android:layout_alignBottom="@+id/sub_tote_level"
+        android:layout_alignLeft="@+id/tv_grey"
+        android:layout_alignStart="@+id/tv_grey" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/recycle"
+        android:id="@+id/textView"
+        android:textSize="50dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/can_level"
+        android:id="@+id/tv_can"
+        android:textSize="50dp"
+        android:layout_marginTop="78dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignRight="@+id/tv_grey"
+        android:layout_alignEnd="@+id/tv_grey" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:text="@string/plus"
+        android:id="@+id/add_can_level"
+        android:layout_below="@+id/tv_can"
+        android:layout_alignLeft="@+id/tv_can"
+        android:layout_alignStart="@+id/tv_can" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:text="@string/minus"
+        android:id="@+id/button"
+        android:layout_alignTop="@+id/add_can_level"
+        android:layout_alignRight="@+id/tv_grey"
+        android:layout_alignEnd="@+id/tv_grey" />
+
 </RelativeLayout>
