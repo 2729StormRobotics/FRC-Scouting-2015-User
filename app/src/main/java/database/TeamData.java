@@ -1,5 +1,7 @@
 package database;
 
+import java.util.ArrayList;
+
 public class TeamData {
 
     //private variables
@@ -14,6 +16,8 @@ public class TeamData {
     int number_containers_auto = 0;
     boolean assisted_totes_auto = false;
     int number_totes_stacked_auto = 0;
+    ArrayList<Stack> stackList = new ArrayList<Stack>();
+
 
     // Empty constructor
     public TeamData(){
@@ -151,6 +155,9 @@ public class TeamData {
         this.number_totes_stacked_auto = number_totes_stacked_auto;
     }
 
+    public void addToStackList(Stack stack){
+        stackList.add(stackList.size() - 1, stack);
+    }
 
 
 

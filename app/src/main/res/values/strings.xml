@@ -40,8 +40,9 @@
     <string name="noodle_land">LandFill: </string>
     <string name="noodle_unaccount">Unaccounted: </string>
     <string name="update">Complete Stack</string>
-    <string name="minus">_</string>
+    <string name="minus">-</string>
     <string name="plus">+</string>
+    <string name="add_stack">Add Stack</string>
 
     <!-- Submit strings -->
     <string name="save_button">Save Data</string>
