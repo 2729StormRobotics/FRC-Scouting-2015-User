@@ -10,12 +10,10 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import adapter.ViewPagerAdapter;
 import database.DatabaseHandler;
-import database.Stack;
 import database.TeamData;
 import de.greenrobot.event.EventBus;
 import fragments.AutoFragment;
@@ -30,8 +28,7 @@ public class MatchActivity extends FragmentActivity {
     EditText inputNumberContainersAuto;
     CheckBox inputAssistedStackingAuto;
     EditText inputNumberTotesStackedAuto;
-    int toteLevel = 0;
-    int canLevel = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,8 +91,8 @@ public class MatchActivity extends FragmentActivity {
                         //updates database
                         DatabaseHandler.getInstance(getApplicationContext()).updateTeamData(teamData);
                         Toast.makeText(getApplicationContext(), "Data Saved.", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                        startActivity(intent);
+                        //Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                        //startActivity(intent);
                     }
                 })
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
@@ -107,34 +104,11 @@ public class MatchActivity extends FragmentActivity {
                 .show();
     }
 
-    public void addStackTele(View view){
-        //TODO add stack values to database. add database columns and other stuff.
-        Stack stack = new Stack();
-        TextView inputToteLevel = (TextView) findViewById(R.id.txt_tote_level);
-        TextView inputCanLevel = (TextView) findViewById(R.id.txt_can_level);
-        int toteLevel = Integer.parseInt(inputToteLevel.getText().toString());
-        int canLevel = Integer.parseInt(inputCanLevel.getText().toString());
-        stack.setToteLevel(toteLevel);
-        stack.setContainerLevel(canLevel);
-        teamData.addToStackList(stack);
-        toteLevel = 0;
-        canLevel = 0;
+    public void addStack(View view){
+
+
     }
 
-    public void addToteLevel(View view){
-        toteLevel = toteLevel + 1;
-    }
 
-    public void subToteLevel(View view){
-        toteLevel = toteLevel - 1;
-    }
-
-    public void addCanLevel(View view){
-        canLevel = canLevel + 1;
-    }
-
-    public void subCanLevel(View view){
-        canLevel = canLevel - 1;
-    }
 
 }

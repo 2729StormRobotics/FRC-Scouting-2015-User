@@ -16,7 +16,22 @@ public class TeamData {
     int number_containers_auto = 0;
     boolean assisted_totes_auto = false;
     int number_totes_stacked_auto = 0;
-    ArrayList<Stack> stackList = new ArrayList<Stack>();
+
+    int toteLevel1;
+    int toteLevel2;
+    int toteLevel3;
+    int toteLevel4;
+    int toteLevel5;
+    int toteLevel6;
+
+    int canLevel1;
+    int canLevel2;
+    int canLevel3;
+    int canLevel4;
+    int canLevel5;
+    int canLevel6;
+
+    boolean noodle;
 
 
     // Empty constructor
@@ -155,10 +170,110 @@ public class TeamData {
         this.number_totes_stacked_auto = number_totes_stacked_auto;
     }
 
-    public void addToStackList(Stack stack){
-        stackList.add(stackList.size() - 1, stack);
+
+    public int getToteLevel1() {
+        return toteLevel1;
     }
 
+    public void setToteLevel1(int toteLevel1) {
+        this.toteLevel1 = toteLevel1;
+    }
+
+    public int getToteLevel2() {
+        return toteLevel2;
+    }
+
+    public void setToteLevel2(int toteLevel2) {
+        this.toteLevel2 = toteLevel2;
+    }
+
+    public int getToteLevel3() {
+        return toteLevel3;
+    }
+
+    public void setToteLevel3(int toteLevel3) {
+        this.toteLevel3 = toteLevel3;
+    }
+
+    public int getToteLevel4() {
+        return toteLevel4;
+    }
+
+    public void setToteLevel4(int toteLevel4) {
+        this.toteLevel4 = toteLevel4;
+    }
+
+    public int getToteLevel5() {
+        return toteLevel5;
+    }
+
+    public void setToteLevel5(int toteLevel5) {
+        this.toteLevel5 = toteLevel5;
+    }
+
+    public int getToteLevel6() {
+        return toteLevel6;
+    }
+
+    public void setToteLevel6(int toteLevel6) {
+        this.toteLevel6 = toteLevel6;
+    }
+
+    public int getCanLevel1() {
+        return canLevel1;
+    }
+
+    public void setCanLevel1(int canLevel1) {
+        this.canLevel1 = canLevel1;
+    }
+
+    public int getCanLevel2() {
+        return canLevel2;
+    }
+
+    public void setCanLevel2(int canLevel2) {
+        this.canLevel2 = canLevel2;
+    }
+
+    public int getCanLevel3() {
+        return canLevel3;
+    }
+
+    public void setCanLevel3(int canLevel3) {
+        this.canLevel3 = canLevel3;
+    }
+
+    public int getCanLevel4() {
+        return canLevel4;
+    }
+
+    public void setCanLevel4(int canLevel4) {
+        this.canLevel4 = canLevel4;
+    }
+
+    public int getCanLevel5() {
+        return canLevel5;
+    }
+
+    public void setCanLevel5(int canLevel5) {
+        this.canLevel5 = canLevel5;
+    }
+
+    public int getCanLevel6() {
+        return canLevel6;
+    }
+
+    public void setCanLevel6(int canLevel6) {
+        this.canLevel6 = canLevel6;
+    }
+
+    public boolean isNoodle() {
+        return noodle;
+    }
+
+    public void setNoodle(boolean noodle) {
+        this.noodle = noodle;
+    }
 
 
 }

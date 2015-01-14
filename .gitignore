@@ -2,3 +2,4 @@ build/
 app/build/
 FRC-Scouting-2015.iws
 .idea/workspace.xml
+app/app.iml

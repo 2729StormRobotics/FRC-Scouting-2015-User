@@ -34,7 +34,7 @@ public class QRGeneratorActivity extends Activity implements DialogInterface.OnC
         DrawQRCode draw = new DrawQRCode(this, input);
 
         //shows and draws the generated QR code
-        setContentView(R.layout.activity_qrgen);
+        setContentView(R.layout.activity_QRGeneratorActivity);
         addContentView(draw,new LayoutParams(LayoutParams.MATCH_PARENT , LayoutParams.WRAP_CONTENT));
 
     }
@@ -47,7 +47,7 @@ public class QRGeneratorActivity extends Activity implements DialogInterface.OnC
         }
     }
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.help, menu);
+        getMenuInflater().inflate(R.menu.menu_qr, menu);
         return true;
     }
 
