@@ -36,7 +36,7 @@
         android:textSize="20dp"
         android:onClick="addStack"
         android:nestedScrollingEnabled="true"
-        android:layout_below="@+id/checkBox"
+        android:layout_below="@+id/can_level6"
         android:layout_alignRight="@+id/tv_grey"
         android:layout_alignEnd="@+id/tv_grey" />
 
@@ -116,7 +116,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cans_level_1"
-        android:id="@+id/can_level2"
+        android:id="@+id/can_level1"
         android:textSize="30dp"
         android:textColor="#ffffffff"
         android:layout_alignParentLeft="true"
@@ -128,6 +128,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cans_level_2"
+        android:id="@+id/can_level2"
+        android:textSize="30dp"
+        android:textColor="#ffffffff"
+        android:layout_below="@+id/can_level1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cans_level_3"
         android:id="@+id/can_level3"
         android:textSize="30dp"
         android:textColor="#ffffffff"
@@ -139,7 +151,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cans_level_3"
+        android:text="@string/cans_level_4"
         android:id="@+id/can_level4"
         android:textSize="30dp"
         android:textColor="#ffffffff"
@@ -151,7 +163,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cans_level_4"
+        android:text="@string/cans_level_5"
         android:id="@+id/can_level5"
         android:textSize="30dp"
         android:textColor="#ffffffff"
@@ -163,20 +175,19 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cans_level_5"
+        android:text="@string/cans_level_6"
         android:id="@+id/can_level6"
         android:textSize="30dp"
         android:textColor="#ffffffff"
         android:layout_below="@+id/can_level5"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp" />
+        android:layout_alignParentStart="true" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cans_level_6"
-        android:id="@+id/checkBox"
+        android:text="@string/noodle"
+        android:id="@+id/noodle"
         android:textSize="30dp"
         android:textColor="#ffffffff"
         android:layout_below="@+id/can_level6"

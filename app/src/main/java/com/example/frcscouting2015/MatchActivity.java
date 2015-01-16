@@ -105,7 +105,25 @@ public class MatchActivity extends FragmentActivity {
     }
 
     public void addStack(View view){
+        CheckBox toteLevel1 = (CheckBox) findViewById(R.id.tote_level1);
+        CheckBox toteLevel2 = (CheckBox) findViewById(R.id.tote_level2);
+        CheckBox toteLevel3 = (CheckBox) findViewById(R.id.tote_level3);
+        CheckBox toteLevel4 = (CheckBox) findViewById(R.id.tote_level4);
+        CheckBox toteLevel5 = (CheckBox) findViewById(R.id.tote_level5);
+        CheckBox toteLevel6 = (CheckBox) findViewById(R.id.tote_level6);
 
+        CheckBox canLevel1 = (CheckBox) findViewById(R.id.can_level1);
+        CheckBox canLevel2 = (CheckBox) findViewById(R.id.can_level2);
+        CheckBox canLevel3 = (CheckBox) findViewById(R.id.can_level3);
+        CheckBox canLevel4 = (CheckBox) findViewById(R.id.can_level4);
+        CheckBox canLevel5 = (CheckBox) findViewById(R.id.can_level5);
+        CheckBox canLevel6 = (CheckBox) findViewById(R.id.can_level6);
+
+        CheckBox noodle = (CheckBox) findViewById(R.id.noodle);
+
+    }
+
+    public void makeString(View view){
 
     }
 

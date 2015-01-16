@@ -19,7 +19,6 @@
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
-
     <string name="auto_frag">Auto</string>
     <string name="tele_frag">Tele</string>
     <string name="submit_frag">Submit</string>
@@ -46,10 +45,11 @@
     <string name="cans_level_5">Can Level 5</string>
     <string name="cans_level_6">Can Level 6</string>
     <string name="add_stack">Submit</string>
-
-
+    <string name="noodle">Noodle</string>
 
     <!-- Submit strings -->
     <string name="save_button">Save Data</string>
+    <string name="title_activity_qr">qr</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
