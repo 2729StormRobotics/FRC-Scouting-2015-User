@@ -31,18 +31,23 @@
     <string name="stacked_tote_set">Assisted in Stacking Totes</string>
 
     <!-- Tele Strings -->
-    <string name="grey_tote">Grey Totes</string>
-    <string name="recycle">Recycle Cans</string>
-    <string name="noodle">Noodles</string>
     <string name="tote_level">Tote level of stack: </string>
     <string name="can_level">Recycle Can Level: </string>
-    <string name="noodle_can">In Can</string>
-    <string name="noodle_land">LandFill: </string>
-    <string name="noodle_unaccount">Unaccounted: </string>
-    <string name="update">Complete Stack</string>
-    <string name="minus">-</string>
-    <string name="plus">+</string>
-    <string name="add_stack">Add Stack</string>
+    <string name="tote_level_1">Tote Level 1</string>
+    <string name="tote_level_2">Tote Level 2</string>
+    <string name="tote_level_3">Tote Level 3</string>
+    <string name="tote_level_4">Tote Level 4</string>
+    <string name="tote_level_5">Tote Level 5</string>
+    <string name="tote_level_6">Tote Level 6</string>
+    <string name="cans_level_1">Can Level 1</string>
+    <string name="cans_level_2">Can Level 2</string>
+    <string name="cans_level_3">Can Level 3</string>
+    <string name="cans_level_4">Can Level 4</string>
+    <string name="cans_level_5">Can Level 5</string>
+    <string name="cans_level_6">Can Level 6</string>
+    <string name="add_stack">Submit</string>
+
+
 
     <!-- Submit strings -->
     <string name="save_button">Save Data</string>

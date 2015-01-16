@@ -33,16 +33,17 @@
         android:layout_height="70dp"
         android:text="@string/add_stack"
         android:id="@+id/btn_add_stack"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:textSize="20dp"
         android:onClick="addStack"
-        android:nestedScrollingEnabled="true" />
+        android:nestedScrollingEnabled="true"
+        android:layout_below="@+id/checkBox"
+        android:layout_alignRight="@+id/tv_grey"
+        android:layout_alignEnd="@+id/tv_grey" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New CheckBox"
+        android:text="@string/tote_level_1"
         android:id="@+id/tote_level1"
         android:textSize="30dp"
         android:layout_below="@+id/tv_grey"
@@ -54,7 +55,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New CheckBox"
+        android:text="@string/tote_level_2"
         android:id="@+id/tote_level2"
         android:textSize="30dp"
         android:textColor="#ffffffff"
@@ -66,7 +67,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New CheckBox"
+        android:text="@string/tote_level_3"
         android:id="@+id/tote_level3"
         android:textSize="30dp"
         android:textColor="#ffffffff"
@@ -78,7 +79,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New CheckBox"
+        android:text="@string/tote_level_4"
         android:id="@+id/tote_level4"
         android:textSize="30dp"
         android:textColor="#ffffffff"
@@ -90,7 +91,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New CheckBox"
+        android:text="@string/tote_level_5"
         android:id="@+id/tote_level5"
         android:textSize="30dp"
         android:textColor="#ffffffff"
@@ -102,7 +103,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New CheckBox"
+        android:text="@string/tote_level_6"
         android:id="@+id/tote_level6"
         android:textSize="30dp"
         android:textColor="#ffffffff"
@@ -114,7 +115,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New CheckBox"
+        android:text="@string/cans_level_1"
         android:id="@+id/can_level2"
         android:textSize="30dp"
         android:textColor="#ffffffff"
@@ -126,7 +127,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New CheckBox"
+        android:text="@string/cans_level_2"
         android:id="@+id/can_level3"
         android:textSize="30dp"
         android:textColor="#ffffffff"
@@ -138,7 +139,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New CheckBox"
+        android:text="@string/cans_level_3"
         android:id="@+id/can_level4"
         android:textSize="30dp"
         android:textColor="#ffffffff"
@@ -150,7 +151,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New CheckBox"
+        android:text="@string/cans_level_4"
         android:id="@+id/can_level5"
         android:textSize="30dp"
         android:textColor="#ffffffff"
@@ -162,7 +163,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New CheckBox"
+        android:text="@string/cans_level_5"
         android:id="@+id/can_level6"
         android:textSize="30dp"
         android:textColor="#ffffffff"
@@ -170,5 +171,16 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="20dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cans_level_6"
+        android:id="@+id/checkBox"
+        android:textSize="30dp"
+        android:textColor="#ffffffff"
+        android:layout_below="@+id/can_level6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
