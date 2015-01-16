@@ -127,6 +127,11 @@ public class MatchActivity extends FragmentActivity {
 
     }
 
+    public void startQR(View view){
+        Intent i = new Intent(getApplicationContext(),qr.class);
+        startActivity(i);
+    }
+
 
 
 }
