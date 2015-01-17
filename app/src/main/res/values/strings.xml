@@ -52,6 +52,5 @@
     <!-- Submit strings -->
     <string name="save_button">Save Data</string>
     <string name="title_activity_qr">qr</string>
-    <string name="hello_world">Hello world!</string>
-
+    <string name="exit">Return to Main Screen</string>
 </resources>

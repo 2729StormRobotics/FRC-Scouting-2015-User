@@ -154,7 +154,8 @@ public class MatchActivity extends FragmentActivity {
         }if(noodle.isChecked()){
             teamData.setNoodle(teamData.getNoodle() + 1);
         }if(coop.isChecked()){
-            teamData.setCoop(teamData.getCoop() + 1);
+            coop.setEnabled(false);
+            teamData.setCoop(1);
         }
 
 
@@ -176,7 +177,6 @@ public class MatchActivity extends FragmentActivity {
         canLevel6.setChecked(false);
 
         noodle.setChecked(false);
-        coop.setChecked(false);
 
     }
 

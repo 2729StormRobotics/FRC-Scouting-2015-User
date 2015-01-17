@@ -1,14 +1,19 @@
 package com.example.frcscouting2015;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 
 import net.glxn.qrgen.android.QRCode;
 
+import database.DatabaseHandler;
 import database.TeamData;
 import de.greenrobot.event.EventBus;
 
@@ -52,5 +57,26 @@ public class qr extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void returnToMain(View view){
+        new AlertDialog.Builder(this)
+                .setTitle("Return to Main Screen")
+                .setMessage("Are you sure you want to exit?")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        DatabaseHandler.getInstance(getApplicationContext()).clearTable();
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // do nothing
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+                    }
     }
 }
