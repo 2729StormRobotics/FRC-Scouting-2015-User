@@ -23,12 +23,12 @@
         android:layout_height="wrap_content"
         android:text="@string/qr"
         android:id="@+id/make_qr"
-        android:onClick="startQr"
         android:background="@android:color/background_light"
         android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="70dp" />
+        android:layout_marginBottom="70dp"
+        android:onClick="startQR" />
 
 </RelativeLayout>
