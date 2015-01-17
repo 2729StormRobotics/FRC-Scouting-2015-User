@@ -39,23 +39,10 @@ public class TeamData {
     public TeamData(){
 
     }
-/*    // constructor
-    public TeamData(int id, int team_number, int match_number, boolean alliance_red, boolean robot_auto, boolean tote_auto, int number_totes_auto, boolean container_auto, int number_containers_auto, boolean assisted_totes_auto, int number_totes_stacked_auto){
-        this._id = id;
-        this.team_number = team_number;
-        this.match_number = match_number;
-        this.alliance_red = alliance_red;
-        this.robot_auto = robot_auto;
-        this.tote_auto = tote_auto;
-        this.number_totes_auto = number_totes_auto;
-        this.container_auto = container_auto;
-        this.number_containers_auto = number_containers_auto;
-        this.assisted_totes_auto = assisted_totes_auto;
-        this.number_totes_stacked_auto = number_totes_stacked_auto;
-    }*/
 
-    // constructor
- /*   public TeamData(int team_number, int match_number, boolean alliance_red, boolean robot_auto, boolean tote_auto,
+
+
+  public TeamData(int team_number, int match_number, boolean alliance_red, boolean robot_auto, boolean tote_auto,
                     int number_totes_auto, boolean container_auto, int number_containers_auto, boolean assisted_totes_auto,
                     int number_totes_stacked_auto, int tote_level1, int tote_level2, int tote_level3,
                     int tote_level4, int tote_level5, int tote_level6, int can_level1, int can_level2,
@@ -90,7 +77,7 @@ public class TeamData {
         this.coop = coop;
         
         
-    }*/
+    }
 
     // getting team number
     public int getTeamNumber(){
