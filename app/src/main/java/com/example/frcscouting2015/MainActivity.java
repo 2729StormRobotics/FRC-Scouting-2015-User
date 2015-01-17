@@ -1,7 +1,9 @@
 package com.example.frcscouting2015;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -145,6 +147,45 @@ public class MainActivity extends Activity {
         imm.hideSoftInputFromWindow(myEditText.getWindowToken(), 0);
     }
 
+    public void startQR(View view){
+        new AlertDialog.Builder(this)
+                .setTitle("Save Data")
+                .setMessage("Are you sure you want to generate the qr code?")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        String output = makeString();
+                        EventBus.getDefault().postSticky(output);
+                        Intent i = new Intent(getApplicationContext(),qr.class);
+                        startActivity(i);
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // do nothing
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+                    }
 
-    
-}
+    public String makeString(){
+        List<TeamData> teamData2 = DatabaseHandler.getInstance(this).getAllTeamData();
+        String output = "";
+        for (TeamData cn : teamData2) {
+            String log = cn.getTeamNumber() + "," +
+                    cn.getMatchNumber() + "," + cn.getAlliance() + "," +
+                    cn.getRobotAuto() + "," + cn.getToteAuto() + "," + cn.getNumberTotesAuto() + ","
+                    + cn.getContainerAuto() + "," + cn.getNumberContainersAuto() + "," + cn.getAssistedTotesAuto() + ","
+                    + cn.getNumberStackedTotesAuto() + "," + cn.getToteLevel1() + "," + cn.getToteLevel2() + ","
+                    + cn.getToteLevel3() + "," +  cn.getToteLevel4() + "," + cn.getToteLevel5() + ","
+                    + cn.getToteLevel6() + "," + cn.getCanLevel1() + "," + cn.getCanLevel2() + "," + cn.getCanLevel3() + "," +
+                    cn.getCanLevel4() + "," + cn.getCanLevel5() + "," + cn.getCanLevel6() + "," +
+                    cn.getNoodle() + "," + cn.getCoop();
+            output = output + log + ":";
+        }
+        return output;
+    }
+
+    }
+
+

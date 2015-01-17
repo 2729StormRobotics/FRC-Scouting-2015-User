@@ -49,7 +49,7 @@ public class MatchActivity extends FragmentActivity {
         teamData = (TeamData) EventBus.getDefault().removeStickyEvent(TeamData.class);
          }
 
-    public void addToDatabase(View view){
+    public void addToDatabase(){
 
 
         new AlertDialog.Builder(this)
@@ -198,13 +198,26 @@ public class MatchActivity extends FragmentActivity {
         return output;
     }
 
-    public void startQR(View view){
+    public void startQR(){
         String output = makeString();
         EventBus.getDefault().postSticky(output);
         Intent i = new Intent(getApplicationContext(),qr.class);
         startActivity(i);
     }
 
+    public void returnToMain() {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    }
 
+    public void saveAndExit(View view){
+        addToDatabase();
+        returnToMain();
 
+    }
+
+    public void saveAndStartQR(View view){
+        addToDatabase();
+        startQR();
+    }
 }

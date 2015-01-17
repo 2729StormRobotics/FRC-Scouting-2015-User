@@ -11,7 +11,7 @@
         android:text="@string/save_button"
         android:id="@+id/save_button"
         android:layout_marginBottom="146dp"
-        android:onClick="addToDatabase"
+        android:onClick="saveAndExit"
         android:background="@android:color/background_light"
         android:textStyle="bold"
         android:layout_alignParentBottom="true"
@@ -29,6 +29,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="70dp"
-        android:onClick="startQR" />
+        android:onClick="saveAndStartQR" />
 
 </RelativeLayout>

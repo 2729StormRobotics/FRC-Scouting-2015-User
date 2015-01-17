@@ -12,7 +12,7 @@
     <string name="title_name">Storm Scouting</string>
     <string name="txt_blueTeam">Blue Alliance</string>
     <string name="txt_redTeam">Red Alliance</string>
-    <string name="txt_pause">Pause</string>
+    <string name="gen">Generate QR Code</string>
 
     <!-- HELP STRINGS -->
     <string name="txt_help">Help</string>
@@ -46,11 +46,11 @@
     <string name="cans_level_6">Can Level 6</string>
     <string name="add_stack">Submit</string>
     <string name="noodle">Noodle</string>
-    <string name="qr">Generate QR</string>
+    <string name="qr">Save and Generate QR</string>
     <string name="coop">Coopertition</string>
 
     <!-- Submit strings -->
-    <string name="save_button">Save Data</string>
+    <string name="save_button">Save and Exit</string>
     <string name="title_activity_qr">qr</string>
     <string name="exit">Return to Main Screen</string>
 </resources>
