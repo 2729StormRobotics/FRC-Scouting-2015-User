@@ -152,7 +152,7 @@ public class MainActivity extends Activity {
 
     public void startQR(View view) {
         new AlertDialog.Builder(this)
-                .setTitle("Save Data")
+                .setTitle("Generate QR")
                 .setMessage("Are you sure you want to generate the qr code?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {

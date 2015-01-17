@@ -204,8 +204,8 @@ public class MatchActivity extends FragmentActivity {
 
     public void saveAndExit(View view) {
         new AlertDialog.Builder(this)
-                .setTitle("Save Data")
-                .setMessage("Are you sure you want to save and exit?")
+                .setTitle("Save Data and Return to Main Screen")
+                .setMessage("Are you sure you want to save and return to the main screen?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         addToDatabase();
@@ -223,7 +223,7 @@ public class MatchActivity extends FragmentActivity {
 
     public void saveAndStartQR(View view) {
         new AlertDialog.Builder(this)
-                .setTitle("Save Data")
+                .setTitle("Save Data and Start QR")
                 .setMessage("Are you sure you want to save and generate a qr code?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {

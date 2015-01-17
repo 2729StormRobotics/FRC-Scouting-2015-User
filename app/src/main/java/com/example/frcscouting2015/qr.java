@@ -42,7 +42,7 @@ public class qr extends ActionBarActivity {
 
     public void deleteAndExit(View view) {
         new AlertDialog.Builder(this)
-                .setTitle("Save Data")
+                .setTitle("Exit")
                 .setMessage("Are you sure you want to exit?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
