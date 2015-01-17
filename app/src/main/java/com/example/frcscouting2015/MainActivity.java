@@ -122,7 +122,7 @@ public class MainActivity extends Activity {
 
              // Inserting Team Data
             TeamData teamData = new TeamData(Integer.parseInt(teamNum), Integer.parseInt(matchNum),
-                    isRed,false,false,0,false,0,false,0);
+                    isRed,false,false,0,false,0,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
             DatabaseHandler.getInstance(this).addTeamData(teamData);
             //List<TeamData> teamData2 = DatabaseHandler.getInstance(this).getAllTeamData();
             /*for (TeamData cn : teamData2) {

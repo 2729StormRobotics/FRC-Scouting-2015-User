@@ -1,9 +1,13 @@
 package com.example.frcscouting2015;
 
+import android.graphics.Bitmap;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+
+import net.glxn.qrgen.android.QRCode;
 
 
 public class qr extends ActionBarActivity {
@@ -12,6 +16,9 @@ public class qr extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr);
+        Bitmap bmp = QRCode.from("Tim Gordon Is Bad").bitmap();
+        ImageView myImage = (ImageView) findViewById(R.id.imageView);
+        myImage.setImageBitmap(bmp);
     }
 
 

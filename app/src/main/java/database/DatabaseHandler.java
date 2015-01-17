@@ -14,7 +14,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // All Static variables
     private static DatabaseHandler sInstance = null;
     // Database Version
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
 
     // Database Name
     private static final String DATABASE_NAME = "Team_Manager";
