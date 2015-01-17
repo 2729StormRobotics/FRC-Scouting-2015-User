@@ -37,6 +37,25 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_ASSISTED_TOTES_AUTO = "assisted_totes_auto";
     private static final String KEY_NUMBER_TOTES_STACKED_AUTO = "number_totes_stacked_auto";
     //TODO telop
+
+
+    private static  final String KEY_TOTE_LEVEL1 = "tote_level1";
+    private static  final String KEY_TOTE_LEVEL2 = "tote_level2";
+    private static  final String KEY_TOTE_LEVEL3 = "tote_level3";
+    private static  final String KEY_TOTE_LEVEL4 = "tote_level4";
+    private static  final String KEY_TOTE_LEVEL5 = "tote_level5";
+    private static  final String KEY_TOTE_LEVEL6 = "tote_level6";
+
+    private static  final String KEY_CAN_LEVEL1 = "can_level1";
+    private static  final String KEY_CAN_LEVEL2 = "can_level2";
+    private static  final String KEY_CAN_LEVEL3 = "can_level3";
+    private static  final String KEY_CAN_LEVEL4 = "can_level4";
+    private static  final String KEY_CAN_LEVEL5 = "can_level5";
+    private static  final String KEY_CAN_LEVEL6 = "can_level6";
+
+    private static  final String KEY_NOODLE = "noodle";
+    private static final String KEY_COOP = "coop";
+
     private Context mCtx;
 
     public static DatabaseHandler getInstance(Context context) {
@@ -70,6 +89,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + KEY_NUMBER_CONTAINERS_AUTO + " INTEGER,"
                 + KEY_ASSISTED_TOTES_AUTO + " INTEGER,"
                 + KEY_NUMBER_TOTES_STACKED_AUTO + " INTEGER"
+                + KEY_TOTE_LEVEL1 + " INTEGER"
+                + KEY_TOTE_LEVEL2 + " INTEGER"
+                + KEY_TOTE_LEVEL3 + " INTEGER"
+                + KEY_TOTE_LEVEL4 + " INTEGER"
+                + KEY_TOTE_LEVEL5 + " INTEGER"
+                + KEY_TOTE_LEVEL6 + " INTEGER"
+                + KEY_CAN_LEVEL1 + " INTEGER"
+                + KEY_CAN_LEVEL2 + " INTEGER"
+                + KEY_CAN_LEVEL3 + " INTEGER"
+                + KEY_CAN_LEVEL4 + " INTEGER"
+                + KEY_CAN_LEVEL5 + " INTEGER"
+                + KEY_CAN_LEVEL6 + " INTEGER"
+                + KEY_NOODLE + " INTEGER"
+                + KEY_COOP + " INTEGER"
                 + ")";
         db.execSQL(CREATE_TEAM);
     }
@@ -98,6 +131,25 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_NUMBER_CONTAINERS_AUTO, teamData.getNumberContainersAuto());
         values.put(KEY_ASSISTED_TOTES_AUTO, teamData.getAssistedTotesAuto());
         values.put(KEY_NUMBER_TOTES_STACKED_AUTO, teamData.getNumberStackedTotesAuto());
+
+        //tele
+        values.put(KEY_TOTE_LEVEL1, teamData.getToteLevel1());
+        values.put(KEY_TOTE_LEVEL2, teamData.getToteLevel2());
+        values.put(KEY_TOTE_LEVEL3, teamData.getToteLevel3());
+        values.put(KEY_TOTE_LEVEL4, teamData.getToteLevel4());
+        values.put(KEY_TOTE_LEVEL5, teamData.getToteLevel5());
+        values.put(KEY_TOTE_LEVEL6, teamData.getToteLevel6());
+
+        values.put(KEY_CAN_LEVEL1, teamData.getCanLevel1());
+        values.put(KEY_CAN_LEVEL2, teamData.getCanLevel2());
+        values.put(KEY_CAN_LEVEL3, teamData.getCanLevel3());
+        values.put(KEY_CAN_LEVEL4, teamData.getCanLevel4());
+        values.put(KEY_CAN_LEVEL5, teamData.getCanLevel5());
+        values.put(KEY_CAN_LEVEL6, teamData.getCanLevel6());
+
+        values.put(KEY_NOODLE, teamData.getNoodle());
+        values.put(KEY_COOP, teamData.getCoop());
+
         return values;
     }
 
@@ -120,7 +172,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             cursor.moveToFirst();
 
         TeamData teamData = new TeamData(
-                cursor.getInt(0), cursor.getInt(1), cursor.getInt(2)>0, cursor.getInt(3)>0, cursor.getInt(4)>0, cursor.getInt(5), cursor.getInt(6)>0, cursor.getInt(7), cursor.getInt(8)>0, cursor.getInt(9));
+                cursor.getInt(0), cursor.getInt(1), cursor.getInt(2)>0, cursor.getInt(3)>0, cursor.getInt(4)>0, cursor.getInt(5), cursor.getInt(6)>0, cursor.getInt(7), cursor.getInt(8)>0, cursor.getInt(9), cursor.getInt(10), cursor.getInt(11), cursor.getInt(12), cursor.getInt(13), cursor.getInt(14), cursor.getInt(15), cursor.getInt(16), cursor.getInt(17), cursor.getInt(18), cursor.getInt(19), cursor.getInt(20), cursor.getInt(21), cursor.getInt(22), cursor.getInt(23));
         return teamData;
     }
 
@@ -173,7 +225,26 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 teamData.setNumberContainersAuto(cursor.getInt(7));
                 teamData.setAssistedTotesAuto(cursor.getInt(8)>0);
                 teamData.setNumberStackedTotesAuto(cursor.getInt(9));
+
                 //TODO Tele-op
+
+                teamData.setToteLevel1(cursor.getInt(10));
+                teamData.setToteLevel2(cursor.getInt(11));
+                teamData.setToteLevel3(cursor.getInt(12));
+                teamData.setToteLevel4(cursor.getInt(13));
+                teamData.setToteLevel5(cursor.getInt(14));
+                teamData.setToteLevel6(cursor.getInt(15));
+
+                teamData.setCanLevel1(cursor.getInt(16));
+                teamData.setCanLevel2(cursor.getInt(17));
+                teamData.setCanLevel3(cursor.getInt(18));
+                teamData.setCanLevel4(cursor.getInt(19));
+                teamData.setCanLevel5(cursor.getInt(20));
+                teamData.setCanLevel6(cursor.getInt(21));
+
+                teamData.setNoodle(cursor.getInt(22));
+                teamData.setCoop(cursor.getInt(23));
+
 
                 // Adding contact to list
                 teamDataList.add(teamData);

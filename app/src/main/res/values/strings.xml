@@ -47,6 +47,7 @@
     <string name="add_stack">Submit</string>
     <string name="noodle">Noodle</string>
     <string name="qr">Generate QR</string>
+    <string name="coop">Coopertition</string>
 
     <!-- Submit strings -->
     <string name="save_button">Save Data</string>

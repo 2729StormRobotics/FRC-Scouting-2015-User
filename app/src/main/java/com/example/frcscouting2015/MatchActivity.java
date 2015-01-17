@@ -120,6 +120,60 @@ public class MatchActivity extends FragmentActivity {
         CheckBox canLevel6 = (CheckBox) findViewById(R.id.can_level6);
 
         CheckBox noodle = (CheckBox) findViewById(R.id.noodle);
+        CheckBox coop = (CheckBox) findViewById(R.id.coop);
+
+        if(toteLevel1.isChecked()){
+            teamData.setToteLevel1(teamData.getToteLevel1() + 1);
+        }if(toteLevel2.isChecked()){
+            teamData.setToteLevel2(teamData.getToteLevel2() + 1);
+        }if(toteLevel3.isChecked()){
+            teamData.setToteLevel3(teamData.getToteLevel3() + 1);
+        }if(toteLevel4.isChecked()){
+            teamData.setToteLevel4(teamData.getToteLevel4() + 1);
+        }if(toteLevel5.isChecked()){
+            teamData.setToteLevel5(teamData.getToteLevel5() + 1);
+        }if(toteLevel6.isChecked()){
+            teamData.setToteLevel6(teamData.getToteLevel6() + 1);
+        }
+
+        if(canLevel1.isChecked()){
+            teamData.setCanLevel1(teamData.getCanLevel1() + 1);
+        }if(canLevel2.isChecked()){
+            teamData.setCanLevel2(teamData.getCanLevel2() + 1);
+        }if(canLevel3.isChecked()){
+            teamData.setCanLevel3(teamData.getCanLevel3() + 1);
+        }if(canLevel4.isChecked()){
+            teamData.setCanLevel4(teamData.getCanLevel4() + 1);
+        }if(canLevel5.isChecked()){
+            teamData.setCanLevel5(teamData.getCanLevel5() + 1);
+        }if(canLevel6.isChecked()){
+            teamData.setCanLevel6(teamData.getCanLevel6() + 1);
+        }if(noodle.isChecked()){
+            teamData.setNoodle(teamData.getNoodle() + 1);
+        }if(coop.isChecked()){
+            teamData.setCoop(teamData.getCoop() + 1);
+        }
+
+
+
+        DatabaseHandler.getInstance(this).updateTeamData(teamData);
+
+        toteLevel1.setChecked(false);
+        toteLevel2.setChecked(false);
+        toteLevel3.setChecked(false);
+        toteLevel4.setChecked(false);
+        toteLevel5.setChecked(false);
+        toteLevel6.setChecked(false);
+
+        canLevel1.setChecked(false);
+        canLevel2.setChecked(false);
+        canLevel3.setChecked(false);
+        canLevel4.setChecked(false);
+        canLevel5.setChecked(false);
+        canLevel6.setChecked(false);
+
+        noodle.setChecked(false);
+        coop.setChecked(false);
 
     }
 
