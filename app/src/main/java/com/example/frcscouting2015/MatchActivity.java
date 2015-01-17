@@ -46,7 +46,7 @@ public class MatchActivity extends FragmentActivity {
 
         // Set the ViewPagerAdapter into ViewPager
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
-        teamData = EventBus.getDefault().getStickyEvent(TeamData.class);
+        teamData = EventBus.getDefault().removeStickyEvent(TeamData.class);
         DatabaseHandler.getInstance(this).addTeamData(teamData);
     }
 
@@ -76,7 +76,6 @@ public class MatchActivity extends FragmentActivity {
             numberTotesStackedAuto = Integer.parseInt(inputNumberTotesStackedAuto.getText().toString());
         }
         //auto add to teamdata
-
         teamData.setTeamNumber(teamData.getTeamNumbertemp());
         teamData.setMatchNumber(teamData.getMatchNumbertemp());
         teamData.setAlliance(teamData.getAlliancetemp());
