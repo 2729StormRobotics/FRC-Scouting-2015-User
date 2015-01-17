@@ -37,7 +37,7 @@ public class qr extends ActionBarActivity {
     }
 
 
-    public void returnToMain(View view){
+    public void returnToMain(){
         new AlertDialog.Builder(this)
                 .setTitle("Return to Main Screen")
                 .setMessage("Are you sure you want to exit?")
@@ -56,5 +56,25 @@ public class qr extends ActionBarActivity {
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
                     }
+
+    public void deleteAndExit(View view){
+        new AlertDialog.Builder(this)
+                .setTitle("Save Data")
+                .setMessage("Are you sure you want to save and exit?")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        DatabaseHandler.getInstance(getApplicationContext()).clearTable();
+                        returnToMain();
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // do nothing
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+    }
+
     }
 
