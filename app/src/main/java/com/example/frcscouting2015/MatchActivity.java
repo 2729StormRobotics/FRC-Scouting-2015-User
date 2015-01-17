@@ -46,11 +46,11 @@ public class MatchActivity extends FragmentActivity {
 
         // Set the ViewPagerAdapter into ViewPager
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
-        teamData = (TeamData) EventBus.getDefault().removeStickyEvent(TeamData.class);
+        teamData = new TeamData();
+        DatabaseHandler.getInstance(this).addTeamData(teamData);
     }
 
     public void addToDatabase() {
-
 
         inputRobotAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_robot_checkbox);
         inputToteAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_tote_checkbox);

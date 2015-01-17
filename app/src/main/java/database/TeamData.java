@@ -17,22 +17,22 @@ public class TeamData {
     boolean assisted_totes_auto = false;
     int number_totes_stacked_auto = 0;
 
-    int toteLevel1;
-    int toteLevel2;
-    int toteLevel3;
-    int toteLevel4;
-    int toteLevel5;
-    int toteLevel6;
+    int toteLevel1 = 0;
+    int toteLevel2 = 0;
+    int toteLevel3 = 0;
+    int toteLevel4 = 0;
+    int toteLevel5 = 0;
+    int toteLevel6 = 0;
 
-    int canLevel1;
-    int canLevel2;
-    int canLevel3;
-    int canLevel4;
-    int canLevel5;
-    int canLevel6;
+    int canLevel1 = 0;
+    int canLevel2 = 0;
+    int canLevel3 = 0;
+    int canLevel4 = 0;
+    int canLevel5 = 0;
+    int canLevel6 = 0;
 
-    int noodle;
-    int coop;
+    int noodle = 0;
+    int coop = 0;
 
 
     // Empty constructor
@@ -55,7 +55,7 @@ public class TeamData {
     }*/
 
     // constructor
-    public TeamData(int team_number, int match_number, boolean alliance_red, boolean robot_auto, boolean tote_auto,
+ /*   public TeamData(int team_number, int match_number, boolean alliance_red, boolean robot_auto, boolean tote_auto,
                     int number_totes_auto, boolean container_auto, int number_containers_auto, boolean assisted_totes_auto,
                     int number_totes_stacked_auto, int tote_level1, int tote_level2, int tote_level3,
                     int tote_level4, int tote_level5, int tote_level6, int can_level1, int can_level2,
@@ -90,7 +90,7 @@ public class TeamData {
         this.coop = coop;
         
         
-    }
+    }*/
 
     // getting team number
     public int getTeamNumber(){
