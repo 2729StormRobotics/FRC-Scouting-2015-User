@@ -256,7 +256,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public boolean checkIfEmpty(){
         SQLiteDatabase db = this.getWritableDatabase();
-        String count = "SELECT count(*) FROM table";
+        String count = "SELECT count(*) FROM " + TABLE_TEAM;
         Cursor mcursor = db.rawQuery(count, null);
         mcursor.moveToFirst();
         int icount = mcursor.getInt(0);
