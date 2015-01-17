@@ -31,8 +31,8 @@ public class qr extends ActionBarActivity {
         //bmp.setHeight(500);
         //bmp.setWidth(500);
         ImageView myImage = (ImageView) findViewById(R.id.imageView);
-        myImage.setMinimumHeight(500);
-        myImage.setMinimumWidth(500);
+        myImage.setMinimumHeight(470);
+        myImage.setMinimumWidth(470);
         myImage.setImageBitmap(bmp);
     }
 
