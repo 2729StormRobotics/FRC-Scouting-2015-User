@@ -23,7 +23,11 @@ public class qr extends ActionBarActivity {
         setContentView(R.layout.activity_qr);
         output = (String) EventBus.getDefault().removeStickyEvent(String.class);
         Bitmap bmp = QRCode.from(output).bitmap();
+        //bmp.setHeight(500);
+        //bmp.setWidth(500);
         ImageView myImage = (ImageView) findViewById(R.id.imageView);
+        myImage.setMinimumHeight(500);
+        myImage.setMinimumWidth(500);
         myImage.setImageBitmap(bmp);
     }
 
