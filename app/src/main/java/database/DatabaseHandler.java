@@ -14,7 +14,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // All Static variables
     private static DatabaseHandler sInstance = null;
     // Database Version
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 5;
 
     // Database Name
     private static final String DATABASE_NAME = "Team_Manager";
@@ -36,7 +36,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_NUMBER_CONTAINERS_AUTO = "number_containers_auto";
     private static final String KEY_ASSISTED_TOTES_AUTO = "assisted_totes_auto";
     private static final String KEY_NUMBER_TOTES_STACKED_AUTO = "number_totes_stacked_auto";
-    //TODO telop
+    //telop
 
 
     private static  final String KEY_TOTE_LEVEL1 = "tote_level1";
@@ -88,20 +88,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + KEY_CONTAINER_AUTO + " INTEGER,"
                 + KEY_NUMBER_CONTAINERS_AUTO + " INTEGER,"
                 + KEY_ASSISTED_TOTES_AUTO + " INTEGER,"
-                + KEY_NUMBER_TOTES_STACKED_AUTO + " INTEGER"
-                + KEY_TOTE_LEVEL1 + " INTEGER"
-                + KEY_TOTE_LEVEL2 + " INTEGER"
-                + KEY_TOTE_LEVEL3 + " INTEGER"
-                + KEY_TOTE_LEVEL4 + " INTEGER"
-                + KEY_TOTE_LEVEL5 + " INTEGER"
-                + KEY_TOTE_LEVEL6 + " INTEGER"
-                + KEY_CAN_LEVEL1 + " INTEGER"
-                + KEY_CAN_LEVEL2 + " INTEGER"
-                + KEY_CAN_LEVEL3 + " INTEGER"
-                + KEY_CAN_LEVEL4 + " INTEGER"
-                + KEY_CAN_LEVEL5 + " INTEGER"
-                + KEY_CAN_LEVEL6 + " INTEGER"
-                + KEY_NOODLE + " INTEGER"
+                + KEY_NUMBER_TOTES_STACKED_AUTO + " INTEGER,"
+                + KEY_TOTE_LEVEL1 + " INTEGER,"
+                + KEY_TOTE_LEVEL2 + " INTEGER,"
+                + KEY_TOTE_LEVEL3 + " INTEGER,"
+                + KEY_TOTE_LEVEL4 + " INTEGER,"
+                + KEY_TOTE_LEVEL5 + " INTEGER,"
+                + KEY_TOTE_LEVEL6 + " INTEGER,"
+                + KEY_CAN_LEVEL1 + " INTEGER,"
+                + KEY_CAN_LEVEL2 + " INTEGER,"
+                + KEY_CAN_LEVEL3 + " INTEGER,"
+                + KEY_CAN_LEVEL4 + " INTEGER,"
+                + KEY_CAN_LEVEL5 + " INTEGER,"
+                + KEY_CAN_LEVEL6 + " INTEGER,"
+                + KEY_NOODLE + " INTEGER,"
                 + KEY_COOP + " INTEGER"
                 + ")";
         db.execSQL(CREATE_TEAM);
@@ -156,7 +156,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void addTeamData(TeamData teamData) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = addValues(teamData);
-        //TODO teleop
 
         // Inserting Row
         db.insert(TABLE_TEAM, null, values);

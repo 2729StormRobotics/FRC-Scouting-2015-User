@@ -9,14 +9,20 @@ import android.widget.ImageView;
 
 import net.glxn.qrgen.android.QRCode;
 
+import database.TeamData;
+import de.greenrobot.event.EventBus;
+
 
 public class qr extends ActionBarActivity {
+
+    private String output;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr);
-        Bitmap bmp = QRCode.from("Tim Gordon Is Bad").bitmap();
+        output = (String) EventBus.getDefault().removeStickyEvent(String.class);
+        Bitmap bmp = QRCode.from(output).bitmap();
         ImageView myImage = (ImageView) findViewById(R.id.imageView);
         myImage.setImageBitmap(bmp);
     }

@@ -7,10 +7,13 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.List;
 
 import adapter.ViewPagerAdapter;
 import database.DatabaseHandler;
@@ -177,11 +180,27 @@ public class MatchActivity extends FragmentActivity {
 
     }
 
-    public void makeString(View view){
-
+    public String makeString(){
+        List<TeamData> teamData2 = DatabaseHandler.getInstance(this).getAllTeamData();
+        String output = "";
+            for (TeamData cn : teamData2) {
+                String log = cn.getTeamNumber() + "," +
+                        cn.getMatchNumber() + "," + cn.getAlliance() + "," +
+                        cn.getRobotAuto() + "," + cn.getToteAuto() + "," + cn.getNumberTotesAuto() + ","
+                         + cn.getContainerAuto() + "," + cn.getNumberContainersAuto() + "," + cn.getAssistedTotesAuto() + ","
+                        + cn.getNumberStackedTotesAuto() + "," + cn.getToteLevel1() + "," + cn.getToteLevel2() + ","
+                        + cn.getToteLevel3() + "," +  cn.getToteLevel4() + "," + cn.getToteLevel5() + ","
+                        + cn.getToteLevel6() + "," + cn.getCanLevel1() + "," + cn.getCanLevel2() + "," + cn.getCanLevel3() + "," +
+                        cn.getCanLevel4() + "," + cn.getCanLevel5() + "," + cn.getCanLevel6() + "," +
+                        cn.getNoodle() + "," + cn.getCoop();
+                output = output + ":" + log;
+            }
+        return output;
     }
 
     public void startQR(View view){
+        String output = makeString();
+        EventBus.getDefault().postSticky(output);
         Intent i = new Intent(getApplicationContext(),qr.class);
         startActivity(i);
     }
