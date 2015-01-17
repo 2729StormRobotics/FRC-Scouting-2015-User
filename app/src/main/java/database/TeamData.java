@@ -36,8 +36,10 @@ public class TeamData {
 
 
     // Empty constructor
-    public TeamData(){
-
+    public TeamData(int team_number, int match_number, boolean alliance_red){
+        this.team_number = team_number;
+        this.match_number = match_number;
+        this.alliance_red = alliance_red;
     }
 
 

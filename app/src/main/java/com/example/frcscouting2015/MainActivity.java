@@ -125,7 +125,8 @@ public class MainActivity extends Activity {
              * */
 
             // Inserting Team Data
-
+            TeamData teamData = new TeamData(Integer.parseInt(teamNum), Integer.parseInt(matchNum),
+                    isRed);
             //List<TeamData> teamData2 = DatabaseHandler.getInstance(this).getAllTeamData();
             /*for (TeamData cn : teamData2) {
                 String log = "Id: "+cn.getID()+" ,Name: " + cn.getTeamNumber() + " ,match: " +
@@ -134,6 +135,7 @@ public class MainActivity extends Activity {
                 // Writing Contacts to log
                 Log.d("Name: ", log);
             }*/
+            EventBus.getDefault().postSticky(teamData);
             startActivity(intent);
 
         } else {
