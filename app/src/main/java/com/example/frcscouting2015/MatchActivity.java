@@ -7,7 +7,6 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -76,9 +75,6 @@ public class MatchActivity extends FragmentActivity {
             numberTotesStackedAuto = Integer.parseInt(inputNumberTotesStackedAuto.getText().toString());
         }
         //auto add to teamdata
-        teamData.setTeamNumber(teamData.getTeamNumbertemp());
-        teamData.setMatchNumber(teamData.getMatchNumbertemp());
-        teamData.setAlliance(teamData.getAlliancetemp());
         teamData.setRobotAuto(robotAuto);
         teamData.setToteAuto(toteAuto);
         teamData.setNumberTotesAuto(numberTotesAuto);

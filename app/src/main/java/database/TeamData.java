@@ -1,7 +1,5 @@
 package database;
 
-import java.util.ArrayList;
-
 public class TeamData {
 
     //private variables
@@ -16,10 +14,6 @@ public class TeamData {
     int number_containers_auto = 0;
     boolean assisted_totes_auto = false;
     int number_totes_stacked_auto = 0;
-
-    int teamNumbertemp = 0;
-    int matchNumbertemp = 0;
-    boolean alliancetemp = false;
 
 
     int toteLevel1 = 0;
@@ -41,9 +35,9 @@ public class TeamData {
 
 
     public TeamData(int team_number, int match_number, boolean alliance_red){
-        this.teamNumbertemp = team_number;
-        this.matchNumbertemp = match_number;
-        this.alliancetemp = alliance_red;
+        this.team_number = team_number;
+        this.match_number = match_number;
+        this.alliance_red = alliance_red;
     }
 
     public TeamData(){
@@ -294,17 +288,5 @@ public class TeamData {
 
     public void setCoop(int coop) {
         this.coop = coop;
-    }
-
-    public boolean getAlliancetemp() {
-        return alliancetemp;
-    }
-
-    public int getTeamNumbertemp() {
-        return teamNumbertemp;
-    }
-
-    public int getMatchNumbertemp() {
-        return matchNumbertemp;
     }
 }
