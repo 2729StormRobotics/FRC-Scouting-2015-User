@@ -52,14 +52,6 @@ public class MatchActivity extends FragmentActivity {
     public void addToDatabase(){
 
 
-        new AlertDialog.Builder(this)
-                .setTitle("Save Data")
-                .setMessage("Are you sure you this info is correct?")
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // continue with add
-                        //Auto input
-
                         inputRobotAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_robot_checkbox);
                         inputToteAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_tote_checkbox);
                         inputNumberTotesAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_tote_number);
@@ -94,18 +86,8 @@ public class MatchActivity extends FragmentActivity {
                         //updates database
                         DatabaseHandler.getInstance(getApplicationContext()).updateTeamData(teamData);
                         Toast.makeText(getApplicationContext(), "Data Saved.", Toast.LENGTH_SHORT).show();
-                        //Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                        //startActivity(intent);
                     }
-                })
-                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // do nothing
-                    }
-                })
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .show();
-    }
+
 
     public void addStack(View view){
         CheckBox toteLevel1 = (CheckBox) findViewById(R.id.tote_level1);
@@ -211,13 +193,60 @@ public class MatchActivity extends FragmentActivity {
     }
 
     public void saveAndExit(View view){
-        addToDatabase();
-        returnToMain();
-
-    }
+        new AlertDialog.Builder(this)
+                .setTitle("Save Data")
+                .setMessage("Are you sure you want to save and exit?")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        addToDatabase();
+                        returnToMain();
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // do nothing
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+            }
 
     public void saveAndStartQR(View view){
-        addToDatabase();
-        startQR();
+        new AlertDialog.Builder(this)
+                .setTitle("Save Data")
+                .setMessage("Are you sure you want to save and exit?")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        addToDatabase();
+                        startQR();
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // do nothing
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
-}
+
+    public void deleteAndExit(View view){
+        new AlertDialog.Builder(this)
+                .setTitle("Save Data")
+                .setMessage("Are you sure you want to save and exit?")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        DatabaseHandler.getInstance(getApplicationContext()).clearTable();
+                        returnToMain();
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // do nothing
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+    }
+    }
+
