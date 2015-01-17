@@ -37,7 +37,8 @@
         android:nestedScrollingEnabled="true"
         android:layout_above="@+id/can_level5"
         android:layout_alignLeft="@+id/tv_can"
-        android:layout_alignStart="@+id/tv_can" />
+        android:layout_alignStart="@+id/tv_can"
+        android:background="@android:color/background_light" />
 
     <CheckBox
         android:layout_width="wrap_content"
