@@ -136,7 +136,7 @@ public class MainActivity extends Activity {
                 Log.d("Name: ", log);
             }*/
             EventBus.getDefault().postSticky(teamData);
-            startActivity(intent);
+            startActivityForResult(intent, 0);
 
         } else {
             Toast.makeText(this, "Please enter all the team's information.", Toast.LENGTH_SHORT).show();

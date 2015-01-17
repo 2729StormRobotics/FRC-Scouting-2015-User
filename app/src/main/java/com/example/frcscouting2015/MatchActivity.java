@@ -46,7 +46,7 @@ public class MatchActivity extends FragmentActivity {
 
         // Set the ViewPagerAdapter into ViewPager
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
-        teamData = EventBus.getDefault().removeStickyEvent(TeamData.class);
+        teamData = (TeamData)EventBus.getDefault().removeStickyEvent(TeamData.class);
         DatabaseHandler.getInstance(this).addTeamData(teamData);
     }
 
@@ -228,7 +228,7 @@ public class MatchActivity extends FragmentActivity {
     public void saveAndStartQR(View view) {
         new AlertDialog.Builder(this)
                 .setTitle("Save Data")
-                .setMessage("Are you sure you want to save and exit?")
+                .setMessage("Are you sure you want to save and generate a qr code?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         addToDatabase();
