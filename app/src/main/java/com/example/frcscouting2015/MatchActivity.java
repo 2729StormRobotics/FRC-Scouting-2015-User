@@ -7,6 +7,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -46,6 +47,8 @@ public class MatchActivity extends FragmentActivity {
         // Set the ViewPagerAdapter into ViewPager
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
         teamData = (TeamData)EventBus.getDefault().removeStickyEvent(TeamData.class);
+        String log = "" + teamData.getTeamNumber();
+        Log.d("k", log);
         DatabaseHandler.getInstance(this).addTeamData(teamData);
     }
 
