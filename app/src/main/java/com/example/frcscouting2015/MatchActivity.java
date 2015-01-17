@@ -77,7 +77,9 @@ public class MatchActivity extends FragmentActivity {
         }
         //auto add to teamdata
 
-
+        teamData.setTeamNumber(teamData.getTeamNumbertemp());
+        teamData.setMatchNumber(teamData.getMatchNumbertemp());
+        teamData.setAlliance(teamData.getAlliancetemp());
         teamData.setRobotAuto(robotAuto);
         teamData.setToteAuto(toteAuto);
         teamData.setNumberTotesAuto(numberTotesAuto);
