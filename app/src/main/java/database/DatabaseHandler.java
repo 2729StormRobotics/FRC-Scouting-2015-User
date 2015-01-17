@@ -30,11 +30,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_ALLIANCE = "alliance";
     //auto
     private static final String KEY_ROBOT_AUTO = "robot_auto";
-    private static final String KEY_TOTE_AUTO = "tote_auto";
+   // private static final String KEY_TOTE_AUTO = "tote_auto";
     private static final String KEY_NUMBER_TOTES_AUTO = "number_totes_auto";
-    private static final String KEY_CONTAINER_AUTO = "container_auto";
+  //  private static final String KEY_CONTAINER_AUTO = "container_auto";
     private static final String KEY_NUMBER_CONTAINERS_AUTO = "number_containers_auto";
-    private static final String KEY_ASSISTED_TOTES_AUTO = "assisted_totes_auto";
+ //   private static final String KEY_ASSISTED_TOTES_AUTO = "assisted_totes_auto";
     private static final String KEY_NUMBER_TOTES_STACKED_AUTO = "number_totes_stacked_auto";
     //telop
 
@@ -83,11 +83,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + KEY_MATCH_NUMBER + " INTEGER,"
                 + KEY_ALLIANCE + " INTEGER,"
                 + KEY_ROBOT_AUTO + " INTEGER,"
-                + KEY_TOTE_AUTO + " INTEGER,"
                 + KEY_NUMBER_TOTES_AUTO + " INTEGER,"
-                + KEY_CONTAINER_AUTO + " INTEGER,"
                 + KEY_NUMBER_CONTAINERS_AUTO + " INTEGER,"
-                + KEY_ASSISTED_TOTES_AUTO + " INTEGER,"
                 + KEY_NUMBER_TOTES_STACKED_AUTO + " INTEGER,"
                 + KEY_TOTE_LEVEL1 + " INTEGER,"
                 + KEY_TOTE_LEVEL2 + " INTEGER,"
@@ -125,11 +122,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_ALLIANCE, teamData.getAlliance());
         //auto
         values.put(KEY_ROBOT_AUTO, teamData.getRobotAuto());
-        values.put(KEY_TOTE_AUTO, teamData.getToteAuto());
         values.put(KEY_NUMBER_TOTES_AUTO, teamData.getNumberTotesAuto());
-        values.put(KEY_CONTAINER_AUTO, teamData.getContainerAuto());
         values.put(KEY_NUMBER_CONTAINERS_AUTO, teamData.getNumberContainersAuto());
-        values.put(KEY_ASSISTED_TOTES_AUTO, teamData.getAssistedTotesAuto());
         values.put(KEY_NUMBER_TOTES_STACKED_AUTO, teamData.getNumberStackedTotesAuto());
 
         //tele
@@ -171,7 +165,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             cursor.moveToFirst();
 
         TeamData teamData = new TeamData(
-                cursor.getInt(0), cursor.getInt(1), cursor.getInt(2)>0, cursor.getInt(3)>0, cursor.getInt(4)>0, cursor.getInt(5), cursor.getInt(6)>0, cursor.getInt(7), cursor.getInt(8)>0, cursor.getInt(9), cursor.getInt(10), cursor.getInt(11), cursor.getInt(12), cursor.getInt(13), cursor.getInt(14), cursor.getInt(15), cursor.getInt(16), cursor.getInt(17), cursor.getInt(18), cursor.getInt(19), cursor.getInt(20), cursor.getInt(21), cursor.getInt(22), cursor.getInt(23));
+                cursor.getInt(0), cursor.getInt(1), cursor.getInt(2)>0, cursor.getInt(3)>0, cursor.getInt(4), cursor.getInt(5), cursor.getInt(6), cursor.getInt(7), cursor.getInt(8), cursor.getInt(9), cursor.getInt(10), cursor.getInt(11), cursor.getInt(12), cursor.getInt(13), cursor.getInt(14), cursor.getInt(15), cursor.getInt(16), cursor.getInt(17), cursor.getInt(18), cursor.getInt(19), cursor.getInt(20));
         return teamData;
     }
 
@@ -218,31 +212,28 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 teamData.setAlliance(cursor.getInt(2)>0);
                 //Auto
                 teamData.setRobotAuto(cursor.getInt(3)>0);
-                teamData.setToteAuto(cursor.getInt(4)>0);
-                teamData.setNumberTotesAuto(cursor.getInt(5));
-                teamData.setContainerAuto(cursor.getInt(6) > 0);
-                teamData.setNumberContainersAuto(cursor.getInt(7));
-                teamData.setAssistedTotesAuto(cursor.getInt(8)>0);
-                teamData.setNumberStackedTotesAuto(cursor.getInt(9));
+                teamData.setNumberTotesAuto(cursor.getInt(4));
+                teamData.setNumberContainersAuto(cursor.getInt(5));
+                teamData.setNumberStackedTotesAuto(cursor.getInt(6));
 
                 //TODO Tele-op
 
-                teamData.setToteLevel1(cursor.getInt(10));
-                teamData.setToteLevel2(cursor.getInt(11));
-                teamData.setToteLevel3(cursor.getInt(12));
-                teamData.setToteLevel4(cursor.getInt(13));
-                teamData.setToteLevel5(cursor.getInt(14));
-                teamData.setToteLevel6(cursor.getInt(15));
+                teamData.setToteLevel1(cursor.getInt(7));
+                teamData.setToteLevel2(cursor.getInt(8));
+                teamData.setToteLevel3(cursor.getInt(9));
+                teamData.setToteLevel4(cursor.getInt(10));
+                teamData.setToteLevel5(cursor.getInt(11));
+                teamData.setToteLevel6(cursor.getInt(12));
 
-                teamData.setCanLevel1(cursor.getInt(16));
-                teamData.setCanLevel2(cursor.getInt(17));
-                teamData.setCanLevel3(cursor.getInt(18));
-                teamData.setCanLevel4(cursor.getInt(19));
-                teamData.setCanLevel5(cursor.getInt(20));
-                teamData.setCanLevel6(cursor.getInt(21));
+                teamData.setCanLevel1(cursor.getInt(13));
+                teamData.setCanLevel2(cursor.getInt(14));
+                teamData.setCanLevel3(cursor.getInt(15));
+                teamData.setCanLevel4(cursor.getInt(16));
+                teamData.setCanLevel5(cursor.getInt(17));
+                teamData.setCanLevel6(cursor.getInt(18));
 
-                teamData.setNoodle(cursor.getInt(22));
-                teamData.setCoop(cursor.getInt(23));
+                teamData.setNoodle(cursor.getInt(19));
+                teamData.setCoop(cursor.getInt(20));
 
 
                 // Adding contact to list

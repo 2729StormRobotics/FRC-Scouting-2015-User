@@ -8,11 +8,11 @@ public class TeamData {
     int match_number = 0;
     boolean alliance_red = false;
     boolean robot_auto = false;
-    boolean tote_auto = false;
+    //boolean tote_auto = false;
     int number_totes_auto = 0;
-    boolean container_auto = false;
+   // boolean container_auto = false;
     int number_containers_auto = 0;
-    boolean assisted_totes_auto = false;
+  //  boolean assisted_totes_auto = false;
     int number_totes_stacked_auto = 0;
 
 
@@ -46,8 +46,8 @@ public class TeamData {
 
 
 
-  public TeamData(int team_number, int match_number, boolean alliance_red, boolean robot_auto, boolean tote_auto,
-                    int number_totes_auto, boolean container_auto, int number_containers_auto, boolean assisted_totes_auto,
+  public TeamData(int team_number, int match_number, boolean alliance_red, boolean robot_auto,
+                    int number_totes_auto, int number_containers_auto,
                     int number_totes_stacked_auto, int tote_level1, int tote_level2, int tote_level3,
                     int tote_level4, int tote_level5, int tote_level6, int can_level1, int can_level2,
                     int can_level3, int can_level4, int can_level5, int can_level6, int noodle, int coop
@@ -56,11 +56,11 @@ public class TeamData {
         this.match_number = match_number;
         this.alliance_red = alliance_red;
         this.robot_auto = robot_auto;
-        this.tote_auto = tote_auto;
+        //this.tote_auto = tote_auto;
         this.number_totes_auto = number_totes_auto;
-        this.container_auto = container_auto;
+       // this.container_auto = container_auto;
         this.number_containers_auto = number_containers_auto;
-        this.assisted_totes_auto = assisted_totes_auto;
+       // this.assisted_totes_auto = assisted_totes_auto;
         this.number_totes_stacked_auto = number_totes_stacked_auto;
         
         this.toteLevel1 = tote_level1;
@@ -123,14 +123,6 @@ public class TeamData {
         this.robot_auto = robot_auto;
     }
 
-    public boolean getToteAuto(){
-        return this.tote_auto;
-    }
-
-
-    public void setToteAuto(boolean tote_auto){
-        this.tote_auto = tote_auto;
-    }
 
     public int getNumberTotesAuto(){
         return this.number_totes_auto;
@@ -141,15 +133,6 @@ public class TeamData {
         this.number_totes_auto = number_totes_auto;
     }
 
-    public boolean getContainerAuto(){
-        return this.container_auto;
-    }
-
-
-    public void setContainerAuto(boolean container_auto){
-        this.container_auto = container_auto;
-    }
-
     public int getNumberContainersAuto(){
         return this.number_containers_auto;
     }
@@ -157,15 +140,6 @@ public class TeamData {
 
     public void setNumberContainersAuto(int number_containers_auto){
         this.number_containers_auto = number_containers_auto;
-    }
-
-    public boolean getAssistedTotesAuto(){
-        return this.assisted_totes_auto;
-    }
-
-
-    public void setAssistedTotesAuto(boolean assisted_totes_auto){
-        this.assisted_totes_auto = assisted_totes_auto;
     }
 
     public int getNumberStackedTotesAuto(){

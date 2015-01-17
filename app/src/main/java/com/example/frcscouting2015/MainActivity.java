@@ -183,8 +183,8 @@ public class MainActivity extends Activity {
         for (TeamData cn : teamData2) {
             String log = cn.getTeamNumber() + "," +
                     cn.getMatchNumber() + "," + cn.getAlliance() + "," +
-                    cn.getRobotAuto() + "," + cn.getToteAuto() + "," + cn.getNumberTotesAuto() + ","
-                    + cn.getContainerAuto() + "," + cn.getNumberContainersAuto() + "," + cn.getAssistedTotesAuto() + ","
+                    cn.getRobotAuto() + "," + cn.getNumberTotesAuto() + ","
+                     + cn.getNumberContainersAuto() + ","
                     + cn.getNumberStackedTotesAuto() + "," + cn.getToteLevel1() + "," + cn.getToteLevel2() + ","
                     + cn.getToteLevel3() + "," + cn.getToteLevel4() + "," + cn.getToteLevel5() + ","
                     + cn.getToteLevel6() + "," + cn.getCanLevel1() + "," + cn.getCanLevel2() + "," + cn.getCanLevel3() + "," +

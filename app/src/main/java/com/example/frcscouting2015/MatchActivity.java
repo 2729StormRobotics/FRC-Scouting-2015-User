@@ -55,35 +55,24 @@ public class MatchActivity extends FragmentActivity {
     public void addToDatabase() {
 
         inputRobotAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_robot_checkbox);
-        inputToteAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_tote_checkbox);
         inputNumberTotesAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_tote_number);
-        inputContainerAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_container_checkbox);
         inputNumberContainersAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_container_number);
-        inputAssistedStackingAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_assisted_checkbox);
         inputNumberTotesStackedAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_totes_stacked_number);
         int numberTotesAuto = 0;
         int numberContainersAuto = 0;
         int numberTotesStackedAuto = 0;
-        boolean robotAuto = inputRobotAuto.isChecked();
-        boolean toteAuto = inputToteAuto.isChecked();
         if (inputNumberTotesAuto.length() > 0) {
             numberTotesAuto = Integer.parseInt(inputNumberTotesAuto.getText().toString());
         }
-        boolean containerAuto = inputContainerAuto.isChecked();
         if (inputNumberContainersAuto.length() > 0) {
             numberContainersAuto = Integer.parseInt(inputNumberContainersAuto.getText().toString());
         }
-        boolean assistedStackingTotesAuto = inputContainerAuto.isChecked();
         if (inputNumberTotesStackedAuto.length() > 0) {
             numberTotesStackedAuto = Integer.parseInt(inputNumberTotesStackedAuto.getText().toString());
         }
         //auto add to teamdata
-        teamData.setRobotAuto(robotAuto);
-        teamData.setToteAuto(toteAuto);
         teamData.setNumberTotesAuto(numberTotesAuto);
-        teamData.setContainerAuto(containerAuto);
         teamData.setNumberContainersAuto(numberContainersAuto);
-        teamData.setAssistedTotesAuto(assistedStackingTotesAuto);
         teamData.setNumberStackedTotesAuto(numberTotesStackedAuto);
         //updates database
         DatabaseHandler.getInstance(this).addTeamData(teamData);
@@ -178,8 +167,8 @@ public class MatchActivity extends FragmentActivity {
         for (TeamData cn : teamData2) {
             String log = cn.getTeamNumber() + "," +
                     cn.getMatchNumber() + "," + cn.getAlliance() + "," +
-                    cn.getRobotAuto() + "," + cn.getToteAuto() + "," + cn.getNumberTotesAuto() + ","
-                    + cn.getContainerAuto() + "," + cn.getNumberContainersAuto() + "," + cn.getAssistedTotesAuto() + ","
+                    cn.getRobotAuto() + "," + cn.getNumberTotesAuto() + ","
+                    + cn.getNumberContainersAuto() + ","
                     + cn.getNumberStackedTotesAuto() + "," + cn.getToteLevel1() + "," + cn.getToteLevel2() + ","
                     + cn.getToteLevel3() + "," + cn.getToteLevel4() + "," + cn.getToteLevel5() + ","
                     + cn.getToteLevel6() + "," + cn.getCanLevel1() + "," + cn.getCanLevel2() + "," + cn.getCanLevel3() + "," +
@@ -229,7 +218,7 @@ public class MatchActivity extends FragmentActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         addToDatabase();
                         startQR();
-                    }
+                                            }
                 })
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
