@@ -193,7 +193,7 @@ public class MatchActivity extends FragmentActivity {
                         + cn.getToteLevel6() + "," + cn.getCanLevel1() + "," + cn.getCanLevel2() + "," + cn.getCanLevel3() + "," +
                         cn.getCanLevel4() + "," + cn.getCanLevel5() + "," + cn.getCanLevel6() + "," +
                         cn.getNoodle() + "," + cn.getCoop();
-                output = output + ":" + log;
+                output = output + log + ":";
             }
         return output;
     }
