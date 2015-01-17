@@ -4,17 +4,14 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.ImageView;
 
 import net.glxn.qrgen.android.QRCode;
 
 import database.DatabaseHandler;
-import database.TeamData;
 import de.greenrobot.event.EventBus;
 
 
@@ -46,12 +43,11 @@ public class qr extends ActionBarActivity {
     public void deleteAndExit(View view) {
         new AlertDialog.Builder(this)
                 .setTitle("Save Data")
-                .setMessage("Are you sure you want to save and exit?")
+                .setMessage("Are you sure you want to exit?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         DatabaseHandler.getInstance(getApplicationContext()).clearTable();
                         returnToMain();
-                        finish();
                     }
                 })
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {

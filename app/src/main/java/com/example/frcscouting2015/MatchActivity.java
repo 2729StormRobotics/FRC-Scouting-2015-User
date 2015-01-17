@@ -49,7 +49,7 @@ public class MatchActivity extends FragmentActivity {
         teamData = (TeamData)EventBus.getDefault().removeStickyEvent(TeamData.class);
         String log = "" + teamData.getTeamNumber();
         Log.d("k", log);
-        DatabaseHandler.getInstance(this).addTeamData(teamData);
+
     }
 
     public void addToDatabase() {
@@ -86,7 +86,7 @@ public class MatchActivity extends FragmentActivity {
         teamData.setAssistedTotesAuto(assistedStackingTotesAuto);
         teamData.setNumberStackedTotesAuto(numberTotesStackedAuto);
         //updates database
-        DatabaseHandler.getInstance(getApplicationContext()).updateTeamData(teamData);
+        DatabaseHandler.getInstance(this).addTeamData(teamData);
         Toast.makeText(getApplicationContext(), "Data Saved.", Toast.LENGTH_SHORT).show();
     }
 
@@ -153,9 +153,6 @@ public class MatchActivity extends FragmentActivity {
             coop.setEnabled(false);
             teamData.setCoop(1);
         }
-
-
-        DatabaseHandler.getInstance(this).updateTeamData(teamData);
 
         toteLevel1.setChecked(false);
         toteLevel2.setChecked(false);
