@@ -254,5 +254,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return teamDataList;
     }
 
+    public boolean checkIfEmpty(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String count = "SELECT count(*) FROM table";
+        Cursor mcursor = db.rawQuery(count, null);
+        mcursor.moveToFirst();
+        int icount = mcursor.getInt(0);
+        if(icount>0){
+            return false;
+        }
+        return true;
+    }
+
 
 }

@@ -47,49 +47,49 @@ public class MatchActivity extends FragmentActivity {
         // Set the ViewPagerAdapter into ViewPager
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
         teamData = (TeamData) EventBus.getDefault().removeStickyEvent(TeamData.class);
-         }
+    }
 
-    public void addToDatabase(){
-
-
-                        inputRobotAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_robot_checkbox);
-                        inputToteAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_tote_checkbox);
-                        inputNumberTotesAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_tote_number);
-                        inputContainerAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_container_checkbox);
-                        inputNumberContainersAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_container_number);
-                        inputAssistedStackingAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_assisted_checkbox);
-                        inputNumberTotesStackedAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_totes_stacked_number);
-                        int numberTotesAuto = 0;
-                        int numberContainersAuto = 0;
-                        int numberTotesStackedAuto = 0;
-                        boolean robotAuto = inputRobotAuto.isChecked();
-                        boolean toteAuto = inputToteAuto.isChecked();
-                        if(inputNumberTotesAuto.length() > 0){
-                            numberTotesAuto = Integer.parseInt(inputNumberTotesAuto.getText().toString());
-                        }
-                        boolean containerAuto = inputContainerAuto.isChecked();
-                        if(inputNumberContainersAuto.length() > 0){
-                            numberContainersAuto = Integer.parseInt(inputNumberContainersAuto.getText().toString());
-                        }
-                        boolean assistedStackingTotesAuto = inputContainerAuto.isChecked();
-                        if(inputNumberTotesStackedAuto.length() > 0){
-                            numberTotesStackedAuto = Integer.parseInt(inputNumberTotesStackedAuto.getText().toString());
-                        }
-                        //auto add to teamdata
-                        teamData.setRobotAuto(robotAuto);
-                        teamData.setToteAuto(toteAuto);
-                        teamData.setNumberTotesAuto(numberTotesAuto);
-                        teamData.setContainerAuto(containerAuto);
-                        teamData.setNumberContainersAuto(numberContainersAuto);
-                        teamData.setAssistedTotesAuto(assistedStackingTotesAuto);
-                        teamData.setNumberStackedTotesAuto(numberTotesStackedAuto);
-                        //updates database
-                        DatabaseHandler.getInstance(getApplicationContext()).updateTeamData(teamData);
-                        Toast.makeText(getApplicationContext(), "Data Saved.", Toast.LENGTH_SHORT).show();
-                    }
+    public void addToDatabase() {
 
 
-    public void addStack(View view){
+        inputRobotAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_robot_checkbox);
+        inputToteAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_tote_checkbox);
+        inputNumberTotesAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_tote_number);
+        inputContainerAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_container_checkbox);
+        inputNumberContainersAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_container_number);
+        inputAssistedStackingAuto = (CheckBox) AutoFragment.view.findViewById(R.id.auto_assisted_checkbox);
+        inputNumberTotesStackedAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_totes_stacked_number);
+        int numberTotesAuto = 0;
+        int numberContainersAuto = 0;
+        int numberTotesStackedAuto = 0;
+        boolean robotAuto = inputRobotAuto.isChecked();
+        boolean toteAuto = inputToteAuto.isChecked();
+        if (inputNumberTotesAuto.length() > 0) {
+            numberTotesAuto = Integer.parseInt(inputNumberTotesAuto.getText().toString());
+        }
+        boolean containerAuto = inputContainerAuto.isChecked();
+        if (inputNumberContainersAuto.length() > 0) {
+            numberContainersAuto = Integer.parseInt(inputNumberContainersAuto.getText().toString());
+        }
+        boolean assistedStackingTotesAuto = inputContainerAuto.isChecked();
+        if (inputNumberTotesStackedAuto.length() > 0) {
+            numberTotesStackedAuto = Integer.parseInt(inputNumberTotesStackedAuto.getText().toString());
+        }
+        //auto add to teamdata
+        teamData.setRobotAuto(robotAuto);
+        teamData.setToteAuto(toteAuto);
+        teamData.setNumberTotesAuto(numberTotesAuto);
+        teamData.setContainerAuto(containerAuto);
+        teamData.setNumberContainersAuto(numberContainersAuto);
+        teamData.setAssistedTotesAuto(assistedStackingTotesAuto);
+        teamData.setNumberStackedTotesAuto(numberTotesStackedAuto);
+        //updates database
+        DatabaseHandler.getInstance(getApplicationContext()).updateTeamData(teamData);
+        Toast.makeText(getApplicationContext(), "Data Saved.", Toast.LENGTH_SHORT).show();
+    }
+
+
+    public void addStack(View view) {
         CheckBox toteLevel1 = (CheckBox) findViewById(R.id.tote_level1);
         CheckBox toteLevel2 = (CheckBox) findViewById(R.id.tote_level2);
         CheckBox toteLevel3 = (CheckBox) findViewById(R.id.tote_level3);
@@ -107,39 +107,50 @@ public class MatchActivity extends FragmentActivity {
         CheckBox noodle = (CheckBox) findViewById(R.id.noodle);
         CheckBox coop = (CheckBox) findViewById(R.id.coop);
 
-        if(toteLevel1.isChecked()){
+        if (toteLevel1.isChecked()) {
             teamData.setToteLevel1(teamData.getToteLevel1() + 1);
-        }if(toteLevel2.isChecked()){
+        }
+        if (toteLevel2.isChecked()) {
             teamData.setToteLevel2(teamData.getToteLevel2() + 1);
-        }if(toteLevel3.isChecked()){
+        }
+        if (toteLevel3.isChecked()) {
             teamData.setToteLevel3(teamData.getToteLevel3() + 1);
-        }if(toteLevel4.isChecked()){
+        }
+        if (toteLevel4.isChecked()) {
             teamData.setToteLevel4(teamData.getToteLevel4() + 1);
-        }if(toteLevel5.isChecked()){
+        }
+        if (toteLevel5.isChecked()) {
             teamData.setToteLevel5(teamData.getToteLevel5() + 1);
-        }if(toteLevel6.isChecked()){
+        }
+        if (toteLevel6.isChecked()) {
             teamData.setToteLevel6(teamData.getToteLevel6() + 1);
         }
 
-        if(canLevel1.isChecked()){
+        if (canLevel1.isChecked()) {
             teamData.setCanLevel1(teamData.getCanLevel1() + 1);
-        }if(canLevel2.isChecked()){
+        }
+        if (canLevel2.isChecked()) {
             teamData.setCanLevel2(teamData.getCanLevel2() + 1);
-        }if(canLevel3.isChecked()){
+        }
+        if (canLevel3.isChecked()) {
             teamData.setCanLevel3(teamData.getCanLevel3() + 1);
-        }if(canLevel4.isChecked()){
+        }
+        if (canLevel4.isChecked()) {
             teamData.setCanLevel4(teamData.getCanLevel4() + 1);
-        }if(canLevel5.isChecked()){
+        }
+        if (canLevel5.isChecked()) {
             teamData.setCanLevel5(teamData.getCanLevel5() + 1);
-        }if(canLevel6.isChecked()){
+        }
+        if (canLevel6.isChecked()) {
             teamData.setCanLevel6(teamData.getCanLevel6() + 1);
-        }if(noodle.isChecked()){
+        }
+        if (noodle.isChecked()) {
             teamData.setNoodle(teamData.getNoodle() + 1);
-        }if(coop.isChecked()){
+        }
+        if (coop.isChecked()) {
             coop.setEnabled(false);
             teamData.setCoop(1);
         }
-
 
 
         DatabaseHandler.getInstance(this).updateTeamData(teamData);
@@ -162,28 +173,28 @@ public class MatchActivity extends FragmentActivity {
 
     }
 
-    public String makeString(){
+    public String makeString() {
         List<TeamData> teamData2 = DatabaseHandler.getInstance(this).getAllTeamData();
         String output = "";
-            for (TeamData cn : teamData2) {
-                String log = cn.getTeamNumber() + "," +
-                        cn.getMatchNumber() + "," + cn.getAlliance() + "," +
-                        cn.getRobotAuto() + "," + cn.getToteAuto() + "," + cn.getNumberTotesAuto() + ","
-                         + cn.getContainerAuto() + "," + cn.getNumberContainersAuto() + "," + cn.getAssistedTotesAuto() + ","
-                        + cn.getNumberStackedTotesAuto() + "," + cn.getToteLevel1() + "," + cn.getToteLevel2() + ","
-                        + cn.getToteLevel3() + "," +  cn.getToteLevel4() + "," + cn.getToteLevel5() + ","
-                        + cn.getToteLevel6() + "," + cn.getCanLevel1() + "," + cn.getCanLevel2() + "," + cn.getCanLevel3() + "," +
-                        cn.getCanLevel4() + "," + cn.getCanLevel5() + "," + cn.getCanLevel6() + "," +
-                        cn.getNoodle() + "," + cn.getCoop();
-                output = output + log + ":";
-            }
+        for (TeamData cn : teamData2) {
+            String log = cn.getTeamNumber() + "," +
+                    cn.getMatchNumber() + "," + cn.getAlliance() + "," +
+                    cn.getRobotAuto() + "," + cn.getToteAuto() + "," + cn.getNumberTotesAuto() + ","
+                    + cn.getContainerAuto() + "," + cn.getNumberContainersAuto() + "," + cn.getAssistedTotesAuto() + ","
+                    + cn.getNumberStackedTotesAuto() + "," + cn.getToteLevel1() + "," + cn.getToteLevel2() + ","
+                    + cn.getToteLevel3() + "," + cn.getToteLevel4() + "," + cn.getToteLevel5() + ","
+                    + cn.getToteLevel6() + "," + cn.getCanLevel1() + "," + cn.getCanLevel2() + "," + cn.getCanLevel3() + "," +
+                    cn.getCanLevel4() + "," + cn.getCanLevel5() + "," + cn.getCanLevel6() + "," +
+                    cn.getNoodle() + "," + cn.getCoop();
+            output = output + log + ":";
+        }
         return output;
     }
 
-    public void startQR(){
+    public void startQR() {
         String output = makeString();
         EventBus.getDefault().postSticky(output);
-        Intent i = new Intent(getApplicationContext(),qr.class);
+        Intent i = new Intent(getApplicationContext(), qr.class);
         startActivity(i);
     }
 
@@ -192,7 +203,7 @@ public class MatchActivity extends FragmentActivity {
         startActivity(intent);
     }
 
-    public void saveAndExit(View view){
+    public void saveAndExit(View view) {
         new AlertDialog.Builder(this)
                 .setTitle("Save Data")
                 .setMessage("Are you sure you want to save and exit?")
@@ -209,9 +220,9 @@ public class MatchActivity extends FragmentActivity {
                 })
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
-            }
+    }
 
-    public void saveAndStartQR(View view){
+    public void saveAndStartQR(View view) {
         new AlertDialog.Builder(this)
                 .setTitle("Save Data")
                 .setMessage("Are you sure you want to save and exit?")
@@ -230,5 +241,5 @@ public class MatchActivity extends FragmentActivity {
                 .show();
     }
 
-    }
+}
 

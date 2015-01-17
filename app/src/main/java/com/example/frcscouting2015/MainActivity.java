@@ -24,24 +24,24 @@ import de.greenrobot.event.EventBus;
 
 public class MainActivity extends Activity {
 
-	public static RadioButton btnRed, btnBlue;
+    public static RadioButton btnRed, btnBlue;
 
-	//////////IMPLEMENTED METHODS//////////
+    //////////IMPLEMENTED METHODS//////////
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        
+
         btnRed = (RadioButton) findViewById(R.id.btn_red);
         btnBlue = (RadioButton) findViewById(R.id.btn_blue);
 
         btnRed.setButtonDrawable(R.drawable.chkbox_off);
         btnBlue.setButtonDrawable(R.drawable.chkbox_off);
 
-        btnRed.setOnCheckedChangeListener(new OnCheckedChangeListener(){
+        btnRed.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
             public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
-                if(btnRed.isChecked())
+                if (btnRed.isChecked())
                     btnRed.setBackgroundResource(R.drawable.high_rzone_border);
                 else
                     btnRed.setBackgroundResource(R.drawable.trans_rzone_border);
@@ -50,10 +50,10 @@ public class MainActivity extends Activity {
 
         });
 
-        btnBlue.setOnCheckedChangeListener(new OnCheckedChangeListener(){
+        btnBlue.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
             public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
-                if(btnBlue.isChecked())
+                if (btnBlue.isChecked())
                     btnBlue.setBackgroundResource(R.drawable.high_bzone_border);
                 else
                     btnBlue.setBackgroundResource(R.drawable.trans_bzone_border);
@@ -65,66 +65,68 @@ public class MainActivity extends Activity {
         new TeamNumbers(this);
         DatabaseHandler db = DatabaseHandler.getInstance(this);
     }
+
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-    
+
     //////////UTILITY METHODS//////////
-    
+
     //checks if all data was entered
     public boolean dataEntered() {
-    	EditText txtmatch = (EditText) this.findViewById(R.id.te_match_num);
-		EditText txtteam = (EditText) this.findViewById(R.id.te_team_num);
-		RadioButton btnBlue = (RadioButton) this.findViewById(R.id.btn_blue);
-		RadioButton btnRed = (RadioButton) this.findViewById(R.id.btn_red);
+        EditText txtmatch = (EditText) this.findViewById(R.id.te_match_num);
+        EditText txtteam = (EditText) this.findViewById(R.id.te_team_num);
+        RadioButton btnBlue = (RadioButton) this.findViewById(R.id.btn_blue);
+        RadioButton btnRed = (RadioButton) this.findViewById(R.id.btn_red);
 
-		
-		if(!txtmatch.getText().toString().matches("") && !txtteam.getText().toString().matches("")
-			&& (btnBlue.isChecked() || btnRed.isChecked())){
-			return true;
-		}return false;
+
+        if (!txtmatch.getText().toString().matches("") && !txtteam.getText().toString().matches("")
+                && (btnBlue.isChecked() || btnRed.isChecked())) {
+            return true;
+        }
+        return false;
     }
 
     //starts match, sends user to match activity
     public void startMatch(View view) {
-    	if(this.dataEntered()){
+        if (this.dataEntered()) {
 
-			Intent intent = new Intent(this, MatchActivity.class);
+            Intent intent = new Intent(this, MatchActivity.class);
 
-			EditText txtmatch = (EditText) this.findViewById(R.id.te_match_num);
-			EditText txtteam = (EditText) this.findViewById(R.id.te_team_num);
+            EditText txtmatch = (EditText) this.findViewById(R.id.te_match_num);
+            EditText txtteam = (EditText) this.findViewById(R.id.te_team_num);
 
-			RadioButton btnRed = (RadioButton) this.findViewById(R.id.btn_red);
+            RadioButton btnRed = (RadioButton) this.findViewById(R.id.btn_red);
 
-			String matchNum = txtmatch.getText().toString();
-			String teamNum = txtteam.getText().toString();
+            String matchNum = txtmatch.getText().toString();
+            String teamNum = txtteam.getText().toString();
 
-			if(!TeamNumbers.isATeamNumber(Integer.parseInt(teamNum))){
-				Toast.makeText(this,"That is not a valid team number.",Toast.LENGTH_SHORT).show();
-				return;
-			}
+            if (!TeamNumbers.isATeamNumber(Integer.parseInt(teamNum))) {
+                Toast.makeText(this, "That is not a valid team number.", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
 
             //checks to see if team is in database already
             List<TeamData> teamDataList = DatabaseHandler.getInstance(this).getAllTeamData();
             for (TeamData cn : teamDataList) {
-                if(cn.getTeamNumber() == Integer.parseInt(teamNum) && cn.getMatchNumber() == Integer.parseInt(matchNum)){
-                    Toast.makeText(this,"Team Number and Match Number are already in database.",Toast.LENGTH_SHORT).show();
+                if (cn.getTeamNumber() == Integer.parseInt(teamNum) && cn.getMatchNumber() == Integer.parseInt(matchNum)) {
+                    Toast.makeText(this, "Team Number and Match Number are already in database.", Toast.LENGTH_SHORT).show();
                     return;
                 }
             }
 
-			boolean isRed = btnRed.isChecked();
+            boolean isRed = btnRed.isChecked();
 
             /**
              * CRUD Operations
              * */
 
-             // Inserting Team Data
+            // Inserting Team Data
             TeamData teamData = new TeamData(Integer.parseInt(teamNum), Integer.parseInt(matchNum),
-                    isRed,false,false,0,false,0,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+                    isRed, false, false, 0, false, 0, false, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             DatabaseHandler.getInstance(this).addTeamData(teamData);
             //List<TeamData> teamData2 = DatabaseHandler.getInstance(this).getAllTeamData();
             /*for (TeamData cn : teamData2) {
@@ -136,27 +138,33 @@ public class MainActivity extends Activity {
             }*/
             EventBus.getDefault().postSticky(teamData);
             startActivity(intent);
-    	}else{
-    		Toast.makeText(this,"Please enter all the team's information.", Toast.LENGTH_SHORT).show();
-    	}
-	}
+        } else {
+            Toast.makeText(this, "Please enter all the team's information.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     public void hideKeys(View view) {
         EditText myEditText = (EditText) findViewById(R.id.te_match_num);
-        InputMethodManager imm = (InputMethodManager)getSystemService(
+        InputMethodManager imm = (InputMethodManager) getSystemService(
                 Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(myEditText.getWindowToken(), 0);
     }
 
-    public void startQR(View view){
+    public void startQR(View view) {
         new AlertDialog.Builder(this)
                 .setTitle("Save Data")
                 .setMessage("Are you sure you want to generate the qr code?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        String output = makeString();
-                        EventBus.getDefault().postSticky(output);
-                        Intent i = new Intent(getApplicationContext(),qr.class);
-                        startActivity(i);
+                        if(DatabaseHandler.getInstance(getApplicationContext()).checkIfEmpty() == false){
+                            String output = makeString();
+                            EventBus.getDefault().postSticky(output);
+                            Intent i = new Intent(getApplicationContext(), qr.class);
+                            startActivity(i);
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Database Empty. Add Data", Toast.LENGTH_SHORT).show();
+                        }
+
                     }
                 })
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
@@ -166,9 +174,9 @@ public class MainActivity extends Activity {
                 })
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
-                    }
+    }
 
-    public String makeString(){
+    public String makeString() {
         List<TeamData> teamData2 = DatabaseHandler.getInstance(this).getAllTeamData();
         String output = "";
         for (TeamData cn : teamData2) {
@@ -177,7 +185,7 @@ public class MainActivity extends Activity {
                     cn.getRobotAuto() + "," + cn.getToteAuto() + "," + cn.getNumberTotesAuto() + ","
                     + cn.getContainerAuto() + "," + cn.getNumberContainersAuto() + "," + cn.getAssistedTotesAuto() + ","
                     + cn.getNumberStackedTotesAuto() + "," + cn.getToteLevel1() + "," + cn.getToteLevel2() + ","
-                    + cn.getToteLevel3() + "," +  cn.getToteLevel4() + "," + cn.getToteLevel5() + ","
+                    + cn.getToteLevel3() + "," + cn.getToteLevel4() + "," + cn.getToteLevel5() + ","
                     + cn.getToteLevel6() + "," + cn.getCanLevel1() + "," + cn.getCanLevel2() + "," + cn.getCanLevel3() + "," +
                     cn.getCanLevel4() + "," + cn.getCanLevel5() + "," + cn.getCanLevel6() + "," +
                     cn.getNoodle() + "," + cn.getCoop();
@@ -186,6 +194,6 @@ public class MainActivity extends Activity {
         return output;
     }
 
-    }
+}
 
 
