@@ -138,7 +138,7 @@ public class MainActivity extends Activity {
             }*/
             EventBus.getDefault().postSticky(teamData);
             startActivity(intent);
-            finish();
+
         } else {
             Toast.makeText(this, "Please enter all the team's information.", Toast.LENGTH_SHORT).show();
         }
@@ -162,6 +162,7 @@ public class MainActivity extends Activity {
                             EventBus.getDefault().postSticky(output);
                             Intent i = new Intent(getApplicationContext(), qr.class);
                             startActivity(i);
+                            finish();
                         }else{
                             Toast.makeText(getApplicationContext(), "Database Empty. Add Data", Toast.LENGTH_SHORT).show();
                         }

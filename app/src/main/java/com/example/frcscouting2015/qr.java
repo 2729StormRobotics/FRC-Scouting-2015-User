@@ -51,6 +51,7 @@ public class qr extends ActionBarActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         DatabaseHandler.getInstance(getApplicationContext()).clearTable();
                         returnToMain();
+                        finish();
                     }
                 })
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
