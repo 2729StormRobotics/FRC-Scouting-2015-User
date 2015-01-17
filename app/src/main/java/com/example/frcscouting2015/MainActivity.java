@@ -138,6 +138,7 @@ public class MainActivity extends Activity {
             }*/
             EventBus.getDefault().postSticky(teamData);
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "Please enter all the team's information.", Toast.LENGTH_SHORT).show();
         }
