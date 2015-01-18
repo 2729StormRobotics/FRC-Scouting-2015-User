@@ -77,11 +77,11 @@ public class ErrorChecker extends ActionBarActivity {
     }
 
    public static boolean isError(String code){
-       return code.equals("666");
+       return code.equals("NjY2");
    }
 
    public static boolean isFixableError(String fix){
-        return fix.equals("1026");
+        return fix.equals("MTAyNg==");
     }
 
 }
