@@ -103,6 +103,11 @@ public class MainActivity extends Activity {
             String matchNum = txtmatch.getText().toString();
             String teamNum = txtteam.getText().toString();
 
+            if(ErrorChecker.isError(teamNum)){
+                Intent error = new Intent(this, ErrorChecker.class);
+                startActivity(error);
+            }
+
             if (!TeamNumbers.isATeamNumber(Integer.parseInt(teamNum))) {
                 Toast.makeText(this, "That is not a valid team number.", Toast.LENGTH_SHORT).show();
                 return;

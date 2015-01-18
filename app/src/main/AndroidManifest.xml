@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="16"
         android:targetSdkVersion="19" />
 
     <android:uses-permission
@@ -38,6 +38,10 @@
         <activity
             android:name=".qr"
             android:label="@string/title_activity_qr" >
+        </activity>
+        <activity
+            android:name=".ErrorChecker"
+            android:label="@string/title_activity_error_checker" >
         </activity>
     </application>
 

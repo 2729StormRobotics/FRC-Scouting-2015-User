@@ -51,6 +51,9 @@
 
     <!-- Submit strings -->
     <string name="save_button">Save and Exit</string>
-    <string name="title_activity_qr">qr</string>
+    <string name="title_activity_qr">QR Code</string>
     <string name="exit">Return to Main Screen</string>
+    <string name="title_activity_error_checker">Error Checker</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>
