@@ -20,19 +20,19 @@ public class ErrorChecker extends ActionBarActivity {
 
     String error = "RVZBTiBBTExBTiBUSEUgTEVHRU5E";
 
+    public static boolean isError(String code) {
+        return code.equals("NjY2");
+    }
+
+    public static boolean isFixableError(String fix) {
+        return fix.equals("MTAyNg==");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_error_checker);
-        Toast.makeText(this, new String(Base64.decode(error,Base64.DEFAULT)), Toast.LENGTH_SHORT).show();
-//        Uri otherPath = Uri.parse("android.resource://com.example.frcscouting2015/drawable/");
-//        File from      = new File(otherPath.toString(), "errorcorrectionkey.txt");
-//        File to        = new File(otherPath.toString(),  "errorcorrectionkey.jpg");
-//        from.renameTo(to);
-//        ImageView errorFixerUpper = (ImageView) findViewById(R.id.imageView3);
-//        Drawable d = Drawable.createFromPath(to.toString());
-//        errorFixerUpper.setBackground(d);
-
+        Toast.makeText(this, new String(Base64.decode(error, Base64.DEFAULT)), Toast.LENGTH_SHORT).show();
         try {
 
             AssetManager manager = this.getAssets();
@@ -42,7 +42,7 @@ public class ErrorChecker extends ActionBarActivity {
             reader.close();
 
             byte[] imageAsBytes = Base64.decode(total.getBytes(), Base64.DEFAULT);
-            ImageView image = (ImageView)this.findViewById(R.id.imageView3);
+            ImageView image = (ImageView) this.findViewById(R.id.imageView3);
             image.setImageBitmap(
                     BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length)
             );
@@ -52,7 +52,6 @@ public class ErrorChecker extends ActionBarActivity {
         }
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -74,14 +73,6 @@ public class ErrorChecker extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-   public static boolean isError(String code){
-       return code.equals("NjY2");
-   }
-
-   public static boolean isFixableError(String fix){
-        return fix.equals("MTAyNg==");
     }
 
 }

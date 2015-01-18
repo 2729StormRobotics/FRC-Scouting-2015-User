@@ -31,7 +31,6 @@ public class qr extends ActionBarActivity {
         myImage.setMinimumHeight(470);
         myImage.setMinimumWidth(470);
         myImage.setImageBitmap(bmp);
-        DatabaseHandler.getInstance(getApplicationContext()).clearTable();
     }
 
 
@@ -46,6 +45,7 @@ public class qr extends ActionBarActivity {
                 .setMessage("Are you sure you want to exit?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
+                        DatabaseHandler.getInstance(getApplicationContext()).clearTable();
                         returnToMain();
                     }
                 })

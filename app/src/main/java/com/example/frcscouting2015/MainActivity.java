@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Base64;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -171,7 +170,6 @@ public class MainActivity extends Activity {
                             EventBus.getDefault().postSticky(output);
                             Intent i = new Intent(getApplicationContext(), qr.class);
                             startActivity(i);
-                            finish();
                         }else{
                             Toast.makeText(getApplicationContext(), "Database Empty. Add Data", Toast.LENGTH_SHORT).show();
                         }

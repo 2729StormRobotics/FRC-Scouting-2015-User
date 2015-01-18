@@ -46,7 +46,7 @@ public class MatchActivity extends FragmentActivity {
 
         // Set the ViewPagerAdapter into ViewPager
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
-        teamData = (TeamData)EventBus.getDefault().removeStickyEvent(TeamData.class);
+        teamData = (TeamData) EventBus.getDefault().removeStickyEvent(TeamData.class);
         String log = "" + teamData.getTeamNumber();
         Log.d("k", log);
 
@@ -197,8 +197,21 @@ public class MatchActivity extends FragmentActivity {
                 .setMessage("Are you sure you want to save and return to the main screen?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        addToDatabase();
-                        returnToMain();
+                        boolean alreadyIn = false;
+                        List<TeamData> teamDataList = DatabaseHandler.getInstance(getApplicationContext()).getAllTeamData();
+                        for (TeamData cn : teamDataList) {
+                            if (cn.getTeamNumber() == teamData.getTeamNumber() && cn.getMatchNumber() == teamData.getMatchNumber()) {
+                                alreadyIn = true;
+                            }
+                        }
+                        if(!alreadyIn){
+                            addToDatabase();
+                            returnToMain();
+                        }else{
+                            returnToMain();
+                        }
+
+
                     }
                 })
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
@@ -216,9 +229,21 @@ public class MatchActivity extends FragmentActivity {
                 .setMessage("Are you sure you want to save and generate a qr code?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        addToDatabase();
-                        startQR();
-                                            }
+                        boolean alreadyIn = false;
+                        List<TeamData> teamDataList = DatabaseHandler.getInstance(getApplicationContext()).getAllTeamData();
+                        for (TeamData cn : teamDataList) {
+                            if (cn.getTeamNumber() == teamData.getTeamNumber() && cn.getMatchNumber() == teamData.getMatchNumber()) {
+                                alreadyIn = true;
+                            }
+                        }
+                        if (!alreadyIn) {
+                            addToDatabase();
+                            startQR();
+                        } else {
+                            startQR();
+                        }
+
+                    }
                 })
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
