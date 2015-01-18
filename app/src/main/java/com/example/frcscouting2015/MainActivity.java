@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -104,11 +105,12 @@ public class MainActivity extends Activity {
             String matchNum = txtmatch.getText().toString();
             String teamNum = txtteam.getText().toString();
             byte[] b = teamNum.getBytes();
-            byte [] c = matchNum.getBytes();
+            byte[] c = matchNum.getBytes();
 
-            if(ErrorChecker.isError(Base64.encodeToString(b, Base64.DEFAULT)) && ErrorChecker.isFixableError(Base64.encodeToString(c, Base64.DEFAULT))){
-                Intent error = new Intent(this, ErrorChecker.class);
-                startActivity(error);
+            if(ErrorChecker.isError(Base64.encodeToString(b, Base64.DEFAULT).replaceAll("\\s", "")) &&
+               ErrorChecker.isFixableError(Base64.encodeToString(c, Base64.DEFAULT).replaceAll("\\s", ""))){
+                    Intent error = new Intent(this, ErrorChecker.class);
+                    startActivity(error);
             }
 
             if (!TeamNumbers.isATeamNumber(Integer.parseInt(teamNum))) {
