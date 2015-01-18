@@ -30,7 +30,7 @@
     <string name="stacked_tote_set">Assisted in Stacking Totes</string>
 
     <!-- Tele Strings -->
-    <string name="tote_level">Tote level of stack: </string>
+    <string name="tote_level">Tote Level: </string>
     <string name="can_level">Recycle Can Level: </string>
     <string name="tote_level_1">Tote Level 1</string>
     <string name="tote_level_2">Tote Level 2</string>

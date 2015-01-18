@@ -16,7 +16,8 @@
         android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="20sp" />
 
     <Button
         android:layout_width="match_parent"
@@ -29,7 +30,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="70dp"
-        android:onClick="saveAndStartQR" />
+        android:onClick="saveAndStartQR"
+        android:textSize="20sp" />
 
     <ImageView
         android:layout_width="wrap_content"

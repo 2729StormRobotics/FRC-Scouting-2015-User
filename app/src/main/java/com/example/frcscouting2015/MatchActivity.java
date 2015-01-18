@@ -47,8 +47,7 @@ public class MatchActivity extends FragmentActivity {
         // Set the ViewPagerAdapter into ViewPager
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
         teamData = (TeamData) EventBus.getDefault().removeStickyEvent(TeamData.class);
-        String log = "" + teamData.getTeamNumber();
-        Log.d("k", log);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
     }
 

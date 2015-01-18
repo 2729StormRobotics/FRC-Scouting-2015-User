@@ -3,6 +3,7 @@ package com.example.frcscouting2015;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -31,6 +32,7 @@ public class qr extends ActionBarActivity {
         myImage.setMinimumHeight(470);
         myImage.setMinimumWidth(470);
         myImage.setImageBitmap(bmp);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
 
