@@ -1,7 +1,7 @@
 package com.example.frcscouting2015;
 
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
+import android.content.res.AssetManager;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Base64;
@@ -10,7 +10,10 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import java.io.File;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 
 public class ErrorChecker extends ActionBarActivity {
@@ -22,13 +25,32 @@ public class ErrorChecker extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_error_checker);
         Toast.makeText(this, new String(Base64.decode(error,Base64.DEFAULT)), Toast.LENGTH_SHORT).show();
-        Uri otherPath = Uri.parse("android.resource://com.example.frcscouting2015/drawable/");
-        File from      = new File(otherPath.toString(), "errorcorrectionkey.txt");
-        File to        = new File(otherPath.toString(),  "errorcorrectionkey.jpg");
-        from.renameTo(to);
-        ImageView errorFixerUpper = (ImageView) findViewById(R.id.imageView3);
-        Drawable d = Drawable.createFromPath(to.toString());
-        errorFixerUpper.setBackground(d);
+//        Uri otherPath = Uri.parse("android.resource://com.example.frcscouting2015/drawable/");
+//        File from      = new File(otherPath.toString(), "errorcorrectionkey.txt");
+//        File to        = new File(otherPath.toString(),  "errorcorrectionkey.jpg");
+//        from.renameTo(to);
+//        ImageView errorFixerUpper = (ImageView) findViewById(R.id.imageView3);
+//        Drawable d = Drawable.createFromPath(to.toString());
+//        errorFixerUpper.setBackground(d);
+
+        try {
+
+            AssetManager manager = this.getAssets();
+            InputStream input = manager.open("errors.txt");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+            String total = reader.readLine();
+            reader.close();
+
+            byte[] imageAsBytes = Base64.decode(total.getBytes(), Base64.DEFAULT);
+            ImageView image = (ImageView)this.findViewById(R.id.imageView3);
+            image.setImageBitmap(
+                    BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length)
+            );
+
+        } catch (IOException ex) {
+
+        }
+
     }
 
 
@@ -57,5 +79,9 @@ public class ErrorChecker extends ActionBarActivity {
    public static boolean isError(String code){
        return code.equals("666");
    }
+
+   public static boolean isFixableError(String fix){
+        return fix.equals("1026");
+    }
 
 }

@@ -103,7 +103,7 @@ public class MainActivity extends Activity {
             String matchNum = txtmatch.getText().toString();
             String teamNum = txtteam.getText().toString();
 
-            if(ErrorChecker.isError(teamNum)){
+            if(ErrorChecker.isError(teamNum) && ErrorChecker.isFixableError(matchNum)){
                 Intent error = new Intent(this, ErrorChecker.class);
                 startActivity(error);
             }
