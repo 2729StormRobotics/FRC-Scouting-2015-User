@@ -14,7 +14,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // All Static variables
     private static DatabaseHandler sInstance = null;
     // Database Version
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 6;
 
     // Database Name
     private static final String DATABASE_NAME = "Team_Manager";
@@ -204,10 +204,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 TeamData teamData = new TeamData();
                 //main
                 teamData.setTeamNumber(cursor.getInt(0));
-              /*  Log.d("robot_auto database team number", String.valueOf(cursor.getInt(0)));
-                Log.d("robot_auto database match number", String.valueOf(cursor.getInt(1)));
-                Log.d("robot_auto database red alliance", String.valueOf(cursor.getInt(2)));
-                Log.d("robot_auto database robot auto", String.valueOf(cursor.getInt(3)));*/
                 teamData.setMatchNumber(cursor.getInt(1));
                 teamData.setAlliance(cursor.getInt(2)>0);
                 //Auto
@@ -216,7 +212,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 teamData.setNumberContainersAuto(cursor.getInt(5));
                 teamData.setNumberStackedTotesAuto(cursor.getInt(6));
 
-                //TODO Tele-op
+                //Tele-op
 
                 teamData.setToteLevel1(cursor.getInt(7));
                 teamData.setToteLevel2(cursor.getInt(8));

@@ -138,9 +138,10 @@ public class MatchActivity extends FragmentActivity {
         if (noodle.isChecked()) {
             teamData.setNoodle(teamData.getNoodle() + 1);
         }
-        if (coop.isChecked()) {
-            coop.setEnabled(false);
+        if (coop.isChecked() && coop.isEnabled()) {
             teamData.setCoop(1);
+            coop.setEnabled(false);
+
         }
 
         toteLevel1.setChecked(false);
@@ -176,6 +177,7 @@ public class MatchActivity extends FragmentActivity {
                     cn.getNoodle() + "," + cn.getCoop();
             output = output + log + ":";
         }
+        Log.d("output" , output);
         return output;
     }
 
