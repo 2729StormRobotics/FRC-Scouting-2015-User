@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">FRC Scouting 2015</string>
+    <string name="app_name">Storm User</string>
     <string name="action_settings">Settings</string>
-
+ar
     <!-- MAIN ACTIVITY STRINGS -->
     <string name="team_number">   Enter Team Number</string>
     <string name="begin_match">Begin Match</string>
@@ -30,8 +30,8 @@
     <string name="stacked_tote_set">Assisted in Stacking Totes</string>
 
     <!-- Tele Strings -->
-    <string name="tote_level">Tote Level: </string>
-    <string name="can_level">Recycle Can Level: </string>
+    <string name="tote_level">Tote and Can Level</string>
+    <string name="can_level">Recycle Can Level</string>
     <string name="tote_level_1">Tote Level 1</string>
     <string name="tote_level_2">Tote Level 2</string>
     <string name="tote_level_3">Tote Level 3</string>
@@ -54,6 +54,9 @@
     <string name="title_activity_qr">QR Code</string>
     <string name="exit">Return to Main Screen</string>
     <string name="title_activity_error_checker">Error Checker</string>
-    <string name="hello_world">Hello world!</string>
+
+
+    <string name="website">www.stormroboticsnj.org</string>
+    <string name="twitter">twitter.com/stormroboticsnj</string>
 
 </resources>

@@ -5,15 +5,16 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.example.frcscouting2015"
-        minSdkVersion 16
-        targetSdkVersion 19
+        applicationId "org.stormroboticsnj.frc_scouting_2015_user"
+        minSdkVersion 19
+        targetSdkVersion 21
+        versionCode 3
+        versionName "1.2"
     }
-
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
@@ -23,6 +24,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile files('src/eventbus-2.4.0.jar')
     compile 'com.google.zxing:core:3.1.0'
-    compile ("net.glxn.qrgen:android:2.0")
-
+    compile("net.glxn.qrgen:android:2.0")
 }

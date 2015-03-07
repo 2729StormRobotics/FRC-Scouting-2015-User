@@ -12,9 +12,9 @@ import fragments.TeleFragment;
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     final int PAGE_COUNT = 3;
-    // Tab Titles
-    private String tabtitles[] = new String[] { "Auto", "Tele", "Submit" };
     Context context;
+    // Tab Titles
+    private String tabtitles[] = new String[]{"Auto", "Tele", "Submit"};
 
     public ViewPagerAdapter(FragmentManager fm) {
         super(fm);

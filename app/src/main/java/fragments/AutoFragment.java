@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.frcscouting2015.R;
+import org.stormroboticsnj.frc_scouting_2015_user.R;
 
 
 public class AutoFragment extends Fragment {
@@ -15,7 +15,7 @@ public class AutoFragment extends Fragment {
     public static View view;
     Intent intent = null;
 
-       @Override
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.auto_fragment, container, false);

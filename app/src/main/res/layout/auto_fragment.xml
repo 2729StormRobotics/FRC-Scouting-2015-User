@@ -1,60 +1,90 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auto_frag_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp"
-    android:background="@android:color/holo_red_dark"
-    android:id="@+id/auto_frag_bg">
+    android:background="@android:color/black"
+    android:padding="20dp">
 
     <CheckBox
+        android:id="@+id/auto_robot_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/robot_set"
-        android:id="@+id/auto_robot_checkbox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"
+        android:button="@drawable/box"
+        android:checked="false"
+        android:paddingLeft="20dp"
+        android:text="@string/robot_set"
         android:textColor="#ffffffff"
-        android:layout_marginBottom="20dp"
-        android:textSize="40sp"
-        android:checked="false" />
+        android:textSize="40sp" />
 
     <EditText
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
         android:id="@+id/auto_tote_number"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp"
-        android:hint="# of Totes Put In Auto Zone"
-        android:textSize="25sp"
-        android:layout_below="@+id/auto_robot_checkbox" />
+        android:layout_below="@+id/auto_robot_checkbox"
+        android:layout_gravity="center_horizontal"
+        android:background="#ffffff"
+        android:ems="10"
+        android:hint="Number of Totes Put In Auto Zone"
+        android:inputType="number"
+        android:paddingLeft="15dp" />
 
     <EditText
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
         android:id="@+id/auto_container_number"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="false"
-        android:layout_marginBottom="20dp"
-        android:hint="#  of Containers Put In Auto Zone"
-        android:textSize="25sp"
-        android:layout_below="@+id/auto_tote_number" />
-
-    <EditText
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/auto_totes_stacked_number"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:hint="# of Totes Stacked"
-        android:textSize="25sp"
-        android:layout_below="@+id/auto_container_number" />
+        android:layout_below="@+id/auto_tote_number"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="27dp"
+        android:background="#ffffff"
+        android:ems="10"
+        android:hint="Number of Containers Put In Auto Zone"
+        android:inputType="number"
+        android:paddingLeft="15dp" />
+
+    <EditText
+        android:id="@+id/auto_totes_stacked_number"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/auto_container_number"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="32dp"
+        android:background="#ffffff"
+        android:ems="10"
+        android:hint="Number of Totes Stacked In Auto Zone"
+        android:inputType="number"
+        android:paddingLeft="15dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/logo"
+        android:layout_below="@+id/containers_center_text" />
+
+    <EditText
+        android:id="@+id/containers_center_text"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_gravity="center_horizontal"
+        android:background="#ffffff"
+        android:ems="10"
+        android:hint="Number of Containers from Center"
+        android:inputType="number"
+        android:paddingLeft="15dp"
+        android:layout_below="@+id/auto_totes_stacked_number"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>

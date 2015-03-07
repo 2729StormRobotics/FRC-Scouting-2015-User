@@ -1,4 +1,4 @@
-package com.example.frcscouting2015;
+package org.stormroboticsnj.frc_scouting_2015_user;
 
 import android.content.Context;
 import android.content.res.AssetManager;

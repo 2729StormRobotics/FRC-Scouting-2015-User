@@ -1,4 +1,4 @@
-package com.example.frcscouting2015;
+package org.stormroboticsnj.frc_scouting_2015_user;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -7,7 +7,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.util.Base64;
 import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -103,14 +102,6 @@ public class MainActivity extends Activity {
 
             String matchNum = txtmatch.getText().toString();
             String teamNum = txtteam.getText().toString();
-            byte[] b = teamNum.getBytes();
-            byte[] c = matchNum.getBytes();
-
-            if(ErrorChecker.isError(Base64.encodeToString(b, Base64.DEFAULT).replaceAll("\\s", "")) &&
-               ErrorChecker.isFixableError(Base64.encodeToString(c, Base64.DEFAULT).replaceAll("\\s", ""))){
-                    Intent error = new Intent(this, ErrorChecker.class);
-                    startActivity(error);
-            }
 
             if (!TeamNumbers.isATeamNumber(Integer.parseInt(teamNum))) {
                 Toast.makeText(this, "That is not a valid team number.", Toast.LENGTH_SHORT).show();
@@ -152,6 +143,7 @@ public class MainActivity extends Activity {
         }
     }
 
+
     public void hideKeys(View view) {
         EditText myEditText = (EditText) findViewById(R.id.te_match_num);
         InputMethodManager imm = (InputMethodManager) getSystemService(
@@ -165,12 +157,12 @@ public class MainActivity extends Activity {
                 .setMessage("Are you sure you want to generate the qr code?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        if(DatabaseHandler.getInstance(getApplicationContext()).checkIfEmpty() == false){
+                        if (DatabaseHandler.getInstance(getApplicationContext()).checkIfEmpty() == false) {
                             String output = makeString();
                             EventBus.getDefault().postSticky(output);
                             Intent i = new Intent(getApplicationContext(), qr.class);
                             startActivity(i);
-                        }else{
+                        } else {
                             Toast.makeText(getApplicationContext(), "Database Empty. Add Data", Toast.LENGTH_SHORT).show();
                         }
 
@@ -187,17 +179,30 @@ public class MainActivity extends Activity {
 
     public String makeString() {
         List<TeamData> teamData2 = DatabaseHandler.getInstance(this).getAllTeamData();
-        String output = "";
+        String output = "@stormscouting ";
         for (TeamData cn : teamData2) {
+            int alliance;
+            int robotAuto;
+            if (cn.getAlliance()) {
+                alliance = 1;
+            } else {
+                alliance = 0;
+            }
+
+            if (cn.getRobotAuto()) {
+                robotAuto = 1;
+            } else {
+                robotAuto = 0;
+            }
             String log = cn.getTeamNumber() + "," +
-                    cn.getMatchNumber() + "," + cn.getAlliance() + "," +
-                    cn.getRobotAuto() + "," + cn.getNumberTotesAuto() + ","
-                     + cn.getNumberContainersAuto() + ","
-                    + cn.getNumberStackedTotesAuto() + "," + cn.getToteLevel1() + "," + cn.getToteLevel2() + ","
+                    cn.getMatchNumber() + "," + alliance + "," +
+                    robotAuto + "," + cn.getNumberTotesAuto() + ","
+                    + cn.getNumberContainersAuto() + ","
+                    + cn.getNumberStackedTotesAuto() + "," + cn.getContainers_center_auto() + "," + cn.getToteLevel1() + "," + cn.getToteLevel2() + ","
                     + cn.getToteLevel3() + "," + cn.getToteLevel4() + "," + cn.getToteLevel5() + ","
                     + cn.getToteLevel6() + "," + cn.getCanLevel1() + "," + cn.getCanLevel2() + "," + cn.getCanLevel3() + "," +
                     cn.getCanLevel4() + "," + cn.getCanLevel5() + "," + cn.getCanLevel6() + "," +
-                    cn.getNoodle() + "," + cn.getCoop();
+                    cn.getNoodle() + "," + cn.getCoop() + "," + cn.getNotes();
             output = output + log + ":";
         }
         return output;

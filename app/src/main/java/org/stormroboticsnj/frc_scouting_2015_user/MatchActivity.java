@@ -1,4 +1,4 @@
-package com.example.frcscouting2015;
+package org.stormroboticsnj.frc_scouting_2015_user;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -20,17 +20,17 @@ import database.DatabaseHandler;
 import database.TeamData;
 import de.greenrobot.event.EventBus;
 import fragments.AutoFragment;
+import fragments.SubmitFragment;
 
 public class MatchActivity extends FragmentActivity {
 
     TeamData teamData;
     CheckBox inputRobotAuto;
-    CheckBox inputToteAuto;
     EditText inputNumberTotesAuto;
-    CheckBox inputContainerAuto;
     EditText inputNumberContainersAuto;
-    CheckBox inputAssistedStackingAuto;
     EditText inputNumberTotesStackedAuto;
+    EditText notesText;
+    EditText containersCenterAuto;
 
 
     @Override
@@ -57,9 +57,15 @@ public class MatchActivity extends FragmentActivity {
         inputNumberTotesAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_tote_number);
         inputNumberContainersAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_container_number);
         inputNumberTotesStackedAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_totes_stacked_number);
+        notesText = (EditText) SubmitFragment.view.findViewById(R.id.notes_txt);
+        containersCenterAuto = (EditText) AutoFragment.view.findViewById(R.id.containers_center_text);
         int numberTotesAuto = 0;
+        boolean robotAuto = false;
         int numberContainersAuto = 0;
         int numberTotesStackedAuto = 0;
+        int numberContainersCenterAuto = 0;
+        String notes = "";
+        robotAuto = inputRobotAuto.isChecked();
         if (inputNumberTotesAuto.length() > 0) {
             numberTotesAuto = Integer.parseInt(inputNumberTotesAuto.getText().toString());
         }
@@ -69,10 +75,20 @@ public class MatchActivity extends FragmentActivity {
         if (inputNumberTotesStackedAuto.length() > 0) {
             numberTotesStackedAuto = Integer.parseInt(inputNumberTotesStackedAuto.getText().toString());
         }
+        if (containersCenterAuto.length() > 0) {
+            numberContainersCenterAuto = Integer.parseInt(containersCenterAuto.getText().toString());
+        }
         //auto add to teamdata
         teamData.setNumberTotesAuto(numberTotesAuto);
         teamData.setNumberContainersAuto(numberContainersAuto);
+        Log.d("number totes stacked auto add to databse", "" + numberTotesStackedAuto);
         teamData.setNumberStackedTotesAuto(numberTotesStackedAuto);
+        notes = notesText.getText().toString();
+        teamData.setNotes(notes);
+        teamData.setContainers_center_auto(numberContainersCenterAuto);
+        teamData.setRobotAuto(robotAuto);
+        //Log.d("containers center", "" + numberContainersCenterAuto);
+
         //updates database
         DatabaseHandler.getInstance(this).addTeamData(teamData);
         Toast.makeText(getApplicationContext(), "Data Saved.", Toast.LENGTH_SHORT).show();
@@ -163,20 +179,37 @@ public class MatchActivity extends FragmentActivity {
 
     public String makeString() {
         List<TeamData> teamData2 = DatabaseHandler.getInstance(this).getAllTeamData();
-        String output = "";
+        String output = "@stormscouting ";
         for (TeamData cn : teamData2) {
+            int alliance;
+            int robotAuto;
+            if (cn.getAlliance()) {
+                alliance = 1;
+            } else {
+                alliance = 0;
+            }
+
+            if (cn.getRobotAuto()) {
+                robotAuto = 1;
+            } else {
+                robotAuto = 0;
+            }
+            if (cn.getNotes().equals("")) {
+                cn.setNotes("No Notes");
+            }
+            Log.d("number stacked totes", "" + cn.getNumberStackedTotesAuto());
             String log = cn.getTeamNumber() + "," +
-                    cn.getMatchNumber() + "," + cn.getAlliance() + "," +
-                    cn.getRobotAuto() + "," + cn.getNumberTotesAuto() + ","
+                    cn.getMatchNumber() + "," + alliance + "," +
+                    robotAuto + "," + cn.getNumberTotesAuto() + ","
                     + cn.getNumberContainersAuto() + ","
-                    + cn.getNumberStackedTotesAuto() + "," + cn.getToteLevel1() + "," + cn.getToteLevel2() + ","
+                    + cn.getNumberStackedTotesAuto() + "," + cn.getContainers_center_auto() + "," + cn.getToteLevel1() + "," + cn.getToteLevel2() + ","
                     + cn.getToteLevel3() + "," + cn.getToteLevel4() + "," + cn.getToteLevel5() + ","
                     + cn.getToteLevel6() + "," + cn.getCanLevel1() + "," + cn.getCanLevel2() + "," + cn.getCanLevel3() + "," +
                     cn.getCanLevel4() + "," + cn.getCanLevel5() + "," + cn.getCanLevel6() + "," +
-                    cn.getNoodle() + "," + cn.getCoop();
+                    cn.getNoodle() + "," + cn.getCoop() + "," + cn.getNotes();
             output = output + log + ":";
         }
-        Log.d("output" , output);
+        Log.d("output", output);
         return output;
     }
 
@@ -205,10 +238,10 @@ public class MatchActivity extends FragmentActivity {
                                 alreadyIn = true;
                             }
                         }
-                        if(!alreadyIn){
+                        if (!alreadyIn) {
                             addToDatabase();
                             returnToMain();
-                        }else{
+                        } else {
                             returnToMain();
                         }
 

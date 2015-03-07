@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
     android:background="@android:color/background_dark"
-    android:screenOrientation="portrait"
+    android:orientation="vertical"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
-    android:paddingTop="20dp">
+    android:paddingTop="20dp"
+    android:screenOrientation="portrait">
 
     <EditText
         android:id="@+id/te_team_num"
         android:layout_width="match_parent"
         android:layout_height="50sp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
         android:background="#ffffff"
         android:ems="10"
         android:hint="@string/team_number"
         android:inputType="number"
-        android:layout_marginBottom="10dp"
         android:paddingLeft="15dp" />
 
     <EditText
@@ -27,42 +26,42 @@
         android:layout_width="match_parent"
         android:layout_height="50sp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
         android:background="#ffffff"
         android:ems="10"
-        android:inputType="number"
         android:hint="@string/match_number"
-        android:layout_marginBottom="10dp"
+        android:inputType="number"
         android:paddingLeft="15dp" />
 
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
+        android:layout_marginBottom="10dp"
         android:baselineAligned="false"
-        android:orientation="horizontal"
-        android:layout_marginBottom="10dp">
+        android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/btn_blue"
             android:layout_width="match_parent"
             android:layout_height="50sp"
             android:layout_weight="1"
-            android:textColor="@android:color/black"
-            android:gravity="center"
             android:background="@android:color/holo_blue_light"
+            android:gravity="center"
+            android:onClick="hideKeys"
             android:text="@string/txt_blueTeam"
-            android:onClick="hideKeys" />
+            android:textColor="@android:color/black" />
 
         <RadioButton
             android:id="@+id/btn_red"
             android:layout_width="match_parent"
             android:layout_height="50sp"
             android:layout_weight="1"
-            android:textColor="@android:color/black"
-            android:gravity="center"
             android:background="@android:color/holo_red_light"
+            android:gravity="center"
+            android:onClick="hideKeys"
             android:text="@string/txt_redTeam"
-            android:onClick="hideKeys" />
+            android:textColor="@android:color/black" />
     </RadioGroup>
 
     <TableLayout
@@ -71,43 +70,53 @@
         android:layout_gravity="right"></TableLayout>
 
     <Button
-        android:layout_width="360dp"
-        android:layout_height="wrap_content"
-        android:text="@string/begin_match"
         android:id="@+id/btn_begin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textColor="@android:color/black"
+        android:layout_marginBottom="30dp"
         android:background="@android:color/background_light"
         android:onClick="startMatch"
         android:stateListAnimator="@null"
-        android:layout_marginBottom="30dp"
+        android:text="@string/begin_match"
+        android:textColor="@android:color/black"
         android:textStyle="bold" />
 
-    <ImageView
-        android:layout_width="385dp"
-        android:layout_height="301dp"
-        android:id="@+id/storm_logo"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/slogo" />
-
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="10dp"
-        android:id="@+id/first_logo"
-        android:background="@drawable/first"
-        android:layout_marginBottom="100dp" />
-
     <Button
-        android:layout_width="329dp"
-        android:layout_height="wrap_content"
-        android:text="@string/gen"
         android:id="@+id/start_qr_main"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         android:background="@android:color/background_light"
         android:onClick="startQR"
         android:stateListAnimator="@null"
-        android:layout_marginBottom="30dp"
+        android:text="@string/gen"
+        android:textColor="@android:color/black"
         android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/website"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/twitter"
+        android:id="@+id/textView2"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffffff" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView3"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/logo" />
 
 </LinearLayout>

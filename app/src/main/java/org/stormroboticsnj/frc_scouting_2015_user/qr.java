@@ -1,12 +1,14 @@
-package com.example.frcscouting2015;
+package org.stormroboticsnj.frc_scouting_2015_user;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Display;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -29,8 +31,14 @@ public class qr extends ActionBarActivity {
         //bmp.setHeight(500);
         //bmp.setWidth(500);
         ImageView myImage = (ImageView) findViewById(R.id.imageView);
-        myImage.setMinimumHeight(470);
-        myImage.setMinimumWidth(470);
+        Display disp = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        disp.getSize(size);
+
+        myImage.setMinimumHeight(size.y-10);
+        myImage.setMinimumWidth(size.x-10);
+        myImage.setMaxHeight(size.y-10);
+        myImage.setMaxWidth(size.x-10);
         myImage.setImageBitmap(bmp);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }

@@ -1,208 +1,229 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_red_dark"
-    android:padding="15dp">
+    android:background="@android:color/black"
+    android:padding="15dp"
+    android:paddingRight="400dp">
 
     <TextView
+        android:id="@+id/tv_grey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/tote_level"
-        android:id="@+id/tv_grey"
-        android:textSize="20sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/tote_level"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/can_level"
-        android:id="@+id/tv_can"
-        android:textSize="20sp"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/tv_grey"
-        android:layout_alignStart="@+id/tv_grey" />
+        android:textColor="#ffffffff"
+        android:textSize="20sp" />
 
     <Button
-        android:layout_width="200dp"
-        android:layout_height="70dp"
-        android:text="@string/add_stack"
         android:id="@+id/btn_add_stack"
-        android:textSize="20sp"
-        android:onClick="addStack"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffffff"
         android:nestedScrollingEnabled="true"
-        android:layout_above="@+id/can_level5"
-        android:layout_alignLeft="@+id/tv_can"
-        android:layout_alignStart="@+id/tv_can"
-        android:background="@android:color/background_light" />
+        android:onClick="addStack"
+        android:text="@string/add_stack"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/noodle"
+        android:layout_marginTop="10dp"
+        android:layout_alignRight="@+id/can_level6"
+        android:layout_alignEnd="@+id/can_level6" />
 
     <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tote_level_1"
         android:id="@+id/tote_level1"
-        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/tv_grey"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"
+        android:button="@drawable/box"
+        android:paddingLeft="20dp"
+        android:text="@string/tote_level_1"
         android:textColor="#ffffffff"
-        android:layout_marginBottom="20dp" />
+        android:textSize="20sp" />
 
     <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tote_level_2"
         android:id="@+id/tote_level2"
-        android:textSize="20sp"
-        android:textColor="#ffffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/tote_level1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="0dp"
+        android:button="@drawable/box"
+        android:paddingLeft="20dp"
+        android:text="@string/tote_level_2"
+        android:textColor="#ffffffff"
+        android:textSize="20sp" />
 
     <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tote_level_3"
         android:id="@+id/tote_level3"
-        android:textSize="20sp"
-        android:textColor="#ffffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/tote_level2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="0dp"
+        android:button="@drawable/box"
+        android:paddingLeft="20dp"
+        android:text="@string/tote_level_3"
+        android:textColor="#ffffffff"
+        android:textSize="20sp" />
 
     <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tote_level_4"
         android:id="@+id/tote_level4"
-        android:textSize="20sp"
-        android:textColor="#ffffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/tote_level3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="20dp"
+        android:button="@drawable/box"
+        android:paddingLeft="20dp"
+        android:text="@string/tote_level_4"
+        android:textColor="#ffffffff"
+        android:textSize="20sp" />
 
     <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tote_level_5"
         android:id="@+id/tote_level5"
-        android:textSize="20sp"
-        android:textColor="#ffffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/tote_level4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="0dp"
+        android:button="@drawable/box"
+        android:paddingLeft="20dp"
+        android:text="@string/tote_level_5"
+        android:textColor="#ffffffff"
+        android:textSize="20sp" />
 
     <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tote_level_6"
         android:id="@+id/tote_level6"
-        android:textSize="20sp"
-        android:textColor="#ffffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/tote_level5"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cans_level_1"
-        android:id="@+id/can_level1"
-        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="0dp"
+        android:button="@drawable/box"
+        android:paddingLeft="20dp"
+        android:text="@string/tote_level_6"
         android:textColor="#ffffffff"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/tv_can"
-        android:layout_marginBottom="20dp" />
+        android:textSize="20sp" />
 
     <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cans_level_2"
         android:id="@+id/can_level2"
-        android:textSize="20sp"
-        android:textColor="#ffffffff"
-        android:layout_below="@+id/can_level1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp" />
-
-    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cans_level_3"
+        android:button="@drawable/box"
+        android:paddingLeft="20dp"
+        android:text="@string/cans_level_2"
+        android:textColor="#ffffffff"
+        android:textSize="20sp"
+        android:layout_below="@+id/tote_level1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <CheckBox
         android:id="@+id/can_level3"
-        android:textSize="20sp"
-        android:textColor="#ffffffff"
-        android:layout_below="@+id/can_level2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp" />
-
-    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cans_level_4"
+        android:button="@drawable/box"
+        android:paddingLeft="20dp"
+        android:text="@string/cans_level_3"
+        android:textColor="#ffffffff"
+        android:textSize="20sp"
+        android:layout_below="@+id/tote_level2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <CheckBox
         android:id="@+id/can_level4"
-        android:textSize="20sp"
-        android:textColor="#ffffffff"
-        android:layout_below="@+id/can_level3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp" />
-
-    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cans_level_5"
+        android:button="@drawable/box"
+        android:paddingLeft="20dp"
+        android:text="@string/cans_level_4"
+        android:textColor="#ffffffff"
+        android:textSize="20sp"
+        android:layout_below="@+id/tote_level3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <CheckBox
         android:id="@+id/can_level5"
-        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/box"
+        android:paddingLeft="20dp"
+        android:text="@string/cans_level_5"
         android:textColor="#ffffffff"
-        android:layout_below="@+id/can_level4"
+        android:textSize="20sp"
+        android:layout_below="@+id/tote_level4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <CheckBox
+        android:id="@+id/can_level6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/box"
+        android:paddingLeft="20dp"
+        android:text="@string/cans_level_6"
+        android:textColor="#ffffffff"
+        android:textSize="20sp"
+        android:layout_below="@+id/tote_level5"
+        android:layout_alignLeft="@+id/can_level5"
+        android:layout_alignStart="@+id/can_level5" />
+
+    <CheckBox
+        android:id="@+id/noodle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/box"
+        android:paddingLeft="20dp"
+        android:text="@string/noodle"
+        android:textColor="#ffffffff"
+        android:textSize="20sp"
+        android:layout_below="@+id/tote_level6"
+        android:layout_alignLeft="@+id/can_level6"
+        android:layout_alignStart="@+id/can_level6" />
+
+    <CheckBox
+        android:id="@+id/coop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cans_level_6"
-        android:id="@+id/can_level6"
-        android:textSize="20sp"
-        android:textColor="#ffffffff"
-        android:layout_below="@+id/can_level5"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/noodle"
-        android:id="@+id/noodle"
-        android:textSize="20sp"
-        android:textColor="#ffffffff"
-        android:layout_above="@+id/can_level3"
-        android:layout_alignLeft="@+id/coop"
-        android:layout_alignStart="@+id/coop" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/noodle"
+        android:layout_marginRight="0dp"
+        android:button="@drawable/box"
+        android:paddingLeft="20dp"
         android:text="@string/coop"
-        android:id="@+id/coop"
-        android:textSize="20sp"
         android:textColor="#ffffffff"
-        android:layout_above="@+id/can_level2"
-        android:layout_alignLeft="@+id/tv_can"
-        android:layout_alignStart="@+id/tv_can" />
+        android:textSize="20sp" />
+
+    <CheckBox
+        android:id="@+id/can_level1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/box"
+        android:paddingLeft="20dp"
+        android:text="@string/cans_level_1"
+        android:textColor="#ffffffff"
+        android:textSize="20sp"
+        android:layout_alignTop="@+id/tote_level1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
