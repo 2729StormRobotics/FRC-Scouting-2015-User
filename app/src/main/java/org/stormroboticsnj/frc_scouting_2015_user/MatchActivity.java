@@ -112,49 +112,66 @@ public class MatchActivity extends FragmentActivity {
         CheckBox noodle = (CheckBox) findViewById(R.id.noodle);
         CheckBox coop = (CheckBox) findViewById(R.id.coop);
 
+        boolean changed = false;
+
+
         if (toteLevel1.isChecked()) {
             teamData.setToteLevel1(teamData.getToteLevel1() + 1);
+            changed = true;
         }
         if (toteLevel2.isChecked()) {
             teamData.setToteLevel2(teamData.getToteLevel2() + 1);
+            changed = true;
         }
         if (toteLevel3.isChecked()) {
             teamData.setToteLevel3(teamData.getToteLevel3() + 1);
+            changed = true;
         }
         if (toteLevel4.isChecked()) {
             teamData.setToteLevel4(teamData.getToteLevel4() + 1);
+            changed = true;
         }
         if (toteLevel5.isChecked()) {
             teamData.setToteLevel5(teamData.getToteLevel5() + 1);
+            changed = true;
         }
         if (toteLevel6.isChecked()) {
             teamData.setToteLevel6(teamData.getToteLevel6() + 1);
+            changed = true;
         }
 
         if (canLevel1.isChecked()) {
             teamData.setCanLevel1(teamData.getCanLevel1() + 1);
+            changed = true;
         }
         if (canLevel2.isChecked()) {
             teamData.setCanLevel2(teamData.getCanLevel2() + 1);
+            changed = true;
         }
         if (canLevel3.isChecked()) {
             teamData.setCanLevel3(teamData.getCanLevel3() + 1);
+            changed = true;
         }
         if (canLevel4.isChecked()) {
             teamData.setCanLevel4(teamData.getCanLevel4() + 1);
+            changed = true;
         }
         if (canLevel5.isChecked()) {
             teamData.setCanLevel5(teamData.getCanLevel5() + 1);
+            changed = true;
         }
         if (canLevel6.isChecked()) {
             teamData.setCanLevel6(teamData.getCanLevel6() + 1);
+            changed = true;
         }
         if (noodle.isChecked()) {
             teamData.setNoodle(teamData.getNoodle() + 1);
+            changed = true;
         }
         if (coop.isChecked() && coop.isEnabled()) {
             teamData.setCoop(1);
             coop.setEnabled(false);
+            changed = true;
 
         }
 
@@ -173,6 +190,11 @@ public class MatchActivity extends FragmentActivity {
         canLevel6.setChecked(false);
 
         noodle.setChecked(false);
+        if(changed){
+            Toast.makeText(this, "Data Added", Toast.LENGTH_SHORT).show();
+            changed = false;
+        }
+
 
     }
 
