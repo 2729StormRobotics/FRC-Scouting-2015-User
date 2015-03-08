@@ -7,7 +7,6 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -81,7 +80,7 @@ public class MatchActivity extends FragmentActivity {
         //auto add to teamdata
         teamData.setNumberTotesAuto(numberTotesAuto);
         teamData.setNumberContainersAuto(numberContainersAuto);
-        Log.d("number totes stacked auto add to databse", "" + numberTotesStackedAuto);
+       // Log.d("number totes stacked auto add to databse", "" + numberTotesStackedAuto);
         teamData.setNumberStackedTotesAuto(numberTotesStackedAuto);
         notes = notesText.getText().toString();
         teamData.setNotes(notes);
@@ -177,49 +176,6 @@ public class MatchActivity extends FragmentActivity {
 
     }
 
-    public String makeString() {
-        List<TeamData> teamData2 = DatabaseHandler.getInstance(this).getAllTeamData();
-        String output = "@stormscouting ";
-        for (TeamData cn : teamData2) {
-            int alliance;
-            int robotAuto;
-            if (cn.getAlliance()) {
-                alliance = 1;
-            } else {
-                alliance = 0;
-            }
-
-            if (cn.getRobotAuto()) {
-                robotAuto = 1;
-            } else {
-                robotAuto = 0;
-            }
-            if (cn.getNotes().equals("")) {
-                cn.setNotes("No Notes");
-            }
-            Log.d("number stacked totes", "" + cn.getNumberStackedTotesAuto());
-            String log = cn.getTeamNumber() + "," +
-                    cn.getMatchNumber() + "," + alliance + "," +
-                    robotAuto + "," + cn.getNumberTotesAuto() + ","
-                    + cn.getNumberContainersAuto() + ","
-                    + cn.getNumberStackedTotesAuto() + "," + cn.getContainers_center_auto() + "," + cn.getToteLevel1() + "," + cn.getToteLevel2() + ","
-                    + cn.getToteLevel3() + "," + cn.getToteLevel4() + "," + cn.getToteLevel5() + ","
-                    + cn.getToteLevel6() + "," + cn.getCanLevel1() + "," + cn.getCanLevel2() + "," + cn.getCanLevel3() + "," +
-                    cn.getCanLevel4() + "," + cn.getCanLevel5() + "," + cn.getCanLevel6() + "," +
-                    cn.getNoodle() + "," + cn.getCoop() + "," + cn.getNotes();
-            output = output + log + ":";
-        }
-        Log.d("output", output);
-        return output;
-    }
-
-    public void startQR() {
-        String output = makeString();
-        EventBus.getDefault().postSticky(output);
-        Intent i = new Intent(getApplicationContext(), qr.class);
-        startActivity(i);
-    }
-
     public void returnToMain() {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
@@ -245,37 +201,6 @@ public class MatchActivity extends FragmentActivity {
                             returnToMain();
                         }
 
-
-                    }
-                })
-                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // do nothing
-                    }
-                })
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .show();
-    }
-
-    public void saveAndStartQR(View view) {
-        new AlertDialog.Builder(this)
-                .setTitle("Save Data and Start QR")
-                .setMessage("Are you sure you want to save and generate a qr code?")
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        boolean alreadyIn = false;
-                        List<TeamData> teamDataList = DatabaseHandler.getInstance(getApplicationContext()).getAllTeamData();
-                        for (TeamData cn : teamDataList) {
-                            if (cn.getTeamNumber() == teamData.getTeamNumber() && cn.getMatchNumber() == teamData.getMatchNumber()) {
-                                alreadyIn = true;
-                            }
-                        }
-                        if (!alreadyIn) {
-                            addToDatabase();
-                            startQR();
-                        } else {
-                            startQR();
-                        }
 
                     }
                 })
