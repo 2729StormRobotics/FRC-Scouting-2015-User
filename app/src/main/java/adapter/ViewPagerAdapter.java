@@ -6,15 +6,16 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import fragments.AutoFragment;
+import fragments.CoopFragment;
 import fragments.SubmitFragment;
 import fragments.TeleFragment;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
-    final int PAGE_COUNT = 3;
+    final int PAGE_COUNT = 4;
     Context context;
     // Tab Titles
-    private String tabtitles[] = new String[]{"Auto", "Tele", "Submit"};
+    private String tabtitles[] = new String[]{"Auto", "Tele", "Coop", "Submit"};
 
     public ViewPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -39,10 +40,16 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
                 TeleFragment fragmenttab2 = new TeleFragment();
                 return fragmenttab2;
 
-            // Open FragmentTab3.java
             case 2:
+                CoopFragment fragment4 = new CoopFragment();
+                return  fragment4;
+
+            // Open FragmentTab3.java
+            case 3:
                 SubmitFragment fragmenttab3 = new SubmitFragment();
                 return fragmenttab3;
+
+
         }
         return null;
     }
