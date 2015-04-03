@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -13,6 +14,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import net.glxn.qrgen.android.QRCode;
+
+import java.io.ByteArrayOutputStream;
 
 import database.DatabaseHandler;
 import de.greenrobot.event.EventBus;
@@ -26,14 +29,14 @@ public class qr extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr);
-        output = (String) EventBus.getDefault().removeStickyEvent(String.class);
-        Bitmap bmp = QRCode.from(output).bitmap();
-        //bmp.setHeight(500);
-        //bmp.setWidth(500);
-        ImageView myImage = (ImageView) findViewById(R.id.imageView);
+        output = EventBus.getDefault().removeStickyEvent(String.class);
         Display disp = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         disp.getSize(size);
+        ByteArrayOutputStream code = QRCode.from(output).withSize(size.x-10,size.x-10).stream();
+        byte[] byteArray = code.toByteArray();
+        Bitmap bmp = BitmapFactory.decodeByteArray(byteArray,0,byteArray.length);
+        ImageView myImage = (ImageView) findViewById(R.id.imageView);
 
         myImage.setMinimumHeight(size.y-10);
         myImage.setMinimumWidth(size.x-10);
