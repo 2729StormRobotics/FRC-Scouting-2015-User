@@ -5,4 +5,59 @@
     android:padding="15dp">
 
 
+    <CheckBox
+        android:id="@+id/coop_level1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/box"
+        android:checked="false"
+        android:paddingLeft="20dp"
+        android:text="@string/coop_level_1"
+        android:textColor="#ffffffff"
+        android:textSize="40sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp" />
+
+    <CheckBox
+        android:id="@+id/coop_level2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/box"
+        android:checked="false"
+        android:paddingLeft="20dp"
+        android:text="@string/coop_level_2"
+        android:textColor="#ffffffff"
+        android:textSize="40sp"
+        android:layout_below="@+id/coop_level1"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp" />
+
+    <CheckBox
+        android:id="@+id/coop_level3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/box"
+        android:checked="false"
+        android:paddingLeft="20dp"
+        android:text="@string/coop_level_3"
+        android:textColor="#ffffffff"
+        android:textSize="40sp"
+        android:layout_below="@+id/coop_level2"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp" />
+
+    <CheckBox
+        android:id="@+id/coop_level4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/box"
+        android:checked="false"
+        android:paddingLeft="20dp"
+        android:text="@string/coop_level_4"
+        android:textColor="#ffffffff"
+        android:textSize="40sp"
+        android:layout_below="@+id/coop_level3"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp" />
 </RelativeLayout>

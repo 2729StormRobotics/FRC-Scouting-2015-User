@@ -45,9 +45,15 @@ ar
     <string name="cans_level_5">Can Level 5</string>
     <string name="cans_level_6">Can Level 6</string>
     <string name="add_stack">Submit</string>
-    <string name="noodle">Noodle</string>
+    <string name="noodle">Noodle Info</string>
     <string name="qr">Save and Generate QR</string>
     <string name="coop">Coopertition</string>
+
+
+    <string name="coop_level_1">Coop Tote Level 1</string>
+    <string name="coop_level_2">Coop Tote Level 2</string>
+    <string name="coop_level_3">Coop Tote Level 3</string>
+    <string name="coop_level_4">Coop Tote Level 4</string>
 
     <!-- Submit strings -->
     <string name="save_button">Save and Exit</string>
