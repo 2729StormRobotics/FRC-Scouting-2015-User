@@ -32,6 +32,13 @@ public class TeamData {
     int canLevel5 = 0;
     int canLevel6 = 0;
 
+
+
+    int coopLevel1 = 0;
+    int coopLevel2 = 0;
+    int coopLevel3 = 0;
+    int coopLevel4 = 0;
+
     int noodle = 0;
     int coop = 0;
 
@@ -284,4 +291,37 @@ public class TeamData {
     public void setContainers_center_auto(int containers_center_auto) {
         this.containers_center_auto = containers_center_auto;
     }
+
+    public int getCoopLevel1() {
+        return coopLevel1;
+    }
+
+    public void setCoopLevel1(int coopLevel1) {
+        this.coopLevel1 = coopLevel1;
+    }
+
+    public int getCoopLevel2() {
+        return coopLevel2;
+    }
+
+    public void setCoopLevel2(int coopLevel2) {
+        this.coopLevel2 = coopLevel2;
+    }
+
+    public int getCoopLevel3() {
+        return coopLevel3;
+    }
+
+    public void setCoopLevel3(int coopLevel3) {
+        this.coopLevel3 = coopLevel3;
+    }
+
+    public int getCoopLevel4() {
+        return coopLevel4;
+    }
+
+    public void setCoopLevel4(int coopLevel4) {
+        this.coopLevel4 = coopLevel4;
+    }
+
 }
