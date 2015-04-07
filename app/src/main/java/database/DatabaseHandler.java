@@ -12,7 +12,7 @@ import java.util.List;
 public class DatabaseHandler extends SQLiteOpenHelper {
 
     // Database Version
-    private static final int DATABASE_VERSION = 80085;
+    private static final int DATABASE_VERSION = 80086;
     // Database Name
     private static final String DATABASE_NAME = "Team_Manager";
     // Contacts table name
@@ -46,7 +46,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_CAN_LEVEL5 = "can_level5";
     private static final String KEY_CAN_LEVEL6 = "can_level6";
     private static final String KEY_NOODLE = "noodle";
-    private static final String KEY_COOP = "coop";
+    private static final String KEY_COOP1 = "coop1";
+    private static final String KEY_COOP2 = "coop2";
+    private static final String KEY_COOP3 = "coop3";
+    private static final String KEY_COOP4 = "coop4";
     private static final String KEY_NOTES = "notes";
     // All Static variables
     private static DatabaseHandler sInstance = null;
@@ -93,7 +96,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + KEY_CAN_LEVEL5 + " INTEGER,"
                 + KEY_CAN_LEVEL6 + " INTEGER,"
                 + KEY_NOODLE + " INTEGER,"
-                + KEY_COOP + " INTEGER,"
+                + KEY_COOP1 + " INTEGER,"
+                + KEY_COOP2 + " INTEGER,"
+                + KEY_COOP3 + " INTEGER,"
+                + KEY_COOP4 + " INTEGER,"
                 + KEY_NOTES + " TEXT"
                 + ")";
         db.execSQL(CREATE_TEAM);
@@ -138,7 +144,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_CAN_LEVEL6, teamData.getCanLevel6());
 
         values.put(KEY_NOODLE, teamData.getNoodle());
-        values.put(KEY_COOP, teamData.getCoop());
+        values.put(KEY_COOP1, teamData.getCoopLevel1());
+        values.put(KEY_COOP2, teamData.getCoopLevel2());
+        values.put(KEY_COOP3, teamData.getCoopLevel3());
+        values.put(KEY_COOP4, teamData.getCoopLevel4());
         values.put(KEY_NOTES, teamData.getNotes());
 
         return values;
@@ -153,38 +162,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close(); // Closing database connection
     }
 
-    public TeamData getTeamData(int id) {
-        SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_TEAM, null, KEY_TEAM_NUMBER + " = ?",
-                new String[]{String.valueOf(id)}, null, null, null, null);
-        if (cursor != null)
-            cursor.moveToFirst();
-
-        TeamData teamData = new TeamData(
-                cursor.getInt(0), cursor.getInt(1), cursor.getInt(2) > 0, cursor.getInt(3) > 0, cursor.getInt(4), cursor.getInt(5), cursor.getInt(6), cursor.getInt(7), cursor.getInt(8), cursor.getInt(9), cursor.getInt(10), cursor.getInt(11), cursor.getInt(12), cursor.getInt(13), cursor.getInt(14), cursor.getInt(15), cursor.getInt(16), cursor.getInt(17), cursor.getInt(18), cursor.getInt(19), cursor.getInt(20), cursor.getInt(21), cursor.getString(22));
-        return teamData;
-    }
 
     public void clearTable() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_TEAM, null, null);
-    }
-
-    // Updating
-    public int updateTeamData(TeamData teamData) {
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        ContentValues values = addValues(teamData);
-        //Log.d("robot_auto database", String.valueOf(teamData.getRobotAuto()));
-        // Log.d("robot_auto database values list", String.valueOf(values.get(KEY_ROBOT_AUTO)));
-
-
-        //TODO teleop
-
-        // updating row
-        return db.update(TABLE_TEAM, values, KEY_TEAM_NUMBER + " = ? AND " + KEY_MATCH_NUMBER + "= ?",
-                new String[]{String.valueOf(teamData.getTeamNumber()), String.valueOf(teamData.getMatchNumber())});
     }
 
     public List<TeamData> getAllTeamData() {
@@ -226,8 +208,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 teamData.setCanLevel6(cursor.getInt(19));
 
                 teamData.setNoodle(cursor.getInt(20));
-                teamData.setCoop(cursor.getInt(21));
-                teamData.setNotes(cursor.getString(22));
+                teamData.setCoopLevel1(cursor.getInt(21));
+                teamData.setCoopLevel2(cursor.getInt(22));
+                teamData.setCoopLevel3(cursor.getInt(23));
+                teamData.setCoopLevel4(cursor.getInt(24));
+                teamData.setNotes(cursor.getString(25));
 
 
                 // Adding contact to list

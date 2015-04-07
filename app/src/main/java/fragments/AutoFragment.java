@@ -1,6 +1,5 @@
 package fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,7 +12,6 @@ import org.stormroboticsnj.frc_scouting_2015_user.R;
 public class AutoFragment extends Fragment {
 
     public static View view;
-    Intent intent = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

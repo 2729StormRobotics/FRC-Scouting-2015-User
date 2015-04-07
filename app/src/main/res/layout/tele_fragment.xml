@@ -28,9 +28,8 @@
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/can_level6"
-        android:layout_marginBottom="118dp" />
+        android:layout_below="@+id/noodle"
+        android:layout_alignEnd="@+id/can_level6" />
 
     <CheckBox
         android:id="@+id/tote_level1"
@@ -198,15 +197,17 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <TextView
-        android:id="@+id/textView3"
+    <CheckBox
+        android:id="@+id/noodle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/noodle"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:button="@drawable/box"
+        android:paddingLeft="20dp"
+        android:text="@string/noodleInCan"
         android:textColor="#ffffffff"
         android:textSize="20sp"
         android:layout_below="@+id/tote_level6"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp" />
 
 </RelativeLayout>

@@ -19,6 +19,7 @@ import database.DatabaseHandler;
 import database.TeamData;
 import de.greenrobot.event.EventBus;
 import fragments.AutoFragment;
+import fragments.CoopFragment;
 import fragments.SubmitFragment;
 
 public class MatchActivity extends FragmentActivity {
@@ -30,6 +31,11 @@ public class MatchActivity extends FragmentActivity {
     EditText inputNumberTotesStackedAuto;
     EditText notesText;
     EditText containersCenterAuto;
+
+    CheckBox coop1Chk;
+    CheckBox coop2Chk;
+    CheckBox coop3Chk;
+    CheckBox coop4Chk;
 
 
     @Override
@@ -58,11 +64,18 @@ public class MatchActivity extends FragmentActivity {
         inputNumberTotesStackedAuto = (EditText) AutoFragment.view.findViewById(R.id.auto_totes_stacked_number);
         notesText = (EditText) SubmitFragment.view.findViewById(R.id.notes_txt);
         containersCenterAuto = (EditText) AutoFragment.view.findViewById(R.id.containers_center_text);
+
+        coop1Chk = (CheckBox) CoopFragment.view.findViewById(R.id.coop_level1);
+        coop2Chk = (CheckBox) CoopFragment.view.findViewById(R.id.coop_level2);
+        coop3Chk = (CheckBox) CoopFragment.view.findViewById(R.id.coop_level3);
+        coop4Chk = (CheckBox) CoopFragment.view.findViewById(R.id.coop_level4);
+
         int numberTotesAuto = 0;
         boolean robotAuto = false;
         int numberContainersAuto = 0;
         int numberTotesStackedAuto = 0;
         int numberContainersCenterAuto = 0;
+
         String notes = "";
         robotAuto = inputRobotAuto.isChecked();
         if (inputNumberTotesAuto.length() > 0) {
@@ -77,6 +90,21 @@ public class MatchActivity extends FragmentActivity {
         if (containersCenterAuto.length() > 0) {
             numberContainersCenterAuto = Integer.parseInt(containersCenterAuto.getText().toString());
         }
+
+
+        if(coop1Chk.isChecked()){
+            teamData.setCoopLevel1(teamData.getCoopLevel1() + 1);
+        }
+        if(coop2Chk.isChecked()){
+            teamData.setCoopLevel2(teamData.getCoopLevel2() + 1);
+        }
+        if(coop3Chk.isChecked()){
+            teamData.setCoopLevel3(teamData.getCoopLevel3() + 1);
+        }
+        if(coop4Chk.isChecked()){
+           teamData.setCoopLevel4(teamData.getCoopLevel4() + 1);
+        }
+
         //auto add to teamdata
         teamData.setNumberTotesAuto(numberTotesAuto);
         teamData.setNumberContainersAuto(numberContainersAuto);
@@ -110,7 +138,6 @@ public class MatchActivity extends FragmentActivity {
         CheckBox canLevel6 = (CheckBox) findViewById(R.id.can_level6);
 
         CheckBox noodle = (CheckBox) findViewById(R.id.noodle);
-        CheckBox coop = (CheckBox) findViewById(R.id.coop);
 
         boolean changed = false;
 
@@ -164,15 +191,9 @@ public class MatchActivity extends FragmentActivity {
             teamData.setCanLevel6(teamData.getCanLevel6() + 1);
             changed = true;
         }
-        if (noodle.isChecked()) {
+        if(noodle.isChecked()){
             teamData.setNoodle(teamData.getNoodle() + 1);
             changed = true;
-        }
-        if (coop.isChecked() && coop.isEnabled()) {
-            teamData.setCoop(1);
-            coop.setEnabled(false);
-            changed = true;
-
         }
 
         toteLevel1.setChecked(false);
@@ -188,8 +209,9 @@ public class MatchActivity extends FragmentActivity {
         canLevel4.setChecked(false);
         canLevel5.setChecked(false);
         canLevel6.setChecked(false);
-
         noodle.setChecked(false);
+
+
         if(changed){
             Toast.makeText(this, "Data Added", Toast.LENGTH_SHORT).show();
             changed = false;

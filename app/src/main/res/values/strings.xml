@@ -47,7 +47,7 @@ ar
     <string name="add_stack">Submit</string>
     <string name="noodle">Noodle Info</string>
     <string name="qr">Save and Generate QR</string>
-    <string name="coop">Coopertition</string>
+    <string name="noodleInCan">Noodle in Container</string>
 
 
     <string name="coop_level_1">Coop Tote Level 1</string>
@@ -64,5 +64,8 @@ ar
 
     <string name="website">www.stormroboticsnj.org</string>
     <string name="twitter">twitter.com/stormroboticsnj</string>
+
+    <string name="uninstall">Uninstall</string>
+    <string name="install">Install</string>
 
 </resources>

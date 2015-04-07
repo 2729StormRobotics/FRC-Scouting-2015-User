@@ -40,7 +40,6 @@ public class TeamData {
     int coopLevel4 = 0;
 
     int noodle = 0;
-    int coop = 0;
 
     String notes = " ";
 
@@ -52,46 +51,6 @@ public class TeamData {
     }
 
     public TeamData() {
-
-    }
-
-
-    public TeamData(int team_number, int match_number, boolean alliance_red, boolean robot_auto,
-                    int number_totes_auto, int number_containers_auto,
-                    int number_totes_stacked_auto, int containers_center_auto, int tote_level1, int tote_level2, int tote_level3,
-                    int tote_level4, int tote_level5, int tote_level6, int can_level1, int can_level2,
-                    int can_level3, int can_level4, int can_level5, int can_level6, int noodle, int coop, String notes
-    ) {
-        this.team_number = team_number;
-        this.match_number = match_number;
-        this.alliance_red = alliance_red;
-        this.robot_auto = robot_auto;
-        //this.tote_auto = tote_auto;
-        this.number_totes_auto = number_totes_auto;
-        // this.container_auto = container_auto;
-        this.number_containers_auto = number_containers_auto;
-        // this.assisted_totes_auto = assisted_totes_auto;
-        this.number_totes_stacked_auto = number_totes_stacked_auto;
-        this.containers_center_auto = containers_center_auto;
-
-        this.toteLevel1 = tote_level1;
-        this.toteLevel2 = tote_level2;
-        this.toteLevel3 = tote_level3;
-        this.toteLevel4 = tote_level4;
-        this.toteLevel5 = tote_level5;
-        this.toteLevel6 = tote_level6;
-
-        this.canLevel1 = can_level1;
-        this.canLevel2 = can_level2;
-        this.canLevel3 = can_level3;
-        this.canLevel4 = can_level4;
-        this.canLevel5 = can_level5;
-        this.canLevel6 = can_level6;
-
-        this.noodle = noodle;
-        this.coop = coop;
-        this.notes = notes;
-
 
     }
 
@@ -266,14 +225,6 @@ public class TeamData {
 
     public void setNoodle(int noodle) {
         this.noodle = noodle;
-    }
-
-    public int getCoop() {
-        return coop;
-    }
-
-    public void setCoop(int coop) {
-        this.coop = coop;
     }
 
     public String getNotes() {

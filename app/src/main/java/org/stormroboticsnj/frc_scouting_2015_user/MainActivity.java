@@ -6,8 +6,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CompoundButton;
@@ -31,6 +33,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+
 
         btnRed = (RadioButton) findViewById(R.id.btn_red);
         btnBlue = (RadioButton) findViewById(R.id.btn_blue);
@@ -66,10 +70,10 @@ public class MainActivity extends Activity {
         DatabaseHandler db = DatabaseHandler.getInstance(this);
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+
+    public void onResume(){
+        super.onResume();
+        downloadNewDialog();
     }
 
     //////////UTILITY METHODS//////////
@@ -202,11 +206,70 @@ public class MainActivity extends Activity {
                     + cn.getToteLevel3() + "," + cn.getToteLevel4() + "," + cn.getToteLevel5() + ","
                     + cn.getToteLevel6() + "," + cn.getCanLevel1() + "," + cn.getCanLevel2() + "," + cn.getCanLevel3() + "," +
                     cn.getCanLevel4() + "," + cn.getCanLevel5() + "," + cn.getCanLevel6() + "," +
-                    cn.getNoodle() + "," + cn.getCoop() + "," + cn.getNotes();
+                    cn.getNoodle() + "," + cn.getCoopLevel1() + "," + cn.getCoopLevel2() + "," + cn.getCoopLevel3() + "," +cn.getCoopLevel4() + "," +  cn.getNotes();
             output = output + log + ":";
         }
         return output;
     }
+
+    public void downloadNewDialog() {
+
+        boolean oldApp = isPackageExisted("org.lrhsd.storm.frc_scouting_2015_master");
+        boolean newApp = isPackageExisted("org.stormroboticsnj.frc_scouting_2015_master");
+
+       if(oldApp) {
+            new AlertDialog.Builder(this)
+                    .setTitle("Old Master App Detected")
+                    .setMessage("Please uninstall the old Master App!")
+                    .setPositiveButton(R.string.uninstall, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(Intent.ACTION_DELETE, Uri.fromParts("package","org.lrhsd.storm.frc_scouting_2015_master",null));
+                            startActivity(intent);
+                        }
+                    })
+                    .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // do nothing
+                        }
+                    })
+                    .show();
+
+        }
+
+        if(!newApp){
+            new AlertDialog.Builder(this)
+                    .setTitle("Install the New Master App!")
+                    .setMessage("Please install the new Master App!")
+                    .setPositiveButton(R.string.install, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent goToMarket = new Intent(Intent.ACTION_VIEW)
+                                    .setData(Uri.parse("market://details?id=org.stormroboticsnj.frc_scouting_2015_master"));
+                            startActivity(goToMarket);
+                        }
+                    })
+                    .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // do nothing
+                        }
+                    })
+                    .show();
+        }
+
+        }
+
+
+
+
+    public boolean isPackageExisted(String targetPackage){
+        PackageManager pm=getPackageManager();
+        try {
+            PackageInfo info=pm.getPackageInfo(targetPackage,PackageManager.GET_META_DATA);
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
+        return true;
+    }
+
 
 }
 

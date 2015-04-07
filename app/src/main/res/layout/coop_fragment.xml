@@ -60,4 +60,5 @@
         android:layout_below="@+id/coop_level3"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="20dp" />
+
 </RelativeLayout>
