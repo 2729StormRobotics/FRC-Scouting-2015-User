@@ -37,6 +37,8 @@ public class MatchActivity extends FragmentActivity {
     CheckBox coop3Chk;
     CheckBox coop4Chk;
 
+    CheckBox troubleNoodle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +71,8 @@ public class MatchActivity extends FragmentActivity {
         coop2Chk = (CheckBox) CoopFragment.view.findViewById(R.id.coop_level2);
         coop3Chk = (CheckBox) CoopFragment.view.findViewById(R.id.coop_level3);
         coop4Chk = (CheckBox) CoopFragment.view.findViewById(R.id.coop_level4);
+
+        troubleNoodle = (CheckBox) SubmitFragment.view.findViewById(R.id.troublenoodle);
 
         int numberTotesAuto = 0;
         boolean robotAuto = false;
@@ -111,6 +115,9 @@ public class MatchActivity extends FragmentActivity {
        // Log.d("number totes stacked auto add to databse", "" + numberTotesStackedAuto);
         teamData.setNumberStackedTotesAuto(numberTotesStackedAuto);
         notes = notesText.getText().toString();
+        if(troubleNoodle.isChecked()){
+            notes += "Trouble moving over noodle";
+        }
         teamData.setNotes(notes);
         teamData.setContainers_center_auto(numberContainersCenterAuto);
         teamData.setRobotAuto(robotAuto);
