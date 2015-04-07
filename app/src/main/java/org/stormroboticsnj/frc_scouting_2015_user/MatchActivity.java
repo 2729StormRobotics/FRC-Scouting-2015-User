@@ -116,7 +116,7 @@ public class MatchActivity extends FragmentActivity {
         teamData.setNumberStackedTotesAuto(numberTotesStackedAuto);
         notes = notesText.getText().toString();
         if(troubleNoodle.isChecked()){
-            notes += "Trouble moving over noodle";
+            notes += " Trouble moving over noodle";
         }
         teamData.setNotes(notes);
         teamData.setContainers_center_auto(numberContainersCenterAuto);
