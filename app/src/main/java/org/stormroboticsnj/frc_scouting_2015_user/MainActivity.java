@@ -198,6 +198,9 @@ public class MainActivity extends Activity {
             } else {
                 robotAuto = 0;
             }
+            if(cn.getNotes().equals("")){
+                cn.setNotes("No Notes");
+            }
             String log = cn.getTeamNumber() + "," +
                     cn.getMatchNumber() + "," + alliance + "," +
                     robotAuto + "," + cn.getNumberTotesAuto() + ","
