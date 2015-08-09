@@ -1,5 +1,2 @@
-FRC-Scouting-2015-New
-=====================
 
-Use Android Studio with this, not the ADT. http://developer.android.com/sdk/index.html
-Created by Garrett Beatty
+Created by Garrett Beatty, Matthew Rassmann, Tommy Orth, and Evan Allan 2014-2015. Never Forget.
